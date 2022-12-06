@@ -1,0 +1,233 @@
+% Install pygmentize (for minted):
+% easy_install no longer exists, it was replaced by pip install.
+
+% - Method 1:
+% brew install python
+% pip3 install Pygments (or with brew, easy_install was replaced by pip install)
+% brew install pygments
+%
+% % https://tex.stackexchange.com/a/62003/69362
+% which pygmentize --> take path and use below as first parameter
+% sudo cp /opt/homebrew/bin/pygmentize /usr/local/bin/pygmentize
+
+% - Method 2:
+% sudo easy_install Pygments
+
+\documentclass{beamer}
+\usepackage [italian]{babel}
+\usepackage [utf8]{inputenc}
+\usepackage [T1]{fontenc}
+ 
+
+\mode<presentation> {
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+%\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+%\usecolortheme{albatross}
+%\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin} 
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{whale}
+%\usecolortheme{wolverine}
+
+%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+\usepackage{listings,xcolor}
+\definecolor{javared}{rgb}{0.6,0,0} % for strings
+\definecolor{javagreen}{rgb}{0.25,0.5,0.35} % comments
+\definecolor{javapurple}{rgb}{0.5,0,0.35} % keywords
+\definecolor{javadocblue}{rgb}{0.25,0.35,0.75} % javadoc
+
+% Colors from: "GradientDescentDiagram.png"
+
+%\definecolor{GradientDescentDiagramBlue}{RGB}{190,208,246}
+%\definecolor{GradientDescentDiagramRed}{RGB}{240,192,193}
+%\definecolor{GradientDescentDiagramGreen}{RGB}{208,230,201}
+
+% Same with saturation 40%
+\definecolor{GradientDescentDiagramBlue}{RGB}{148,179,246}
+\definecolor{GradientDescentDiagramGreen}{RGB}{161,230,138}
+\definecolor{GradientDescentDiagramOrange}{RGB}{245,180,1}
+\definecolor{GradientDescentDiagramRed}{RGB}{240,144,147}
+
+% https://tex.stackexchange.com/questions/89821/how-to-draw-a-solid-colored-circle
+\usepackage{tikz}
+\newcommand{\colouredcircle}[1][black]{\tikz\draw[#1,fill=#1] (0,0) circle (.5ex);}
+
+% https://tex.stackexchange.com/questions/147642/how-to-create-new-commands-with-multiple-arguments
+% https://tex.stackexchange.com/questions/201013/how-to-include-a-background-image-to-only-one-page-of-a-beamer-presentation
+\newcommand{\sectionframe}[2]{\usebackgroundtemplate{%             declare it
+	\tikz[overlay,remember picture] \node[opacity=0.3, at=(current page.center)] {
+	   \includegraphics[height=\paperheight,width=\paperwidth]{#1}};
+	}
+	\begin{frame}
+		\begin{center}
+			\ \newlinedouble
+			\Huge \textbf{#2}
+		\end{center}
+	\end{frame}
+	\usebackgroundtemplate{}%% undeclare it
+}
+
+\usepackage{colortbl}
+\usepackage{array,multirow}
+\usepackage{graphicx} % Allows including images
+\usepackage{amssymb}
+\usepackage{amsmath} 
+\usepackage{latexsym}
+\usepackage{mathtools}
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{amsfonts}
+\usepackage{pbox}
+
+% These two beloware for the euro symbol
+% \usepackage{libertine}
+\usepackage{eurosym}
+\usepackage{minted}   % code prettyfier
+
+% http://ctan.math.washington.edu/tex-archive/macros/latex/contrib/mathtools/empheq.pdf
+\usepackage{empheq}
+
+% https://en.wikibooks.org/wiki/LaTeX/Algorithms
+% https://ctan.mirror.garr.it/mirrors/ctan/macros/latex/contrib/algorithm2e/doc/algorithm2e.pdf
+\usepackage[]{algorithm2e}
+
+% https://www.overleaf.com/latex/examples/drawing-coloured-boxes-using-tcolorbox/pvknncpjyfbp
+\usepackage{tikz,lipsum,lmodern}
+\usepackage[most]{tcolorbox} 
+
+%\begin{tcolorbox}[colback=yellow!10,colframe=blue!40!black!60]
+%  My box
+%\end{tcolorbox}
+
+
+% https://www.researchgate.net/publication/341380597_Insert_GIF_in_a_LaTeX_Beamer_Presentation
+% options --> https://texblog.org/2018/03/05/the-animate-package/
+% gif converter --> https://image.online-convert.com/convert-to-png
+\usepackage{animate}
+
+% per gestire gli if
+% https://tex.stackexchange.com/a/58627/69362
+% https://www.ctan.org/pkg/ifthen
+\usepackage{ifthen}
+\newboolean{highschool}
+\setboolean{highschool}{true}
+%\ifthenelse{\boolean{highschool}}{}{
+%}
+
+% Emoji
+% https://tex.stackexchange.com/questions/3695/smileys-in-latex
+%\usepackage{MnSymbol,wasysym}
+%(\smiley ~oppure \frownie)
+
+
+% Per gli svg usare la app per mac: gapplin per convertirle in png
+% Su photoshop:
+% C --> Cropping
+% CMD + T --> una volta selezionato il layer lo puoi resizare
+% per convertire svg in pdf --> usare "SVG Converter" per mac
+% https://apps.apple.com/us/app/svg-converter-ohanaware-com/id1075707641?mt=12
+
+% Init Yellow box formula
+%\begin{empheq}[box=\fcolorbox{blue!40!black!60}{yellow!10}]{align*}
+%\mbox{Err}_{\mathcal{TE}} = \frac{1}{n} \sum_{i=1}^m \mathbb{I}[\widetilde y_i\not= \hat C(\widetilde x_i)]
+%\end{empheq}
+% End Yellow box
+
+% Init Simple formula centered (no margins)
+%\makebox[\textwidth]{$\mbox{Err}_{\mathcal{TE}} = \frac{1}{n} \sum_{i=1}^m \mathbb{I}[\widetilde y_i\not= \hat C(\widetilde x_i)]$}
+% End Simple Fomula centered (no margins)
+
+% Bold in math
+% $\pmb{letter}$
+
+% Commands definitions
+\include{new_commands}
+
+\newtheorem{defn}{Definizione}
+\newtheorem{thm}{Teorema}
+\newtheorem{cor}[thm]{Corollario}
+\newtheorem{prop}[thm]{Proposizione}
+\newtheorem{oss}{Osservazione}
+
+
+%Information to be included in the title page:
+\title{Title}
+\author{Daniele Maddaluno}
+%\institute{ShareLaTeX}
+\newcommand\yearnext{\advance\year by 1 \the\year\advance\year by -1}
+\newcommand\yearprev{\advance\year by -1 \the\year\advance\year by +1}
+\ifthenelse{\month>8}{
+\newcommand\academicyear{\the\year/\yearnext}	
+}{
+\newcommand\academicyear{\yearprev/\the\year}	
+}
+\date{\academicyear}
+
+
+\begin{document}
+
+\begin{frame}
+	\titlepage % Print the title page as the first slide
+\end{frame}
+
+% Split index
+% https://stackoverflow.com/questions/913966/how-to-split-table-of-contents-across-multiple-slides-with-latex-beamer
+\begin{frame}[allowframebreaks]
+	\frametitle{Index} % Table of contents slide, comment this block out to remove it
+	\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+\end{frame}
+ 
+
+%--------------------------------------------------
+%	PRESENTATION SLIDES 
+%--------------------------------------------------
+
+\include{1_intro}
+
+\end{document}

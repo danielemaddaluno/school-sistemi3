@@ -1,0 +1,15 @@
+# ignore all . folders
+.*/
+# ignore all _ folders
+_*/
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.synctex.gz
+*.toc
+*.dvi
+*.ps
+*.synctex(busy)
+/presentation.pdf
