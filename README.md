@@ -1,4 +1,4 @@
-# Corso XYZ
+# Corso Sistemi e Reti 3°
 
 Puoi scaricare le slides del corso dal seguente link:<br>
 [presentation.pdf](../../releases/latest/download/presentation.pdf) (aprire con Adobe Acrobat Reader per visualizzare le animazioni)
