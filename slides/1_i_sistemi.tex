@@ -1,7 +1,7 @@
 \section[I Sistemi]{I Sistemi}
 \sectionframe{images/covers/cover_intro.jpg}{Intro}
 
-\subsection[Intro]{Intro}
+\subsection[Definizione]{Definizione}
 
 % Pastorello: intro_statistical_learning
 % https://www.javatpoint.com/machine-learning
@@ -128,4 +128,94 @@
 		\vspace{1.5em}
 %	\end{block}
 \end{frame}
+
+
+\subsection[Lo stato]{Lo stato}
+
+
+\begin{frame}
+%	\frametitle{La funzione di transizione di stato}
+	
+	\begin{block}{Lo stato}
+		Lo \textbf{stato} di un sistema è l'insieme di informazioni necessarie e sufficienti per descrivere le condizioni in cui si trova un sistema in un qualunque istante.\\
+		\vspace{0.5em}
+		Ad esempio:
+		\begin{itemize}
+			\item Nel sistema \textbf{automobile}:\\
+				stato = velocità alla quale si trova in un dato istante (0 se è ferma).
+			\item Nel sistema \textbf{aeroplano}:\\
+				stato = litri di carburante nel serbatoio, il numero di giri del motore, Il livello dell’ollo ecc.
+		\end{itemize}
+		\vspace{0.5em}
+		Leggere i valori dello stato di un sistema in un determinato momento equivale a farne una fotografia istantanea.\\
+%		I valori degli ingressi, uscite e stati in un sistema, vengono memorizzati in apposite variabili che prendono il nome di variabili d'ingresso, d'uscita e di stato.
+		
+	\end{block}
+\end{frame}
+
+
+
+\subsection[Funzione di transizione di stato]{Funzione di transizione di stato}
+
+
+\begin{frame}
+%	\frametitle{La funzione di transizione di stato}
+	
+	\begin{block}{La funzione di transizione di stato}
+		La \textbf{funzione di transizione dello stato} ($\pmb{f}$), è la funzione che determina quale sia il valore dello stato del sistema $\pmb{s}$ in un generico istante $\pmb{t}$.\\
+		
+		$$\pmb{s(t) = f\Big(s(t_0), i(t)\Big)}$$
+		
+		\begin{itemize}
+			\item $\pmb{f}$ è la funzione di transizione dello stato
+			\item $\pmb{s(t_0)}$ è lo stato iniziale del sistema al tempo $t_0$
+			\item $\pmb{i(t)}$ sono tutti gli ingressi applicati al sistema dall'istante iniziale $t_0$ all'istante $t$
+			\item $\pmb{s(t)}$ è quindi lo stato del sistema al tempo $\pmb{t}$.	\\
+			Esso può essere ottenuto tramite la funzione di transizione dello stato $\pmb{f}$ conoscendo $\pmb{s(t_0)}$ e $\pmb{i(t)}$.
+		\end{itemize}
+		
+		\begin{figure}[!htbp]
+			\centering
+			\includegraphics[width=0.50\linewidth]{images/1_i_sistemi/sistemaF.pdf}
+					%\caption{}
+		\end{figure}
+	\end{block}
+\end{frame}
+
+
+
+\subsection[Funzione di trasformazione delle uscite]{Funzione di trasformazione delle uscite}
+
+
+\begin{frame}
+%	\frametitle{Funzione di trasformazione delle uscite}
+	
+	\begin{block}{Funzione di trasformazione delle uscite}
+		La \textbf{funzione di trasformazione delle uscite} ($\pmb{g}$) è la funzione che determina quale valore avrà l'uscita $\pmb{o(t)}$ ad un generico istante $\pmb{t}$.\\
+		
+		$$\pmb{o(t) = g\Big(s(t), i(t)\Big)}$$
+		
+		\begin{itemize}
+			\item $\pmb{g}$ è la funzione di trasformazione delle uscite
+			\item $\pmb{s(t)}$ è lo stato del sistema al tempo $t$
+			\item $\pmb{i(t)}$ sono tutti gli ingressi applicati al sistema dall'istante iniziale $t_0$ all'istante $t$
+			\item $\pmb{o(t)}$ è quindi il valore che avrà l'uscita $\pmb{o(t)}$ ad un generico istante $\pmb{t}$, conoscendo il valore dello stato e degli ingressi nel medesimo istante.
+		\end{itemize}
+		
+		\begin{figure}[!htbp]
+			\centering
+			\includegraphics[width=0.50\linewidth]{images/1_i_sistemi/sistemaF.pdf}
+					%\caption{}
+		\end{figure}
+	\end{block}
+\end{frame}
+
+%\begin{frame}
+%%	\frametitle{La funzione di transizione di stato}
+%	
+%	\begin{block}{La funzione di transizione di stato}
+%		
+%	\end{block}
+%\end{frame}
+
 
