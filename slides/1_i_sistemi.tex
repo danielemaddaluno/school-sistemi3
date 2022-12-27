@@ -362,12 +362,12 @@ $L_{RX}$ & $L_{RX}$ & $Dark$ & $Dark$ & - \\ \hline
 
 
 \begin{frame}
-	\frametitle{Classificazione dei sistemi}
-	\begin{block}{Classificazione dei sistemi}
-		Sulla base di tali osservazioni possiamo classificare un sistema come:
+	\frametitle{Classificazione sistemica}
+	\begin{block}{Classificazione sistemica}
+		Sulla base di tali osservazioni possiamo classificare un sistema identificando tipologie a due a due di natura opposta; si hanno pertanto sistemi:
 		\begin{itemize}
 			\item Variante o invariante
-			\item Discreto o continuo
+			\item Continuo o discreto
 			\item Combinatorio o sequenziale
 			\item Deterministico o stocastico
 			\item Dinamico o statico
@@ -384,16 +384,57 @@ $L_{RX}$ & $L_{RX}$ & $Dark$ & $Dark$ & - \\ \hline
 \subsubsection[Variante o invariante]{Variante o invariante}
 \begin{frame}
 	\frametitle{Variante o invariante}
-	\begin{block}{Variante o invariante}
-		abc
+	\begin{block}{Variante o invariante nel tempo}
+		Un sistema è \textbf{invariante nel tempo} quando i parametri che lo caratterizzano rimangono invarianti nel tempo e quindi le leggi che legano le sollecitazioni alle risposte rimangono invariate nel tempo.\\~\\
+		\textbf{ATTENZIONE}: non è variante un sistema quando variano gli ingressi e/o le uscite: in tal caso si dice che il sistema è dinamico.
 	\end{block}
 \end{frame}
 
-\subsubsection[Discreto o continuo]{Discreto o continuo}
+\subsubsection[Continuo o discreto]{Continuo o discreto}
 \begin{frame}
-	\frametitle{Discreto o continuo}
-	\begin{block}{Discreto o continuo}
-		abc
+	\frametitle{Continuo o discreto}
+	\begin{block}{Continuo o discreto}
+		Un sistema può essere \textbf{discreto}:
+		\begin{itemize}
+			\item nell'\textbf{avanzamento}
+			\item nelle \textbf{sollecitazioni}
+			\item nelle \textbf{interazioni}
+		\end{itemize}
+		
+		Un sistema si dice continuo se non è discreto in nessuno dei tre aspetti (avanzamento, sollecitazioni e interazioni).
+	\end{block}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Continuo o discreto: nell'avanzamento}
+	\begin{block}{Un sistema è discreto nell'avanzamento}
+		quando non esistono tempi intermedi tra un istante $t_n$ e il suo successivo $t_{n+1}$ in cui viene studiato (ad es. nei sistemi di scansione temporale tramite un clock).\\
+		Ad esempio: \textit{ripresa cinematografica microprocessore scandito dal clock}.
+	\end{block}
+	
+	\begin{block}{Un sistema è discreto nelle sollecitazioni}
+		quando l'insieme delle Variabili d'Ingresso (VI) è discreto.\\
+		Ad esempio: \textit{un distributore di bibite} o \textit{un sistema di illuminazione}.
+	\end{block}
+	
+	\begin{block}{Un sistema è discreto nelle interazioni}
+		quando la funzione di transizione e/o la funzione di trasformazione sono entrambe discrete.\\
+		Ad esempio: \textit{un orologio digitale con ingresso continuo ma uscita discreta}.
+	\end{block}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Continuo o discreto}
+	\begin{block}{Continuo o discreto}		
+		Un tipico esempio di sistema continuo è rappresentato da:
+		\begin{itemize}
+			\item un albero che produce frutti, 
+			\item una mucca che produce latte, 
+			\item ecc...
+		\end{itemize}
+		
 	\end{block}
 \end{frame}
 
