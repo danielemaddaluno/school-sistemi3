@@ -367,9 +367,9 @@ $L_{RX}$ & $L_{RX}$ & $Dark$ & $Dark$ & - \\ \hline
 		Sulla base di tali osservazioni possiamo classificare un sistema identificando tipologie a due a due di natura opposta; si hanno pertanto sistemi:
 		\begin{itemize}
 			\item Variante o invariante
-			\item Continuo o discreto
-			\item Combinatorio o sequenziale
 			\item Deterministico o stocastico
+			\item Continuo o discreto
+			\item Combinatorio o sequenziale			
 			\item Dinamico o statico
 			\item Proprio o improprio
 			\item ...
@@ -390,6 +390,20 @@ $L_{RX}$ & $L_{RX}$ & $Dark$ & $Dark$ & - \\ \hline
 	\end{block}
 \end{frame}
 
+
+\subsubsection[Deterministico o stocastico]{Deterministico o stocastico}
+\begin{frame}
+	\frametitle{Deterministico o stocastico}
+	\begin{block}{Un sistema è deterministico}
+		Un sistema è \textbf{deterministico} quando le funzioni di transizione e di trasformazione permettono la determinazione del valore dello stato e delle uscite in modo univoco.
+	\end{block}
+	
+	\begin{block}{Un sistema è stocastico}
+		Un sistema è \textbf{stocastico} quando almeno una delle due funzioni è regolata da legami di natura probabilistica.
+	\end{block}
+\end{frame}
+
+
 \subsubsection[Continuo o discreto]{Continuo o discreto}
 \begin{frame}
 	\frametitle{Continuo o discreto}
@@ -407,10 +421,10 @@ $L_{RX}$ & $L_{RX}$ & $Dark$ & $Dark$ & - \\ \hline
 
 
 \begin{frame}
-	\frametitle{Continuo o discreto: nell'avanzamento}
+	\frametitle{Continuo o discreto}
 	\begin{block}{Un sistema è discreto nell'avanzamento}
 		quando non esistono tempi intermedi tra un istante $t_n$ e il suo successivo $t_{n+1}$ in cui viene studiato (ad es. nei sistemi di scansione temporale tramite un clock).\\
-		Ad esempio: \textit{ripresa cinematografica microprocessore scandito dal clock}.
+		Ad esempio: \textit{ripresa cinematografica} o \textit{microprocessore scandito dal clock}.
 	\end{block}
 	
 	\begin{block}{Un sistema è discreto nelle sollecitazioni}
@@ -427,32 +441,116 @@ $L_{RX}$ & $L_{RX}$ & $Dark$ & $Dark$ & - \\ \hline
 
 \begin{frame}
 	\frametitle{Continuo o discreto}
-	\begin{block}{Continuo o discreto}		
-		Un tipico esempio di sistema continuo è rappresentato da:
+	\begin{block}{Esempi di sistemi continui}		
 		\begin{itemize}
 			\item un albero che produce frutti, 
-			\item una mucca che produce latte, 
+			\item una mucca che produce latte,
 			\item ecc...
 		\end{itemize}
 		
 	\end{block}
+	
+	\begin{block}{Esempi di sistemi discreti:}		
+		\begin{itemize}
+			\item un distributore di lattine, 
+			\item il sistema orologio digitale, 
+			\item ecc...
+		\end{itemize}
+	\end{block}
+	
 \end{frame}
+
+
+\begin{frame}
+	\frametitle{Continuo o discreto}
+	
+	\begin{block}{Esempi di sistemi discreto e continuo}		
+		Un classico orologio a lancette invece, a seconda dei tempi nella quale viene studiato il sistema, può essere considerato:
+		\begin{itemize}
+			\item \textbf{continuo}, ipotizzando che la lancetta passi con continuità dalla posizione relativa a un secondo a quella relativa all'altro secondo (codominio della funzione di trasformazione: intervallo continuo $[0, 59.999...]$).
+			\item \textbf{discreto}, ipotizzando che la lancetta avanzi di uno scatto ogni secondo (codominio della funzione di trasformazione: intervallo discreto: $[0, 1, 2, 3, 4, 5, ..., 59]$).
+		\end{itemize}
+	\end{block}	
+\end{frame}
+
+
 
 \subsubsection[Combinatorio o sequenziale]{Combinatorio o sequenziale}
 \begin{frame}
 	\frametitle{Combinatorio o sequenziale}
-	\begin{block}{Combinatorio o sequenziale}
-		abc
+	\begin{block}{Un sistema è \textbf{combinatorio}}
+		se le uscite dipendono solo dai valori presenti agli ingressi nel medesimo istante, le uscite non ricordano il passato: il sistema è senza memoria e le uscite sono una combinazione degli ingressi nello stesso istante
 	\end{block}
+	
+	\begin{block}{Un sistema è \textbf{sequenziale}}
+		quando le uscite dipendono non solo dai valori degli ingressi in quell'istante, ma anche dai valori assunti in precedenza dagli ingressi.
+	\end{block}
+	
+	
 \end{frame}
 
-\subsubsection[Deterministico o stocastico]{Deterministico o stocastico}
+
 \begin{frame}
-	\frametitle{Deterministico o stocastico}
-	\begin{block}{Deterministico o stocastico}
-		abc
+	\frametitle{Combinatorio o sequenziale}
+	
+	\begin{block}{Esempi di sistemi combinatori}
+	
+		\begin{columns}			
+		\column{0.7\linewidth}
+		\begin{itemize}
+			\item Serratura di un lucchetto a combinazione numerica: per ottenere la combinazione si devono ruotare e posizionare manopole rotanti ciascuna su di una cifra; è indipendente dal valore iniziale delle manopole in quanto conta solamente il numero finale sul quale vengono posizionate.
+			\item Porte logiche (and, or, not...): l'uscita di questi sistemi dipende unicamente dal valore presente sugli ingressi e non dai valori degli ingressi delle operazioni precedenti.
+		\end{itemize}
+					
+		\column{0.3\linewidth}
+		\begin{figure}[!htbp] 
+			\centering
+			\includegraphics[width=0.7\linewidth]{images/1_i_sistemi/lock.png}
+					%\caption{}
+		\end{figure}
+		
+		\begin{figure}[!htbp]
+			\centering
+			\includegraphics[width=1.0\linewidth]{images/1_i_sistemi/ports.png}
+					%\caption{}
+		\end{figure}
+	\end{columns}
+		
+		
 	\end{block}
+	
+	
 \end{frame}
+
+
+
+\begin{frame}
+	\frametitle{Combinatorio o sequenziale}
+	
+	\begin{block}{Esempi di sequenziali}
+	
+		\begin{columns}			
+		\column{0.7\linewidth}
+		\begin{itemize}
+			\item Distributore automatico di merendine: sistema sequenziale in quanto erogazione del prodotto dipende dalle monete inserite precedentemente che concorrono a formare l'importo necessario (mantiene la memoria del denaro inserito)
+		\end{itemize}
+					
+		\column{0.3\linewidth}
+%		\begin{figure}[!htbp] 
+%			\centering
+%			\includegraphics[width=0.7\linewidth]{images/1_i_sistemi/lock.png}
+%					%\caption{}
+%		\end{figure}
+		
+	\end{columns}
+		
+		
+	\end{block}
+	
+	
+\end{frame}
+
+
 
 \subsubsection[Dinamico o statico]{Dinamico o statico}
 \begin{frame}
