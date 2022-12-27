@@ -1,18 +1,39 @@
 \section[I Sistemi]{I Sistemi}
 \sectionframe{images/covers/cover_intro.jpg}{Intro}
 
-\subsection[Definizione]{Definizione}
+\subsection[Definizioni: sistema e stato di un sistema]{Definizioni: sistema e stato di un sistema}
 
 % Pastorello: intro_statistical_learning
 % https://www.javatpoint.com/machine-learning
 \begin{frame}
-	\frametitle{Sistema e Stato}
+	\frametitle{Definizione di sistema}
 	
 	\begin{block}{Sistema}
 		Un \textbf{sistema} è un insieme di elementi in relazione tra di loro secondo leggi ben precise che concorrono al raggiungimento di un obiettivo comune.
 	\end{block}
 	\begin{block}{Stato}
 		Il sistema, in base al dati ricevuti in ingresso ed alla sua natura, evolve istante dopo istante in una nuova situazione che è chiamata \textbf{stato}.
+	\end{block}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Definizione di stato di un sistema}
+	
+	\begin{block}{Lo stato}
+		Lo \textbf{stato} di un sistema è l'insieme di informazioni necessarie e sufficienti per descrivere le condizioni in cui si trova un sistema in un qualunque istante.\\
+		\vspace{0.5em}
+		Ad esempio:
+		\begin{itemize}
+			\item Nel sistema \textbf{automobile}:\\
+				stato = velocità alla quale si trova in un dato istante (0 se è ferma).
+			\item Nel sistema \textbf{aeroplano}:\\
+				stato = litri di carburante nel serbatoio, il numero di giri del motore, Il livello dell’ollo ecc.
+		\end{itemize}
+		\vspace{0.5em}
+		Leggere i valori dello stato di un sistema in un determinato momento equivale a farne una fotografia istantanea.\\
+%		I valori degli ingressi, uscite e stati in un sistema, vengono memorizzati in apposite variabili che prendono il nome di variabili d'ingresso, d'uscita e di stato.
+		
 	\end{block}
 \end{frame}
 
@@ -30,8 +51,10 @@
 \end{frame}
 
 
+
+\subsection[Sistemi naturali, artificiali e misti]{Sistemi naturali, artificiali e misti}
 \begin{frame}
-	\frametitle{Catalogazione dei sistemi}
+	\frametitle{Sistemi naturali, artificiali e misti}
 	
 	\begin{block}{È possibile catalogare i sistemi in tre grandi categorie:}
 		\begin{itemize}
@@ -46,8 +69,10 @@
 \end{frame}
 
 
+\subsection[Inputs, states e outputs]{Inputs, states e outputs}
+
 \begin{frame}
-	\frametitle{Un qualunque sistema X}
+	\frametitle{Inputs, states e outputs}
 	
 	\begin{block}{Potremmo rappresentare qualunque sistema X nel seguente modo:}
 		\begin{itemize}
@@ -67,7 +92,7 @@
 
 
 \begin{frame}
-	\frametitle{Un qualunque sistema X}
+	\frametitle{Inputs, states e outputs}
 	
 	\begin{block}{Le grandezze che determinano un sistema:}
 		Un sistema è basato su quattro grandezze principali\\
@@ -83,7 +108,7 @@
 
 
 \begin{frame}
-	\frametitle{Un qualunque sistema X}
+	\frametitle{Inputs, states e outputs}
 	
 	\begin{block}{Le grandezze che determinano un sistema:}
 		\vspace{1.5em}
@@ -130,40 +155,16 @@
 \end{frame}
 
 
-\subsection[Lo stato]{Lo stato}
+
+
+\subsection[Funzione di transizione di stato $f$]{Funzione di transizione di stato $f$}
 
 
 \begin{frame}
-%	\frametitle{La funzione di transizione di stato}
+%	\frametitle{La funzione di transizione dello stato}
 	
-	\begin{block}{Lo stato}
-		Lo \textbf{stato} di un sistema è l'insieme di informazioni necessarie e sufficienti per descrivere le condizioni in cui si trova un sistema in un qualunque istante.\\
-		\vspace{0.5em}
-		Ad esempio:
-		\begin{itemize}
-			\item Nel sistema \textbf{automobile}:\\
-				stato = velocità alla quale si trova in un dato istante (0 se è ferma).
-			\item Nel sistema \textbf{aeroplano}:\\
-				stato = litri di carburante nel serbatoio, il numero di giri del motore, Il livello dell’ollo ecc.
-		\end{itemize}
-		\vspace{0.5em}
-		Leggere i valori dello stato di un sistema in un determinato momento equivale a farne una fotografia istantanea.\\
-%		I valori degli ingressi, uscite e stati in un sistema, vengono memorizzati in apposite variabili che prendono il nome di variabili d'ingresso, d'uscita e di stato.
-		
-	\end{block}
-\end{frame}
-
-
-
-\subsection[Funzione di transizione di stato]{Funzione di transizione di stato}
-
-
-\begin{frame}
-%	\frametitle{La funzione di transizione di stato}
-	
-	\begin{block}{La funzione di transizione di stato}
-		La \textbf{funzione di transizione dello stato} ($\pmb{f}$), è la funzione che determina quale sia il valore dello stato del sistema $\pmb{s}$ in un generico istante $\pmb{t}$.\\
-		
+	\begin{block}{La \textbf{funzione di transizione dello stato} ($\pmb{f}$)}
+		è la funzione che determina quale sia il valore dello stato del sistema $\pmb{s}$ in un generico istante $\pmb{t}$.
 		$$\pmb{s(t) = f\Big(s(t_0), i(t)\Big)}$$
 		
 		\begin{itemize}
@@ -184,15 +185,14 @@
 
 
 
-\subsection[Funzione di trasformazione delle uscite]{Funzione di trasformazione delle uscite}
+\subsection[Funzione di trasformazione delle uscite $g$]{Funzione di trasformazione delle uscite}
 
 
 \begin{frame}
 %	\frametitle{Funzione di trasformazione delle uscite}
 	
-	\begin{block}{Funzione di trasformazione delle uscite}
-		La \textbf{funzione di trasformazione delle uscite} ($\pmb{g}$) è la funzione che determina quale valore avrà l'uscita $\pmb{o(t)}$ ad un generico istante $\pmb{t}$.\\
-		
+	\begin{block}{La \textbf{funzione di trasformazione delle uscite} ($\pmb{g}$)}
+		è la funzione che determina quale valore avrà l'uscita $\pmb{o(t)}$ ad un generico istante $\pmb{t}$.
 		$$\pmb{o(t) = g\Big(s(t), i(t)\Big)}$$
 		
 		\begin{itemize}
@@ -210,12 +210,140 @@
 	\end{block}
 \end{frame}
 
-%\begin{frame}
-%%	\frametitle{La funzione di transizione di stato}
-%	
-%	\begin{block}{La funzione di transizione di stato}
-%		
-%	\end{block}
-%\end{frame}
 
 
+\subsection[Un esempio completo]{Un esempio completo}
+
+\begin{frame}
+	\frametitle{Esempio di un sistema di illuminazione}
+	\begin{block}{Sistema di illuminazione:}
+	
+	Prendiamo in esame un semplice sistema di illuminazione come mostrato nello schema a fianco.
+	
+	
+	\begin{columns}			
+		\column{0.65\linewidth}
+		\hspace{0.1em}
+		Ci sono solo quattro stati ammessi: 
+		\begin{itemize}
+			\item buio, ovvero tutte le luci spente ($Dark$)
+			\item solo la luce nell'ingresso accesa ($L_I$)
+			\item solo la luce nel corridoio a sx accesa ($L_{LX}$)
+			\item solo la luce nel corridoio a dx accesa ($L_{RX}$)
+		\end{itemize}
+		
+		Il sistema riceve gli input esclusivamente attraverso i due bottoni $B_1$ e $B_2$, possono esser premuti solo uno per volta.
+		Se non mantenuti premuti rimangono sollevati (entrambi su OFF).
+					
+		\column{0.35\linewidth}
+		\begin{figure}[!htbp]
+			\centering 
+			\includegraphics[width=0.8\linewidth]{images/1_i_sistemi/sistemaLight.pdf}
+					%\caption{}
+		\end{figure}
+		
+	\end{columns}
+	\end{block}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Esempio di un sistema di illuminazione}
+	\begin{block}{Sistema di illuminazione, funzione di transizione dello stato:}
+	
+	Prendiamo in esame la funzione di transizione dello stato del semplice sistema di illuminazione.
+	
+	
+	\begin{columns}			
+		\column{0.6\linewidth}
+\begin{small}
+	
+\begin{table}[]
+\begin{tabular}{|
+>{\columncolor[HTML]{C0C0C0}}c |c|c|c|c|}
+\hline
+\cellcolor[HTML]{FFFFFF}$\pmb{s}$\textbackslash $\pmb{i}$ & \cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}c@{}}$B_1$ OFF\\ $B_2$ OFF\end{tabular} & \cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}c@{}}$B_1$ ON\\ $B_2$ OFF\end{tabular} & \cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}c@{}}$B_1$ OFF\\ $B_2$ ON\end{tabular} & \cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}c@{}}$B_1$ ON\\ $B_2$ ON\end{tabular} \\ \hline
+$Dark$ & $Dark$ & $L_I$ & $L_I$ & - \\ \hline
+$L_I$ & $L_I$ & $L_{LX}$ & $L_{RX}$ & - \\ \hline
+$L_{LX}$ & $L_{LX}$ & $Dark$ & $Dark$ & - \\ \hline
+$L_{RX}$ & $L_{RX}$ & $Dark$ & $Dark$ & - \\ \hline                                                                        
+\end{tabular}
+\end{table}
+\end{small}
+					
+		\column{0.4\linewidth}
+		\begin{figure}[!htbp]
+			\centering
+			\includegraphics[width=0.80\linewidth]{images/1_i_sistemi/sistemaLight.pdf}
+					%\caption{}
+		\end{figure}
+	\end{columns}
+	\end{block}
+\end{frame}
+
+
+
+
+\begin{frame}
+	\frametitle{Esempio di un sistema di illuminazione}
+	\begin{block}{Sistema di illuminazione, funzione di transizione dello stato:}
+	
+	Prendiamo in esame la funzione di transizione dello stato del semplice sistema di illuminazione.
+	
+	
+	\begin{columns}			
+		\column{0.6\linewidth}
+\begin{small}
+	
+\begin{table}[]
+\begin{tabular}{|
+>{\columncolor[HTML]{C0C0C0}}c |c|c|c|c|}
+\hline
+\cellcolor[HTML]{FFFFFF}$\pmb{s}$\textbackslash $\pmb{i}$ & \cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}c@{}}$B_1$ OFF\\ $B_2$ OFF\end{tabular} & \cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}c@{}}$B_1$ ON\\ $B_2$ OFF\end{tabular} & \cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}c@{}}$B_1$ OFF\\ $B_2$ ON\end{tabular} & \cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}c@{}}$B_1$ ON\\ $B_2$ ON\end{tabular} \\ \hline
+$Dark$ & $Dark$ & $L_I$ & $L_I$ & - \\ \hline
+$L_I$ & $L_I$ & $L_{LX}$ & $L_{RX}$ & - \\ \hline
+$L_{LX}$ & $L_{LX}$ & $Dark$ & $Dark$ & - \\ \hline
+$L_{RX}$ & $L_{RX}$ & $Dark$ & $Dark$ & - \\ \hline                                                                        
+\end{tabular}
+\end{table}
+\end{small}
+					
+		\column{0.4\linewidth}
+		\begin{figure}[!htbp]
+			\centering
+			\includegraphics[width=0.9\linewidth]{images/1_i_sistemi/sistemaLightF.pdf}
+					%\caption{}
+		\end{figure}
+	\end{columns}
+	\end{block}
+\end{frame}
+
+
+
+\begin{frame}
+	\frametitle{Esempio di un sistema di illuminazione}
+	\begin{block}{Sistema di illuminazione, funzione di trasformazione delle uscite:}
+	
+	La funzione di trasformazione delle uscite in questo specifico caso è funzione solo dello stato in cui il sistema si va a trovare, ovvero non tiene di conto dell'ultimo input ricevuto al tempo $t$ ma solo dello stato:
+	
+	\begin{itemize}
+		\item $s=Dark \quad\rightarrow$ $output =$ luci spente
+		\item $s=L_{I} \quad\:\quad\rightarrow$ $output =$ luce dell'ingresso accesa
+		\item $s=L_{LX} \quad\;\;\rightarrow$ $output =$ luce del corridoio sx accesa
+		\item $s=L_{RX} \quad\;\;\rightarrow$ $output =$ luce del corridoio sx accesa
+	\end{itemize}
+	
+	\end{block}
+\end{frame}
+
+
+
+\subsection[Classificazione dei sistemi]{Classificazione dei sistemi}
+
+\begin{frame}
+	\frametitle{Classificazione dei sistemi}
+	\begin{block}{Classificazione dei sistemi:}
+		
+	
+	\end{block}
+\end{frame}
