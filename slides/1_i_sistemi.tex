@@ -219,11 +219,11 @@
 	\begin{block}{Sistema di illuminazione:}
 	
 	Prendiamo in esame un semplice sistema di illuminazione come mostrato nello schema a fianco.
-	
+	\hspace{0.3em}
 	
 	\begin{columns}			
 		\column{0.65\linewidth}
-		\hspace{0.1em}
+		
 		Ci sono solo quattro stati ammessi: 
 		\begin{itemize}
 			\item buio, ovvero tutte le luci spente ($Dark$)
@@ -370,7 +370,6 @@ $L_{RX}$ & $L_{RX}$ & $Dark$ & $Dark$ & - \\ \hline
 			\item Deterministico o stocastico
 			\item Continuo o discreto
 			\item Combinatorio o sequenziale			
-			\item Dinamico o statico
 			\item Proprio o improprio
 			\item ...
 		\end{itemize}
@@ -496,25 +495,25 @@ $L_{RX}$ & $L_{RX}$ & $Dark$ & $Dark$ & - \\ \hline
 	\begin{block}{Esempi di sistemi combinatori}
 	
 		\begin{columns}			
-		\column{0.7\linewidth}
-		\begin{itemize}
-			\item Serratura di un lucchetto a combinazione numerica: per ottenere la combinazione si devono ruotare e posizionare manopole rotanti ciascuna su di una cifra; è indipendente dal valore iniziale delle manopole in quanto conta solamente il numero finale sul quale vengono posizionate.
-			\item Porte logiche (and, or, not...): l'uscita di questi sistemi dipende unicamente dal valore presente sugli ingressi e non dai valori degli ingressi delle operazioni precedenti.
-		\end{itemize}
-					
-		\column{0.3\linewidth}
-		\begin{figure}[!htbp] 
-			\centering
-			\includegraphics[width=0.7\linewidth]{images/1_i_sistemi/lock.png}
-					%\caption{}
-		\end{figure}
-		
-		\begin{figure}[!htbp]
-			\centering
-			\includegraphics[width=1.0\linewidth]{images/1_i_sistemi/ports.png}
-					%\caption{}
-		\end{figure}
-	\end{columns}
+			\column{0.7\linewidth}
+			\begin{itemize}
+				\item \textbf{Lucchetto a combinazione numerica}:\\per ottenere la combinazione si devono ruotare e posizionare manopole rotanti ciascuna su di una cifra; è indipendente dal valore iniziale delle manopole in quanto conta solamente il numero finale sul quale vengono posizionate.
+				\item \textbf{Porte logiche (and, or, not, ...)}:\\l'uscita di questi sistemi dipende unicamente dal valore presente sugli ingressi e non dai valori degli ingressi delle operazioni precedenti.
+			\end{itemize}
+						
+			\column{0.3\linewidth}
+			\begin{figure}[!htbp] 
+				\centering
+				\includegraphics[width=0.7\linewidth]{images/1_i_sistemi/lock.png}
+						%\caption{}
+			\end{figure}
+			
+			\begin{figure}[!htbp]
+				\centering
+				\includegraphics[width=1.0\linewidth]{images/1_i_sistemi/ports.png}
+						%\caption{}
+			\end{figure}
+		\end{columns}
 		
 		
 	\end{block}
@@ -527,22 +526,23 @@ $L_{RX}$ & $L_{RX}$ & $Dark$ & $Dark$ & - \\ \hline
 \begin{frame}
 	\frametitle{Combinatorio o sequenziale}
 	
-	\begin{block}{Esempi di sequenziali}
+	\begin{block}{Esempi di sistemi sequenziali}
 	
 		\begin{columns}			
-		\column{0.7\linewidth}
-		\begin{itemize}
-			\item Distributore automatico di merendine: sistema sequenziale in quanto erogazione del prodotto dipende dalle monete inserite precedentemente che concorrono a formare l'importo necessario (mantiene la memoria del denaro inserito)
-		\end{itemize}
-					
-		\column{0.3\linewidth}
-%		\begin{figure}[!htbp] 
-%			\centering
-%			\includegraphics[width=0.7\linewidth]{images/1_i_sistemi/lock.png}
-%					%\caption{}
-%		\end{figure}
-		
-	\end{columns}
+			\column{0.7\linewidth}
+			\begin{itemize}
+				\item \textbf{Distributore automatico di merendine}:\\sistema sequenziale in quanto erogazione del prodotto dipende dalle monete inserite precedentemente che concorrono a formare l'importo necessario (mantiene la memoria del denaro inserito)
+			\end{itemize}
+						
+			\column{0.3\linewidth}
+			\begin{figure}[!htbp] 
+				\centering
+				\advance\leftskip-0.25cm
+				\includegraphics[width=1.0\linewidth]{images/1_i_sistemi/vending_machine.jpg}
+						%\caption{}
+			\end{figure}
+			
+		\end{columns}
 		
 		
 	\end{block}
@@ -550,20 +550,56 @@ $L_{RX}$ & $L_{RX}$ & $Dark$ & $Dark$ & - \\ \hline
 	
 \end{frame}
 
-
-
-\subsubsection[Dinamico o statico]{Dinamico o statico}
-\begin{frame}
-	\frametitle{Dinamico o statico}
-	\begin{block}{Dinamico o statico}
-		abc
-	\end{block}
-\end{frame}
 
 \subsubsection[Proprio o improprio]{Proprio o improprio}
 \begin{frame}
 	\frametitle{Proprio o improprio}
-	\begin{block}{Proprio o improprio}
-		abc
+	\begin{block}{Un sistema è \textbf{proprio}}
+		quando l'uscita dipende solo dallo stato e non dall'ingresso nello stesso istante.
 	\end{block}
+	
+	\begin{block}{Un sistema è \textbf{improprio}}
+		quando l'ingresso influenza la formazione del valore d'uscita anche nello stesso istante.
+	\end{block}
+	
+	\begin{columns}			
+		\column{0.5\linewidth}
+		\begin{figure}[!htbp] 
+			\centering
+			%\advance\leftskip-0.25cm
+			\includegraphics[width=1.0\linewidth]{images/1_i_sistemi/systemProprio.pdf}
+					%\caption{}
+		\end{figure}
+					
+		\column{0.5\linewidth}
+		\begin{figure}[!htbp] 
+			\centering
+			%\advance\leftskip-0.25cm
+			\includegraphics[width=1.0\linewidth]{images/1_i_sistemi/systemImproprio.pdf}
+					%\caption{}
+		\end{figure}
+		
+	\end{columns}
+	
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Proprio o improprio}
+	
+	\begin{block}{Esempio di un sistema \textbf{proprio}}
+		Un sistema di illuminazione è un sistema proprio in quanto le uscite (luce delle lampadine) sono direttamente dipendenti dallo stato del sistema.	
+		
+		\begin{figure}[!htbp]
+			\centering 
+			\includegraphics[width=0.3\linewidth]{images/1_i_sistemi/sistemaLight.pdf}
+					%\caption{}
+		\end{figure}
+	\end{block}
+	
+%	\begin{block}{Esempio di sistemi \textbf{improprio}}
+%			
+%	\end{block}
+	
+	
 \end{frame}
