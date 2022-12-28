@@ -102,7 +102,7 @@
 % https://tex.stackexchange.com/questions/147642/how-to-create-new-commands-with-multiple-arguments
 % https://tex.stackexchange.com/questions/201013/how-to-include-a-background-image-to-only-one-page-of-a-beamer-presentation
 \newcommand{\sectionframe}[2]{\usebackgroundtemplate{%             declare it
-	\tikz[overlay,remember picture] \node[opacity=0.3, at=(current page.center)] {
+	\tikz[overlay,remember picture] \node[opacity=0.4, at=(current page.center)] {
 	   \includegraphics[height=\paperheight,width=\paperwidth]{#1}};
 	}
 	\begin{frame}
@@ -230,5 +230,6 @@
 
 \include{0_intro}
 \include{1_i_sistemi}
+\include{2_le_architetture}
 
 \end{document}

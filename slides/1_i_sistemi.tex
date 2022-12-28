@@ -1,10 +1,9 @@
 \section[I Sistemi]{I Sistemi}
-\sectionframe{images/covers/cover_intro.jpg}{Intro}
+\sectionframe{images/covers/cover_systems.jpg}{I Sistemi}
+% From https://jaymantri.com/post/104375101928/download
 
 \subsection[Definizioni: sistema e stato di un sistema]{Definizioni: sistema e stato di un sistema}
 
-% Pastorello: intro_statistical_learning
-% https://www.javatpoint.com/machine-learning
 \begin{frame}
 	\frametitle{Definizione di sistema}
 	
@@ -492,31 +491,34 @@ $L_{RX}$ & $L_{RX}$ & $Dark$ & $Dark$ & - \\ \hline
 \begin{frame}
 	\frametitle{Combinatorio o sequenziale}
 	
-	\begin{block}{Esempi di sistemi combinatori}
-	
-		\begin{columns}			
-			\column{0.7\linewidth}
+
+	\begin{columns}			
+		\column{0.7\linewidth}
+		
+		\begin{block}{Esempi di sistemi combinatori}
 			\begin{itemize}
 				\item \textbf{Lucchetto a combinazione numerica}:\\per ottenere la combinazione si devono ruotare e posizionare manopole rotanti ciascuna su di una cifra; è indipendente dal valore iniziale delle manopole in quanto conta solamente il numero finale sul quale vengono posizionate.
 				\item \textbf{Porte logiche (and, or, not, ...)}:\\l'uscita di questi sistemi dipende unicamente dal valore presente sugli ingressi e non dai valori degli ingressi delle operazioni precedenti.
 			\end{itemize}
-						
-			\column{0.3\linewidth}
-			\begin{figure}[!htbp] 
-				\centering
-				\includegraphics[width=0.7\linewidth]{images/1_i_sistemi/lock.png}
-						%\caption{}
-			\end{figure}
-			
-			\begin{figure}[!htbp]
-				\centering
-				\includegraphics[width=1.0\linewidth]{images/1_i_sistemi/ports.png}
-						%\caption{}
-			\end{figure}
-		\end{columns}
+		\end{block}
+					
+		\column{0.3\linewidth}
+		\begin{figure}[!htbp] 
+			\centering
+			\includegraphics[width=0.7\linewidth]{images/1_i_sistemi/lock.png}
+					%\caption{}
+		\end{figure}
+		
+		\begin{figure}[!htbp]
+			\centering
+			\advance\rightskip-0.25cm
+			\includegraphics[width=1.0\linewidth]{images/1_i_sistemi/ports.png}
+					%\caption{}
+		\end{figure}
+	\end{columns}
 		
 		
-	\end{block}
+	
 	
 	
 \end{frame}
@@ -525,28 +527,25 @@ $L_{RX}$ & $L_{RX}$ & $Dark$ & $Dark$ & - \\ \hline
 
 \begin{frame}
 	\frametitle{Combinatorio o sequenziale}
-	
-	\begin{block}{Esempi di sistemi sequenziali}
-	
-		\begin{columns}			
-			\column{0.7\linewidth}
-			\begin{itemize}
-				\item \textbf{Distributore automatico di merendine}:\\sistema sequenziale in quanto erogazione del prodotto dipende dalle monete inserite precedentemente che concorrono a formare l'importo necessario (mantiene la memoria del denaro inserito)
-			\end{itemize}
-						
-			\column{0.3\linewidth}
-			\begin{figure}[!htbp] 
-				\centering
-				\advance\leftskip-0.25cm
-				\includegraphics[width=1.0\linewidth]{images/1_i_sistemi/vending_machine.jpg}
-						%\caption{}
-			\end{figure}
-			
-		\end{columns}
 		
+	\begin{columns}			
+		\column{0.6\linewidth}
 		
-	\end{block}
-	
+		\begin{block}{Esempi di sistemi sequenziali}
+		\begin{itemize}
+			\item \textbf{Distributore automatico di merendine}:\\sistema sequenziale in quanto erogazione del prodotto dipende dalle monete inserite precedentemente che concorrono a formare l'importo necessario (mantiene la memoria del denaro inserito)
+		\end{itemize}
+		\end{block}
+					
+		\column{0.4\linewidth}
+		\begin{figure}[!htbp] 
+			\centering
+%			\advance\leftskip-0.25cm
+			\includegraphics[width=0.85\linewidth]{images/1_i_sistemi/vending_machine.jpg}
+			\caption{Foto di \href{https://unsplash.com/it/@vonshnauzer}{Egor Myznik}}
+		\end{figure}
+		
+	\end{columns}
 	
 \end{frame}
 
@@ -597,9 +596,48 @@ $L_{RX}$ & $L_{RX}$ & $Dark$ & $Dark$ & - \\ \hline
 		\end{figure}
 	\end{block}
 	
-%	\begin{block}{Esempio di sistemi \textbf{improprio}}
-%			
-%	\end{block}
+	
+\end{frame}
+
+
+
+\subsubsection[I modelli]{I modelli}
+\begin{frame}
+	\frametitle{La modellazione dei sistemi}
+	\begin{block}{I sistemi reali}
+		I \textbf{sistemi reali sono complessi da studiare}, e sono spesso costituiti da numerosi elementi che possono essere legati da relazioni non sempre intuitive.
+		\textbf{Per studiare un sistema} è necessario utilizzare un \textbf{modello} che ne simuli il comportamento. 
+	\end{block}
+	
+	\begin{block}{Il modello}
+		Il \textbf{modello} di un sistema è un insieme di elementi che permettono di riprodurre, valutare o stimare, anche limitatamente ad un certo contesto, le funzioni svolte dal sistema originale, in maniera \textbf{più semplice} senza dover per forza intervenire su di esso.
+		Nel modello si focalizza l’attenzione sugli \textbf{elementi essenziali}, \textbf{trascurando i dettagli} che non portano informazioni e ne rendono lo studio eccessivamente complesso.
+%		L'idea è quella di sostituire il sistema reale con una sua rappresentazione integrale che metta in evidenza solo gli elementi che si ritengono utili allo scopo dell'analisi.
+	\end{block}
+	
+	
+\end{frame}
+
+
+\subsection[Il computer]{Il computer}
+\begin{frame}
+	\frametitle{Il sistema computer}
+	
+	\begin{columns}			
+		\column{0.6\linewidth}
+		\begin{block}{Il computer}
+			I computer è a tutti gli effetti un sistema complesso che potremmo classificare come invariante, deterministico, discreto...\\
+			Affinché noi possiamo carpirne gli elementi essenziali è necessario studiare tale sistema attraverso un modello.\\~\\
+			In seguito vedremo quali sono alcuni dei modelli più utilizzati per iniziare a studiare il funzionamento del sistema-computer.			
+		\end{block}
+		
+		\column{0.4\linewidth}
+		\begin{figure}[!htbp]
+			\centering 
+			\includegraphics[width=0.95\linewidth]{images/1_i_sistemi/computer.jpeg}
+			\caption{Foto di \href{https://unsplash.com/it/@andyjh07}{Andy Holmes}}
+		\end{figure}		
+	\end{columns}
 	
 	
 \end{frame}
