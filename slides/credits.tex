@@ -1,15 +1,25 @@
 \section[Credits]{Credits}
-%\sectionframe{images/covers/cover_architecture.jpeg}{Le Architetture}
-%% 
-%
-%\begin{frame}
-%
-%	\begin{itemize}
-%%		\usepackage{cleveref}
-%%		\item \cref{fig:systems_trees} Pag. \cpageref{fig:systems_trees}
-%		\item \ref{fig:systems_trees} Pag. \pageref{fig:systems_trees} Foto by \href{https://jaymantri.com/}{Jay Mantri}, \href{https://jaymantri.com/post/104375101928/download}{link}
-%		\item \ref{fig:ryzen} \pageref{fig:ryzen} prova
-%	\end{itemize}
-%\end{frame}
+\sectionframe{images/covers/cover_architecture.jpeg}{Le Architetture}
+% 
+
+\newcommand{\photoref}[4]{Fig. \ref{#1}, pag. \pageref{#1}: photo by \href{#3}{#2}, \href{#4}{link}}
+
+\begin{frame}
+
+	\textbf{\nameref{sec:systems}}:
+	\begin{itemize}
+		\item \photoref{sec:systems}{Jay Mantri}{https://jaymantri.com/}{https://jaymantri.com/post/104375101928/download}
+		\item \photoref{fig:systems_vendingmachine}{Egor Myznik}{https://unsplash.com/it/@vonshnauzer}{https://unsplash.com/it/foto/DRs9XsNlAZw}
+		\item \photoref{fig:systems_computer}{Andy Holmes}{https://unsplash.com/it/@andyjh07}{https://unsplash.com/it/foto/EOAKUQcsFIU}
+	\end{itemize}
+	
+	
+	\textbf{\nameref{sec:architectures}}:
+	\begin{itemize}
+		\item \photoref{sec:architectures}{Chance Anderson}{https://unsplash.com/it/@chanceanderson}{https://unsplash.com/it/foto/if2coegqwZU}, Seattle Public Library Central Library, Seattle, United States
+	\end{itemize}
+	
+\end{frame}
+
 
  
