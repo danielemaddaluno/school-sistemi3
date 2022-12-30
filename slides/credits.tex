@@ -3,30 +3,52 @@
 \sectionframe{images/covers/cover_credits.jpg}{Credits}
  
 
-\newcommand{\photoref}[4]{Fig. \ref{#1}, pag. \pageref{#1}: photo by \href{#3}{#2}, \href{#4}{link}}
+\newcommand{\ExternalLink}{%
+	\tikz[x=1.2ex, y=1.2ex, baseline=-0.05ex]{% 
+	    \begin{scope}[x=1ex, y=1ex]
+	        \clip (-0.1,-0.1) 
+	            --++ (-0, 1.2) 
+	            --++ (0.6, 0) 
+	            --++ (0, -0.6) 
+	            --++ (0.6, 0) 
+	            --++ (0, -1);
+	        \path[draw, 
+	            line width = 0.5, 
+	            rounded corners=0.5] 
+	            (0,0) rectangle (1,1);
+	    \end{scope}
+	    \path[draw, line width = 0.5] (0.5, 0.5) 
+	        -- (1, 1);
+	    \path[draw, line width = 0.5] (0.6, 1) 
+	        -- (1, 1) -- (1, 0.6);
+	    }
+}
+\newcommand{\photoref}[5]{\hyperlink{#2}{Pag. \pageref{#2}}, \textit{#1} \href{#5}{\ExternalLink}, photo by \href{#4}{#3}}
+
+
+
 
 \begin{frame}
-
+	\frametitle{Credits}
 	\textbf{\nameref{sec:systems}}:
 	\begin{itemize}
-		\item Cover\photoref{sec:systems}{Jay Mantri}{https://jaymantri.com/}{https://jaymantri.com/post/104375101928/download}, a forest
-		\item \photoref{fig:systems_vendingmachine}{Egor Myznik}{https://unsplash.com/it/@vonshnauzer}{https://unsplash.com/it/foto/DRs9XsNlAZw}, a vending machine
-		\item \photoref{fig:systems_computer}{Andy Holmes}{https://unsplash.com/it/@andyjh07}{https://unsplash.com/it/foto/EOAKUQcsFIU}, an inner view of a computer
+		\item \photoref{A forest}{sec:systems}{Jay Mantri}{https://jaymantri.com/}{https://jaymantri.com/post/104375101928/download}
+		\item \photoref{A vending machine}{fig:systems_vendingmachine}{Egor Myznik}{https://unsplash.com/it/@vonshnauzer}{https://unsplash.com/it/foto/DRs9XsNlAZw}
+		\item \photoref{An inner view of a computer}{fig:systems_computer}{Andy Holmes}{https://unsplash.com/it/@andyjh07}{https://unsplash.com/it/foto/EOAKUQcsFIU}
 	\end{itemize}
 	
 	
 	\textbf{\nameref{sec:architectures}}:
 	\begin{itemize}
-		\item Cover\photoref{sec:architectures}{Chance Anderson}{https://unsplash.com/it/@chanceanderson}{https://unsplash.com/it/foto/if2coegqwZU}, Seattle Public Library Central Library, Seattle, United States
-		\item \photoref{fig:architectures_turingmachine}{Mike Davey}{https://aturingmachine.com/}{https://www.youtube.com/watch?v=E3keLeMwfHY}, a machine that embodied the classic look and feel of the machine presented in Turing’s paper
-		\item \photoref{fig:architectures_transistors}{Axel R.}{https://unsplash.com/it/@trisolarian}{https://unsplash.com/it/foto/2jXSnvMRwbc}, some transistors
+		\item \photoref{Seattle Public Library Central Library, Seattle, United States}{sec:architectures}{Chance Anderson}{https://unsplash.com/it/@chanceanderson}{https://unsplash.com/it/foto/if2coegqwZU}
+		\item \photoref{A machine that embodied the classic look and feel of the machine presented in Turing’s paper}{fig:architectures_turingmachine}{Mike Davey}{https://aturingmachine.com/}{https://www.youtube.com/watch?v=E3keLeMwfHY}
+		\item \photoref{Some transistors}{fig:architectures_transistors}{Axel R.}{https://unsplash.com/it/@trisolarian}{https://unsplash.com/it/foto/2jXSnvMRwbc}
 		
-		\item \photoref{fig:architectures_moorelaw}{Max Roser, Hannah Ritchie}{https://commons.wikimedia.org/wiki/File:Moore\%27s_Law_Transistor_Count_1970-2020.png}{https://en.wikipedia.org/wiki/Moore\%27s_law\#/media/File:Moore's_Law_Transistor_Count_1970-2020.png}, Moore's Law Transistor Count 1970-2020
-		\item \photoref{fig:architectures_intel}{Slejven Djurakovic}{https://unsplash.com/it/@slavudin}{https://unsplash.com/it/foto/0uXzoEzYZ4I}, Intel Processor
-		\item \photoref{fig:architectures_ryzen}{Olivier Collet}{https://unsplash.com/it/@ocollet}{https://unsplash.com/it/foto/JMwCe3w7qKk}, AMD Ryzen Processor
-		\item \photoref{fig:memory_ram}{Harrison Broadbent}{https://unsplash.com/it/@harrisonbroadbent}{https://unsplash.com/it/foto/ING1Uf1Fc30}, RAM Memory
-		\item \photoref{fig:memory_hdd}{Denny Müller}{https://unsplash.com/it/@redaquamedia}{https://unsplash.com/it/foto/1qL31aacAPA}, HDD Memory
-		
+		\item \photoref{Moore's Law Transistor Count 1970-2020}{fig:architectures_moorelaw}{Max Roser, Hannah Ritchie}{https://commons.wikimedia.org/wiki/File:Moore\%27s_Law_Transistor_Count_1970-2020.png}{https://en.wikipedia.org/wiki/Moore\%27s_law\#/media/File:Moore's_Law_Transistor_Count_1970-2020.png}
+		\item \photoref{Intel Processor}{fig:architectures_intel}{Slejven Djurakovic}{https://unsplash.com/it/@slavudin}{https://unsplash.com/it/foto/0uXzoEzYZ4I}
+		\item \photoref{AMD Ryzen Processor}{fig:architectures_ryzen}{Olivier Collet}{https://unsplash.com/it/@ocollet}{https://unsplash.com/it/foto/JMwCe3w7qKk}
+		\item \photoref{RAM Memory}{fig:memory_ram}{Harrison Broadbent}{https://unsplash.com/it/@harrisonbroadbent}{https://unsplash.com/it/foto/ING1Uf1Fc30}
+		\item \photoref{HDD Memory}{fig:memory_hdd}{Denny Müller}{https://unsplash.com/it/@redaquamedia}{https://unsplash.com/it/foto/1qL31aacAPA}
 	\end{itemize}
 	
 \end{frame} 
@@ -38,7 +60,8 @@
 	
 	\textbf{\nameref{sec:credits}}:
 	\begin{itemize}
-		\item \photoref{sec:credits}{Alessandro Sacchi}{https://unsplash.com/it/@alle_sacchi}{https://unsplash.com/it/foto/NUFnfYd09iI}, Seceda, Italy
+		\item \photoref{Seceda, Italy}{sec:credits}{Alessandro Sacchi}{https://unsplash.com/it/@alle_sacchi}{https://unsplash.com/it/foto/NUFnfYd09iI}
+		\item 
 	\end{itemize}
 	
 \end{frame} 
