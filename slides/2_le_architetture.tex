@@ -244,7 +244,7 @@
 			\item \textbf{FALSE} oppure \textbf{0}: non passaggio di corrente (tensione bassa)
 		\end{itemize}
 	\end{block}
-	$\qquad\qquad\qquad\qquad\qquad\!$Le tre porte principali sono:
+	$\qquad\qquad\qquad\qquad\:$Le tre porte logiche principali sono:
 	
 	\begin{columns}
 		\column{0.33\linewidth}
@@ -323,7 +323,7 @@
 	\begin{block}{La porta logica AND}
 		è la porta logica che implementa la \textbf{congiunzione logica}.\\
 		L'uscità è alta (a 1) solo se entrambi i valori di input A e B sono alti, in tutti gli altri casi l'uscita è bassa (a 0).\\
-		In altre parole, la funzione AND corrisponde a trovare il minimo tra due cifre binarie (o a un prodotto tra due cifre binarie).
+		In altre parole, la funzione AND corrisponde a trovare il \textbf{minimo} tra due cifre binarie (o a un \textbf{prodotto} tra due cifre binarie).
 	\end{block}
 
 	\begin{columns}
@@ -369,7 +369,7 @@
 	\begin{block}{La porta logica OR}
 		è la porta logica digitale che implementa la \textbf{disgiunzione logica}.\\
 		L'uscità è bassa (a 0) solo se entrambi i valori di input A e B sono bassi, in tutti gli altri casi l'uscita è alta (a 1).\\
-		In altre parole, la funzione OR corrisponde a trovare il massimo tra due cifre binarie.
+		In altre parole, la funzione OR corrisponde a trovare il \textbf{massimo} tra due cifre binarie.
 	\end{block}
 
 	\begin{columns}
@@ -436,6 +436,54 @@
 		\includegraphics[width=1.0\linewidth]{images/2_le_architetture/logic_gates_truthtables.png}
 %		\caption{Le tabelle di verità}
 	\end{figure}
+	
+\end{frame}
+
+
+\subsection[I generatori di segnali]{I generatori di segnali}
+\begin{frame}
+	\frametitle{I generatori di segnali}
+	
+	\begin{block}{I generatori di segnali}
+		I \textbf{generatori di segnali} sono componenti elettronici che producono segnali elettrici di varie frequenze e forme d'onda per sincronizzare e coordinare le operazioni all'interno di un computer.
+	\end{block}
+	
+	\begin{figure}[!htbp]
+		\centering 
+		\includegraphics[width=0.65\linewidth]{images/2_le_architetture/waveforms.pdf}
+		\caption{Forme d'onda sinusoidale, quadrata, triangolare e a dente di sega}
+		\label{fig:architectures_waveforms}
+	\end{figure}
+\end{frame}
+
+
+\subsection[Il clock]{Il clock}
+\begin{frame}
+	\frametitle{Il clock}
+	
+	\begin{block}{Il clock}
+		Il \textbf{clock} è un esempio di generatore di segnali che viene utilizzato per \textit{sincronizzare} e \textit{coordinare} le operazioni all'interno di un computer, produce un \textbf{segnale periodico} con forma di \textbf{onda quadra}.
+	\end{block}
+	
+	\begin{columns}
+		\column{0.4\linewidth}
+		\begin{itemize}
+			\item $\mathrm{T} \rightarrow $ periodo o ciclo,\\
+			unità di misura in\\
+			$s$ (secondi)\\~\\
+			\item $f = \frac{1}{\mathrm{T}} \rightarrow$ frequenza,\\
+			unità di misura in $Hz = 1/s$ (hertz)
+		\end{itemize}
+		
+		\column{0.6\linewidth}
+		\begin{figure}[!htbp]
+			\centering 
+			\includegraphics[width=1.0\linewidth]{images/2_le_architetture/clock.png}
+			\caption{Il ciclo di clock}
+			\label{fig:architectures_clock}
+		\end{figure}
+		
+	\end{columns}
 	
 \end{frame}
 
