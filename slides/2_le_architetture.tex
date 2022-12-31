@@ -232,6 +232,180 @@
 
 
 
+\subsection[Le porte logiche]{Le porte logiche}
+\begin{frame}
+	\frametitle{Le porte logiche}
+	
+	\begin{block}{Le porte logiche}
+		Grazie ai transistor è possibile realizzare dei circuiti logici (vedi \hyperlink{fig:architectures_transistors}{pag. \pageref{fig:architectures_transistors}}).\\
+		Le \textbf{porte logiche} sono dei circuiti elettronici elementari in grado di svolgere le operazioni logiche dell'algebra booleana basata sui valori logici:
+		\begin{itemize}
+			\item \textbf{TRUE} oppure \textbf{1}: passaggio di corrente (tensione alta)
+			\item \textbf{FALSE} oppure \textbf{0}: non passaggio di corrente (tensione bassa)
+		\end{itemize}
+	\end{block}
+	$\qquad\qquad\qquad\qquad\qquad\!$Le tre porte principali sono:
+	
+	\begin{columns}
+		\column{0.33\linewidth}
+		\begin{figure}[!htbp]
+			\centering 
+			\includegraphics[width=0.5\linewidth]{images/2_le_architetture/logic_gate_not.pdf}
+			\caption{Porta logica \textit{NOT}}
+		\end{figure}
+		
+		\column{0.33\linewidth}
+		\begin{figure}[!htbp]
+			\centering 
+			\includegraphics[width=0.5\linewidth]{images/2_le_architetture/logic_gate_and.pdf}
+			\caption{Porta logica \textit{AND}}
+		\end{figure} 
+		
+		\column{0.33\linewidth}
+		\begin{figure}[!htbp] 
+			\centering 
+			\includegraphics[width=0.5\linewidth]{images/2_le_architetture/logic_gate_or.pdf}
+			\caption{Porta logica \textit{OR}}
+		\end{figure}
+		
+	\end{columns}
+	
+\end{frame}
+
+
+\subsubsection[La porta logica NOT]{La porta logica NOT}
+\begin{frame}
+	\frametitle{La porta logica NOT}
+	
+	
+	\begin{block}{La porta logica NOT}
+		è la porta logica che implementa la \textbf{negazione logica}.\\Tale dispositivo restituisce il \textbf{valore negato del livello logico} in ingresso.
+	\end{block}
+
+	\begin{columns}
+		\column{0.3\linewidth}
+		\begin{figure}[!htbp]
+			\centering 
+			\includegraphics[width=0.9\linewidth]{images/2_le_architetture/logic_gate_not_a.pdf}
+			\caption{Icona}
+		\end{figure}
+		
+		\column{0.4\linewidth}
+		\begin{table}[]
+		\begin{tabular}{|
+		>{\columncolor[HTML]{C0C0C0}}c |c|}
+		\hline
+		\cellcolor[HTML]{EFEFEF}\textbf{A} & \cellcolor[HTML]{EFEFEF}\textbf{NOT A} \\ \hline
+		0                                  & 1                                      \\ \hline
+		1                                  & 0                                      \\ \hline
+		\end{tabular}
+		\caption{Tabella di verità}
+		\end{table}
+		
+		\column{0.3\linewidth}
+		\begin{figure}[!htbp]
+			\centering 
+			\includegraphics[width=0.85\linewidth]{images/2_le_architetture/logic_gate_circuit_not.png}
+			\caption{Circuito}
+		\end{figure}
+		
+	\end{columns}
+	
+\end{frame}
+
+
+
+\subsubsection[La porta logica AND]{La porta logica AND}
+\begin{frame}
+	\frametitle{La porta logica AND}
+	
+	
+	\begin{block}{La porta logica AND}
+		è la porta logica che implementa la \textbf{congiunzione logica}.\\
+		L'uscità è alta (a 1) solo se entrambi i valori di input A e B sono alti, in tutti gli altri casi l'uscita è bassa (a 0).\\
+		In altre parole, la funzione AND corrisponde a trovare il minimo tra due cifre binarie (o a un prodotto tra due cifre binarie).
+	\end{block}
+
+	\begin{columns}
+		\column{0.3\linewidth}
+		\begin{figure}[!htbp]
+			\centering 
+			\includegraphics[width=1.0\linewidth]{images/2_le_architetture/logic_gate_and_ab.pdf}
+			\caption{Icona}
+		\end{figure}
+		
+		\column{0.4\linewidth}
+		\begin{table}[]
+		\begin{tabular}{|
+		>{\columncolor[HTML]{C0C0C0}}c |
+		>{\columncolor[HTML]{C0C0C0}}c |c|}
+		\hline
+		\cellcolor[HTML]{EFEFEF}\textbf{A} & \cellcolor[HTML]{EFEFEF}\textbf{B} & \cellcolor[HTML]{EFEFEF}\textbf{A $\bullet$ B} \\ \hline
+		0                                  & 0                         & 0                                    \\ \hline
+		0                                  & 1                         & 0                                    \\ \hline
+		1                                  & 0                         & 0                                    \\ \hline
+		1                                  & 1                         & 1                                    \\ \hline
+		\end{tabular}
+		\caption{Tabella di verità}
+		\end{table}
+		
+		\column{0.3\linewidth}
+		\begin{figure}[!htbp]
+			\centering 
+			\includegraphics[width=0.85\linewidth]{images/2_le_architetture/logic_gate_circuit_and.png}
+			\caption{Circuito}
+		\end{figure}
+		
+	\end{columns}
+	
+\end{frame}
+
+
+\subsubsection[La porta logica OR]{La porta logica OR}
+\begin{frame}
+	\frametitle{La porta logica OR}
+	
+	
+	\begin{block}{La porta logica OR}
+		è la porta logica digitale che implementa la \textbf{disgiunzione logica}.\\
+		L'uscità è bassa (a 0) solo se entrambi i valori di input A e B sono bassi, in tutti gli altri casi l'uscita è alta (a 1).\\
+		In altre parole, la funzione OR corrisponde a trovare il massimo tra due cifre binarie.
+	\end{block}
+
+	\begin{columns}
+		\column{0.3\linewidth}
+		\begin{figure}[!htbp]
+			\centering 
+			\includegraphics[width=1.0\linewidth]{images/2_le_architetture/logic_gate_or_ab.pdf}
+			\caption{Icona}
+		\end{figure}
+		
+		\column{0.4\linewidth}
+		\begin{table}[]
+		\begin{tabular}{|
+		>{\columncolor[HTML]{C0C0C0}}c |
+		>{\columncolor[HTML]{C0C0C0}}c |c|}
+		\hline
+		\cellcolor[HTML]{EFEFEF}\textbf{A} & \cellcolor[HTML]{EFEFEF}\textbf{B} & \cellcolor[HTML]{EFEFEF}\textbf{A $+$ B} \\ \hline
+		0                                  & 0                         & 0                                    \\ \hline
+		0                                  & 1                         & 1                                    \\ \hline
+		1                                  & 0                         & 1                                    \\ \hline
+		1                                  & 1                         & 1                                    \\ \hline
+		\end{tabular}
+		\caption{Tabella di verità}
+		\end{table}
+		
+		\column{0.3\linewidth}
+		\begin{figure}[!htbp]
+			\centering 
+			\includegraphics[width=0.85\linewidth]{images/2_le_architetture/logic_gate_circuit_or.png}
+			\caption{Circuito}
+		\end{figure}
+		
+	\end{columns}
+	
+\end{frame}
+
 
 
 \subsection[L'architettura di un computer]{L'architettura di un computer}
@@ -276,7 +450,7 @@
 %	\frametitle{L'architettura di un computer}
 	
 	\begin{block}{Il processore}
-		Il processore, noto anche come "microprocessore", è il "cervello" del computer, ed è responsabile dell'esecuzione delle istruzioni contenute nel software.
+		Il \textbf{processore}, noto anche come "microprocessore", è il "cervello" del computer, ed è responsabile dell'esecuzione delle istruzioni contenute nel software.
 	\end{block}
 
 	\begin{columns}			
@@ -309,26 +483,30 @@
 %	\frametitle{L'architettura di un computer}
 	
 	\begin{block}{La memoria}
-		La memoria è dove vengono temporaneamente archiviati i dati e le istruzioni che vengono utilizzati dal processore. Esistono due tipi principali di memoria: la memoria RAM (Random Access Memory), che viene utilizzata per archiviare i dati che il processore sta attualmente lavorando, e la memoria di massa, come il disco rigido o il solid state drive, che viene utilizzata per archiviare i dati a lungo termine.
+		La \textbf{memoria} è dove vengono temporaneamente archiviati i dati e le istruzioni che vengono utilizzati dal processore. Esistono due tipi principali di memoria: 
+		\begin{itemize}
+			\item la \textbf{memoria RAM} (Random Access Memory), che viene utilizzata per archiviare i dati che il processore sta attualmente lavorando
+			\item la \textbf{memoria di massa}, come il disco rigido o il solid state drive, che viene utilizzata per archiviare i dati a lungo termine.
+		\end{itemize}
 	\end{block}
 	
 	\begin{columns}			
 		\column{0.5\linewidth}
-		\begin{figure}[!htbp] 
+		\begin{figure}[!htbp]
 			\centering
 			%\advance\leftskip-0.25cm
-			\includegraphics[width=1.0\linewidth]{images/2_le_architetture/memory_ram.jpg}
+			\includegraphics[width=0.82\linewidth]{images/2_le_architetture/memory_ram.jpg}
 			\caption{Due memorie RAM}
-			\label{fig:memory_ram}
+			\label{fig:architectures_memory_ram}
 		\end{figure}
 					
 		\column{0.5\linewidth}
 		\begin{figure}[!htbp] 
 			\centering
 			%\advance\leftskip-0.25cm
-			\includegraphics[width=0.85\linewidth]{images/2_le_architetture/memory_hdd.jpg}
+			\includegraphics[width=0.7\linewidth]{images/2_le_architetture/memory_hdd.jpg}
 			\caption{L'interno di un Hard Disk}
-			\label{fig:memory_hdd}
+			\label{fig:architectures_memory_hdd}
 		\end{figure}
 		
 	\end{columns}
@@ -340,14 +518,16 @@
 %	\frametitle{L'architettura di un computer}
 	
 	\begin{block}{L'input/output (I/O)} 
-		L'input/output (I/O) gestisce il flusso di dati tra il computer e l'esterno, attraverso dispositivi come il monitor, la tastiera e il mouse.
+		L'\textbf{input/output} (I/O) gestisce il flusso di dati tra il computer e l'esterno, attraverso dispositivi come il monitor, la tastiera e il mouse.
 	\end{block}
 	
-%	\begin{figure}[!htbp]
-%		\centering 
-%		\includegraphics[width=0.6\linewidth]{images/2_le_architetture/hd-sw.pdf}
-%%			\caption{}
-%	\end{figure}
+	\begin{figure}[!htbp] 
+		\centering
+		%\advance\leftskip-0.25cm
+		\includegraphics[width=0.8\linewidth]{images/2_le_architetture/io.jpg}
+		\caption{Monitor, tastiera, mouse e casse}
+		\label{fig:architectures_io}
+	\end{figure}
 	 
 \end{frame}
 
