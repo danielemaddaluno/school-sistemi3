@@ -440,6 +440,56 @@
 \end{frame}
 
 
+\subsubsection[Le leggi di De Morgan]{Le leggi di De Morgan}
+\begin{frame}
+	\frametitle{Le leggi di De Morgan}
+
+	\begin{block}{Le leggi di De Morgan}
+		Le \textbf{leggi di De Morgan}, o teoremi di De Morgan, sono relative alla logica booleana e stabiliscono relazioni di equivalenza tra gli operatori di congiunzione e disgiunzione logica.\\ \vspace{0.8em}
+		
+		\begin{enumerate}
+			\item $\overline{A \cdot B} = \overline A + \overline B$\\
+			siccome è possibile riscriverla così: $A \cdot B = \overline{\overline A + \overline B}$ deduciamo che possiamo ottenere un AND combinando adeguatamente NOT e OR.
+			\item $\overline{A + B} = \overline {A} \cdot \overline {B}$	\\
+			siccome è possibile riscriverla così: $A + B = \overline{\overline {A} \cdot \overline {B}}$
+			deduciamo che possiamo ottenere un OR combinando adeguatamente NOT e AND.
+		\end{enumerate}
+		
+	\end{block}
+	
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Le leggi di De Morgan: circuiti equivalenti}
+
+	\begin{figure}[!htbp]
+		\centering 
+		\includegraphics[width=1.0\linewidth]{images/2_le_architetture/demorgan_1.jpeg}
+%		\caption{Le tabelle di verità}
+	\end{figure}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Le leggi di De Morgan: circuiti equivalenti (nega a dx e sx)}
+
+	\begin{figure}[!htbp]
+		\centering 
+		\includegraphics[width=1.0\linewidth]{images/2_le_architetture/demorgan_2.png}
+%		\caption{Le tabelle di verità}
+	\end{figure}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Esercizi sulle leggi di De Morgan}
+
+	
+	
+\end{frame}
+
+
 \subsection[I generatori di segnali]{I generatori di segnali}
 \begin{frame}
 	\frametitle{I generatori di segnali}
@@ -466,16 +516,16 @@
 	\end{block}
 	
 	\begin{columns}
-		\column{0.4\linewidth}
+		\column{0.38\linewidth}
 		\begin{itemize}
 			\item $\mathrm{T} \rightarrow $ periodo o ciclo,\\
 			unità di misura in\\
 			$s$ (secondi)\\~\\
 			\item $f = \frac{1}{\mathrm{T}} \rightarrow$ frequenza,\\
-			unità di misura in $Hz = 1/s$ (hertz)
+			unità di misura in $Hz = \frac{1}{s}$ (hertz)
 		\end{itemize}
 		
-		\column{0.6\linewidth}
+		\column{0.62\linewidth}
 		\begin{figure}[!htbp]
 			\centering 
 			\includegraphics[width=1.0\linewidth]{images/2_le_architetture/clock.png}
@@ -498,7 +548,7 @@
 	
 	\begin{figure}[!htbp]
 		\centering 
-		\includegraphics[width=0.8\linewidth]{images/2_le_architetture/clock.png}
+		\includegraphics[width=0.78\linewidth]{images/2_le_architetture/clock.png}
 %		\caption{Il ciclo di clock}
 	\end{figure}
 	
@@ -513,13 +563,13 @@
 		La \textbf{frequenza} $f$ di un'onda è il numero di oscillazioni complete al secondo.\\
 		Questa si misura in Hertz ($Hz$) ovvero in \textbf{oscillazioni al secondo}.\\
 		È uno dei parametri più importanti per misurare le prestazioni di un processore.\\
-		A volte come sinonimo di frequenza di clock si utilizza il termine velocità di clock.
+		A volte come sinonimo di frequenza di clock si può trovare utilizzato il termine velocità di clock.
 	\end{block}
 	
 	
 	\begin{figure}[!htbp]
 		\centering 
-		\includegraphics[width=0.8\linewidth]{images/2_le_architetture/clock.png}
+		\includegraphics[width=0.78\linewidth]{images/2_le_architetture/clock.png}
 %		\caption{Il ciclo di clock}
 	\end{figure}
 	
@@ -540,17 +590,41 @@
 
 
 \begin{frame}
-	\frametitle{Esempi per chiarire i concetti:}
+	\frametitle{Esercizi sulla relazione tra $\mathrm{T}$ e $f$:}
 	
-	\begin{block}{Esempio 1:}
-		Una CPU con una velocità di clock di 3.2 $GHz$ esegue 3.2 miliardi di cicli al secondo. In passato la velocità delle CPU era misurata in megahertz o milioni di cicli al secondo.	
+	\begin{block}{Esercizio 1: calcola il periodo $\mathrm{T}$ conoscendo la frequenza $f$}
+		Un \textbf{processore} con \textbf{frequenza di clock} (o velocità di clock) di \textbf{4.0 $\pmb{GHz}$} (giga$Hz$) esegue 4 miliardi di cicli completi al secondo.\\
+		In passato le CPU erano molto più lente di oggi e la frequenza di clock era misurata in $MHz$ (mega$Hz$) ovvero milioni di cicli completi al secondo.\\
+		\textbf{Quanto dura il periodo di clock $\pmb{\mathrm{T}}$ per il suddetto processore?}\\~\\
+		\pause
+		Ricordando che la relazione tra $\mathrm{T}$ e $f$ è del tipo $\mathrm{T} = \frac{1}{f}$ possiamo calcolare la durata del periodo di clock $\mathrm{T}$ conoscendo la frequenza $f$ come segue:\\~\\
+		\pause
+		$\quad\,\, \mathrm{T} = \frac{1}{f} = \frac{1}{4 GHz} = \frac{1}{4 \cdot 10^9 Hz} = \frac{1}{4 \cdot 10^9 1/s} = \frac{1}{4 \cdot 10^9 s^{-1}} = \frac{1}{4} \cdot 10^{-9} s = 0.25ns$\\ \vspace{0.4em}
+		\pause
+		$\qquad\qquad\qquad\qquad\qquad\qquad\qquad$	quindi:\\ \vspace{0.4em}
+%		\begin{center}
+%			quindi:
+%		\end{center}
+		$\qquad\qquad\qquad\qquad \mathrm{T} = 0.25ns = 250 ps = 250$ picosecondi
 	\end{block}
 	
-	\begin{block}{Esempio 2:}
-		Quindi se ho un processore con frequenza di clock pari a 4.0 $GHz$ vuol dire che in un secondo esegue 4 miliardi di cicli completi.\\
-		Ricordando che la relazione tra $\mathrm{T}$ e $f$ è del tipo $\mathrm{T} = \frac{1}{f}$ possiamo calcolare la durata del periodo di clock $\mathrm{T}$ come segue:
-		
-		$$\mathrm{T} = \frac{1}{f} = \frac{1}{\mathrm{4 \cdot 10^9}} s= 0.25 \cdot 10^{-9} s = 0.25ns = 250 \mu s$$
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Esercizi sulla relazione tra $\mathrm{T}$ e $f$:}
+	
+	\begin{block}{Esercizio 2: calcola la frequenza $f$ conoscendo il periodo $\mathrm{T}$}
+		\textbf{Che frequenza di clock ha un processore con periodo di clock di 200$\pmb{ps}$ (picosecondi)?}\\~\\
+		\pause
+		Ricordando che la relazione tra $f$ e $\mathrm{T}$ è del tipo $f = \frac{1}{\mathrm{T}}$ possiamo calcolare la frequenza di clock $f$ conoscendo la durata del periodo di clock $\mathrm{T}$ come segue:\\~\\
+		\pause
+		$\qquad f = \frac{1}{\mathrm{T}} = \frac{1}{200 ps} = \frac{1}{200 \cdot 10^{-12} s} = \frac{1}{0.2 \cdot 10^{-9} s} = \frac{1}{0.2} \cdot \dot 10^9 s^{-1} = 5 GHz$
+		\pause
+		\begin{center}
+			quindi:
+		\end{center}
+		$\qquad\qquad\qquad\qquad\qquad\;\; f = 5 GHz = 5 gigahertz$
 	\end{block}
 	
 \end{frame}
