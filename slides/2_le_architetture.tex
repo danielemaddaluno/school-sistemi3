@@ -434,7 +434,7 @@
 	\begin{figure}[!htbp]
 		\centering 
 		\includegraphics[width=1.0\linewidth]{images/2_le_architetture/logic_gates_truthtables.png}
-%		\caption{Le tabelle di verità}
+%		\caption{}
 	\end{figure}
 	
 \end{frame}
@@ -466,7 +466,7 @@
 	\begin{figure}[!htbp]
 		\centering 
 		\includegraphics[width=0.8\linewidth]{images/2_le_architetture/demorgan_1.pdf}
-%		\caption{Le tabelle di verità}
+%		\caption{}
 	\end{figure}
 	
 \end{frame}
@@ -477,7 +477,7 @@
 	\begin{figure}[!htbp]
 		\centering 
 		\includegraphics[width=0.8\linewidth]{images/2_le_architetture/demorgan_2.pdf}
-%		\caption{Le tabelle di verità}
+%		\caption{}
 	\end{figure}
 \end{frame}
 
@@ -488,14 +488,17 @@
 	\begin{block}{Riscrivere la proposizione logica $\overline{X} + Y$ (che utilizza \textit{not} e \textit{or}) applicando le leggi di De Morgan, utilizzando solo le porte logiche \textit{not} e \textit{and}.}
 		
 		Ricordando che $A + B = \overline{\overline {A} \cdot \overline {B}}$\\
+		\pause
 		Focalizzandosi sulla parte sinistra dell'equazione la proposizione logica di partenza può essere vista come $A = \overline {X}$ e $B = Y$ del caso.\\
+		\pause
 		Quindi prendiamo la proposizione $\overline{\overline {A} \cdot \overline {B}}$ e sostituiamo i nostri $A$ e $B$.\\~\\
+		\pause
 		
 		$$\overline{\overline {A} \cdot \overline {B}} = \overline{\overline {\overline {X}} \cdot \overline {Y}} = \overline{X \cdot \overline {Y}}$$
-		
+		\pause
 		$$Quindi$$
 		
-		$$\overline{X} + Y = \overline{X \cdot \overline {Y}}$$
+		$$\overline{X} + Y = \overline{X \cdot \overline {Y}}$$ 
 		
 		
 			
@@ -508,7 +511,93 @@
 	\frametitle{Esercizi sulle leggi di De Morgan: \#2}
 
 	\begin{block}{Rappresentare graficamente i due circuiti logici equivalenti del punto precedente, ovvero il circuito per $\overline{X} + Y$ e il circuito per $\overline{X \cdot \overline {Y}}$}
+		\vspace{1em}
+		\pause
+		\begin{figure}[!htbp]
+			\centering 
+			\includegraphics[width=0.8\linewidth]{images/2_le_architetture/demorgan_ex.pdf}
+	%		\caption{}
+		\end{figure}
+			
+	\end{block}
+	
+\end{frame}
+
+
+
+\begin{frame}
+	\frametitle{Esercizi sulle leggi di De Morgan: \#3}
+
+	\begin{block}{Compilare la tabella di verità della proposizione $\overline{X} + Y$}
+	
+		\begin{scriptsize}
+			\begin{columns}
+				\column{0.3\linewidth}
+				\begin{table}[]
+				\begin{tabular}{|
+				>{\columncolor[HTML]{C0C0C0}}c |
+				>{\columncolor[HTML]{C0C0C0}}c |c|}
+				\hline
+				\cellcolor[HTML]{EFEFEF}\textbf{$\pmb{X}$} & \cellcolor[HTML]{EFEFEF}\textbf{$\pmb{Y}$} & \cellcolor[HTML]{EFEFEF}$\pmb{\pmb{\overline{X} + Y}}$ \\ \hline
+				0                                  & 0                         &                                     \\ \hline
+				0                                  & 1                         &                                     \\ \hline
+				1                                  & 0                         &                                     \\ \hline
+				1                                  & 1                         &                                    \\ \hline
+				\end{tabular}
+				\end{table}
+				\pause
+				
+				\column{0.35\linewidth}
+				\begin{table}[]
+				\begin{tabular}{|
+				>{\columncolor[HTML]{C0C0C0}}c |
+				>{\columncolor[HTML]{C0C0C0}}c |
+				>{\columncolor[HTML]{C0C0C0}}c |c|}
+				\hline
+				\cellcolor[HTML]{EFEFEF}\textbf{$\pmb{X}$} & \cellcolor[HTML]{EFEFEF}\textbf{$\pmb{Y}$} & \cellcolor[HTML]{EFEFEF}$\pmb{\overline{X}}$ & \cellcolor[HTML]{EFEFEF}$\pmb{\pmb{\overline{X} + Y}}$ \\ \hline
+				0                                  & 0                                  & 1                                  &                                     \\ \hline
+				0                                  & 1                                  & 1                                  &                                     \\ \hline
+				1                                  & 0                                  & 0                                  &                                     \\ \hline
+				1                                  & 1                                  & 0                                  &                                     \\ \hline
+				\end{tabular}
+				\end{table}
+				\pause
+				
+				\column{0.35\linewidth}
+				\begin{table}[]
+				\begin{tabular}{|
+				>{\columncolor[HTML]{C0C0C0}}c |
+				>{\columncolor[HTML]{C0C0C0}}c |
+				>{\columncolor[HTML]{C0C0C0}}c |c|}
+				\hline
+				\cellcolor[HTML]{EFEFEF}\textbf{$\pmb{X}$} & \cellcolor[HTML]{EFEFEF}\textbf{$\pmb{Y}$} & \cellcolor[HTML]{EFEFEF}$\pmb{\overline{X}}$ & \cellcolor[HTML]{EFEFEF}$\pmb{\pmb{\overline{X} + Y}}$ \\ \hline
+				0                                  & 0                                  & 1                                  & 1                                    \\ \hline
+				0                                  & 1                                  & 1                                  & 1                                    \\ \hline
+				1                                  & 0                                  & 0                                  & 0                                    \\ \hline
+				1                                  & 1                                  & 0                                  & 1                                    \\ \hline
+				\end{tabular}
+				\end{table}
+				
+			\end{columns}
+		\end{scriptsize}
 		
+		\pause
+		Ricordiamo che la tabella di verità ottenuta sarà identica a quella di $\overline{X \cdot \overline {Y}}$ in quanto sono circuiti equivalenti. La tabella di verità di $\overline{X} + Y$ quindi è:
+		
+		\begin{scriptsize}
+			\begin{table}[]
+			\begin{tabular}{|
+			>{\columncolor[HTML]{C0C0C0}}c |
+			>{\columncolor[HTML]{C0C0C0}}c |c|}
+			\hline
+			\cellcolor[HTML]{EFEFEF}\textbf{$\pmb{X}$} & \cellcolor[HTML]{EFEFEF}\textbf{$\pmb{Y}$} & \cellcolor[HTML]{EFEFEF}$\pmb{\pmb{\overline{X} + Y}}$ \\ \hline
+			0                                  & 0                         & 1                                    \\ \hline
+			0                                  & 1                         & 1                                    \\ \hline
+			1                                  & 0                         & 0                                    \\ \hline
+			1                                  & 1                         & 1                                   \\ \hline
+			\end{tabular}
+			\end{table}
+		\end{scriptsize}
 			
 	\end{block}
 	
