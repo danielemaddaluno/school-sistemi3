@@ -87,6 +87,21 @@
 \end{frame}
 
 
+\begin{frame}
+	\frametitle{Il computer}
+	
+	\begin{block}{I componenti elettronici di un computer}
+		I componenti elettronici che formano un computer possono essere sintetizzati in due categorie principali:
+		\begin{itemize}
+			\item \textbf{porte logiche} (per realizzare le quali si utilizzano i \textbf{transistor})
+			\item \textbf{generatori di segnali}
+		\end{itemize}
+		
+		Approfondiamoli nelle slides successive.
+	\end{block}
+\end{frame}
+
+
 
 \subsection[I transistor]{I transistor}
 \begin{frame}
@@ -163,7 +178,7 @@
 \end{frame}
 
 
-\subsection[La capacità di integrazione]{La capacità di integrazione}
+\subsubsection[La capacità di integrazione]{La capacità di integrazione}
 \begin{frame}
 	\frametitle{La capacità di integrazione}
 	
@@ -182,7 +197,7 @@
 \end{frame}
 
 
-\subsection[La legge di Moore]{La legge di Moore}
+\subsubsection[La legge di Moore]{La legge di Moore}
 \begin{frame}
 	\frametitle{La legge di Moore}
 	
@@ -445,7 +460,7 @@
 	\frametitle{Le leggi di De Morgan}
 
 	\begin{block}{Le leggi di De Morgan}
-		Le \textbf{leggi di De Morgan}, o teoremi di De Morgan, sono relative alla logica booleana e stabiliscono relazioni di equivalenza tra gli operatori di congiunzione e disgiunzione logica.\\ \vspace{0.8em}
+		Le \textbf{leggi di De Morgan}, o teoremi di De Morgan, sono relativi alla logica booleana e stabiliscono relazioni di equivalenza tra gli operatori di congiunzione e disgiunzione logica.\\ \vspace{0.8em}
 		
 		\begin{enumerate}
 			\item $\overline{A \cdot B} = \overline A + \overline B$\\
@@ -585,18 +600,46 @@
 		Ricordiamo che la tabella di verità ottenuta sarà identica a quella di $\overline{X \cdot \overline {Y}}$ in quanto sono circuiti equivalenti. La tabella di verità di $\overline{X} + Y$ quindi è:
 		
 		\begin{scriptsize}
-			\begin{table}[]
-			\begin{tabular}{|
-			>{\columncolor[HTML]{C0C0C0}}c |
-			>{\columncolor[HTML]{C0C0C0}}c |c|}
-			\hline
-			\cellcolor[HTML]{EFEFEF}\textbf{$\pmb{X}$} & \cellcolor[HTML]{EFEFEF}\textbf{$\pmb{Y}$} & \cellcolor[HTML]{EFEFEF}$\pmb{\pmb{\overline{X} + Y}}$ \\ \hline
-			0                                  & 0                         & 1                                    \\ \hline
-			0                                  & 1                         & 1                                    \\ \hline
-			1                                  & 0                         & 0                                    \\ \hline
-			1                                  & 1                         & 1                                   \\ \hline
-			\end{tabular}
-			\end{table}
+		
+			\begin{columns}
+				\column{0.4\linewidth}
+				\begin{table}[]
+				\begin{tabular}{|
+				>{\columncolor[HTML]{C0C0C0}}c |
+				>{\columncolor[HTML]{C0C0C0}}c |c|}
+				\hline
+				\cellcolor[HTML]{EFEFEF}\textbf{$\pmb{X}$} & \cellcolor[HTML]{EFEFEF}\textbf{$\pmb{Y}$} & \cellcolor[HTML]{EFEFEF}$\pmb{\pmb{\overline{X} + Y}}$ \\ \hline
+				0                                  & 0                         & 1                                    \\ \hline
+				0                                  & 1                         & 1                                    \\ \hline
+				1                                  & 0                         & 0                                    \\ \hline
+				1                                  & 1                         & 1                                   \\ \hline
+				\end{tabular}
+				\end{table}
+				
+				\column{0.1\linewidth}
+				\begin{huge}
+					\begin{center}
+						$\equiv$
+					\end{center}
+				\end{huge}
+				
+				
+				\column{0.4\linewidth}
+				\begin{table}[]
+				\begin{tabular}{|
+				>{\columncolor[HTML]{C0C0C0}}c |
+				>{\columncolor[HTML]{C0C0C0}}c |c|}
+				\hline
+				\cellcolor[HTML]{EFEFEF}\textbf{$\pmb{X}$} & \cellcolor[HTML]{EFEFEF}\textbf{$\pmb{Y}$} & \cellcolor[HTML]{EFEFEF}$\pmb{\overline{X \cdot \overline {Y}}}$ \\ \hline
+				0                                  & 0                         & 1                                    \\ \hline
+				0                                  & 1                         & 1                                    \\ \hline
+				1                                  & 0                         & 0                                    \\ \hline
+				1                                  & 1                         & 1                                   \\ \hline
+				\end{tabular}
+				\end{table}				
+			\end{columns}
+			
+			
 		\end{scriptsize}
 			
 	\end{block}
@@ -747,44 +790,46 @@
 
 
 
-\subsection[L'architettura di un computer]{L'architettura di un computer}
+\subsection[I componenti essenziali]{I componenti essenziali}
 \begin{frame}
-	\frametitle{L'architettura di un computer}
+	\frametitle{I modelli}
 	
-	\begin{block}{L'architettura di un computer}
-		L'\textbf{architettura di un computer} comprende tutte le \textbf{scelte progettuali} che vengono fatte durante la creazione di un computer, come ad esempio la scelta dei \textbf{componenti hardware}, la scelta del \textbf{sistema operativo} e il modo in cui tutti questi elementi lavorano insieme per eseguire le istruzioni del software.
-	\end{block}
-	
-	\begin{figure}[!htbp]
-		\centering 
-		\includegraphics[width=0.6\linewidth]{images/2_le_architetture/hd-sw.pdf}
-%			\caption{}
-	\end{figure}
-	
-\end{frame}
-
-
-\begin{frame}
-	\frametitle{L'architettura di un computer}
-	
-	\begin{block}{L'architettura di un computer}
-		In generale, l'architettura di un computer può essere divisa in tre parti principali:
+	\begin{block}{I modelli}
+		Adesso che abbiamo chiarito quali siano i principali componenti elettronici che formano un computer, definiamo quali sono i componenti essenziali di un computer:
 		\begin{itemize}
 			\item il processore
 			\item la memoria
 			\item l'input/output (I/O)
 		\end{itemize}
+		
 	\end{block}
-	
-%	\begin{figure}[!htbp]
-%		\centering 
-%		\includegraphics[width=0.6\linewidth]{images/2_le_architetture/hd-sw.pdf}
-%%			\caption{}
-%	\end{figure}
 	
 \end{frame}
 
 
+
+%\begin{frame}
+%	\frametitle{L'architettura di un computer}
+%	
+%	\begin{block}{L'architettura di un computer}
+%		In generale, l'architettura di un computer può essere divisa in tre parti principali:
+%		\begin{itemize}
+%			\item il processore
+%			\item la memoria
+%			\item l'input/output (I/O)
+%		\end{itemize}
+%	\end{block}
+%	
+%%	\begin{figure}[!htbp]
+%%		\centering 
+%%		\includegraphics[width=0.6\linewidth]{images/2_le_architetture/hd-sw.pdf}
+%%%			\caption{}
+%%	\end{figure}
+%	
+%\end{frame}
+
+
+\subsubsection[Il processore]{Il processore}
 \begin{frame}
 %	\frametitle{L'architettura di un computer}
 	
@@ -817,7 +862,7 @@
 
 
 
-
+\subsubsection[La memoria]{La memoria}
 \begin{frame}
 %	\frametitle{L'architettura di un computer}
 	
@@ -853,6 +898,7 @@
 \end{frame}
 
 
+\subsubsection[L'input/output (I/O)]{L'input/output (I/O)}
 \begin{frame}
 %	\frametitle{L'architettura di un computer}
 	
@@ -887,4 +933,47 @@
 \end{frame}
 
 
+\subsection[I modelli]{I modelli}
+\begin{frame}
+	\frametitle{I modelli}
+	
+	\begin{block}{I modelli}
+		
+		I due modelli maggiormente utilizzati per illustrare il funzionamento di massima del sistema-computer sono:
+		\begin{itemize}
+			\item il \textbf{modello di Von Neumann}
+			\item il \textbf{modello di Harvard}
+		\end{itemize}
+	\end{block}
+	
+%	\begin{figure}[!htbp]
+%		\centering 
+%		\includegraphics[width=0.6\linewidth]{images/2_le_architetture/hd-sw.pdf}
+%%			\caption{}
+%	\end{figure}
+	
+\end{frame}
 
+\subsubsection[Il modello di Von Neumann]{Il modello di Von Neumann}
+\begin{frame}
+	\frametitle{Il modello di Von Neumann}
+	
+	\begin{block}{}
+	
+	\end{block}
+	
+	
+\end{frame}
+
+
+\subsubsection[Il modello di Harvard]{Il modello di Harvard}
+
+\begin{frame}
+	\frametitle{Il modello di Harvard}
+	
+	\begin{block}{}
+	
+	\end{block}
+	
+	
+\end{frame}
