@@ -1,90 +1,6 @@
-\section[Le architetture]{Le architetture}
-\label{sec:architectures}
-\sectionframe{images/covers/cover_architecture.jpeg}{Le Architetture}
-
-
-\subsection[La macchina di Turing]{La macchina di Turing}
-\begin{frame}
-	\frametitle{La macchina di Turing}
-	 
-	\begin{block}{Il computer}
-		Il computer è un dispositivo fisico che implementa il funzionamento di una macchina di Turing.
-	\end{block}
-	\begin{block}{La Macchina di Turing}
-		La Macchina di Turing è una macchina ideale che manipola i dati contenuti su un nastro di lunghezza potenzialmente infinita, secondo un insieme prefissato di regole ben definite.\\
-		In altre parole, si tratta di un modello astratto che definisce una macchina in grado di eseguire algoritmi e dotata di un nastro potenzialmente infinito su cui può leggere e/o scrivere dei simboli.
-	\end{block}
-\end{frame}
-
-
-
-\begin{frame}
-	\frametitle{La macchina di Turing}
-	
-	\begin{block}{Una simulazione della Macchina di Turing}
-		\begin{figure}[!htbp]
-			\centering 
-			\includegraphics[width=0.9\linewidth]{images/2_le_architetture/turing_machine.jpg}
-			\caption{Foto da \href{https://aturingmachine.com/}{aturingmachine.com}, clicca \underline{\href{https://www.youtube.com/watch?v=E3keLeMwfHY}{qui}} per vedere il video.}
-			\label{fig:architectures_turingmachine}
-		\end{figure}
-	\end{block}
-\end{frame}
-
-
-\subsection[Il computer]{Il computer}
-\begin{frame}
-	\frametitle{Il computer}
-	
-	\begin{block}{Il computer}
-		Un computer esegue programmi (come la macchina di Turing).\\
-		Esistono due categorie di computer:
-		\begin{columns}			
-			\column{0.3\linewidth}
-			\begin{figure}[!htbp]
-				\centering 
-				\includegraphics[width=0.7\linewidth]{images/2_le_architetture/microprocessor.jpeg}
-				%\caption{}
-			\end{figure}
-			
-			\column{0.5\linewidth}
-			$\bullet$ \textbf{general purpose}:\\riprogrammabili dall'utente ($\mu$processors, utilizzati ad esempio nei \textit{personal computer}).
-			
-			\column{0.2\linewidth}
-			\begin{figure}[!htbp]
-				\centering
-				\advance\leftskip-0.5cm
-				\includegraphics[width=1.0\linewidth]{images/2_le_architetture/microprocessor.png}
-				%\caption{}
-			\end{figure}
-			
-		\end{columns}
-		 
-		\begin{columns}						
-			\column{0.3\linewidth}
-			\begin{figure}[!htbp]
-				\centering 
-				\includegraphics[width=0.7\linewidth]{images/2_le_architetture/microcontroller.jpeg}
-				%\caption{}
-			\end{figure}
-			
-			\column{0.5\linewidth}
-			$\bullet$ \textbf{special purpose}:\\dedicati ad una sola applicazione specifica  ($\mu$controllers, utilizzati ad esempio negli \textit{elettrodomestici}).
-			
-			\column{0.2\linewidth}
-			\begin{figure}[!htbp]
-				\centering
-				\advance\leftskip-0.5cm
-				\includegraphics[width=1.0\linewidth]{images/2_le_architetture/microcontroller.png}
-				%\caption{}
-			\end{figure}
-			
-		\end{columns}
-		
-	\end{block}
-	
-	
-\end{frame}
+\section[I componenti elettronici]{I componenti elettronici}
+\label{sec:electronics}
+\sectionframe{images/covers/cover_architecture.jpeg}{I componenti elettronici}
 
 
 \begin{frame}
@@ -121,9 +37,9 @@
 		\column{0.4\linewidth}
 		\begin{figure}[!htbp]
 			\centering 
-			\includegraphics[width=0.95\linewidth]{images/2_le_architetture/transistor.jpg}
+			\includegraphics[width=0.95\linewidth]{images/2_elettronica/transistor.jpg}
 			\caption{Transistors}
-			\label{fig:architectures_transistors}
+			\label{fig:electronics_transistors}
 		\end{figure}		
 	\end{columns}
 	
@@ -148,7 +64,7 @@
 		\column{0.4\linewidth}
 		\begin{figure}[!htbp]
 			\centering 
-			\includegraphics[width=0.95\linewidth]{images/2_le_architetture/transistors.jpg}
+			\includegraphics[width=0.95\linewidth]{images/2_elettronica/transistors.jpg}
 			\caption{Confronto tra diversi transistor BJT, da sinistra a destra: SOT-23, TO-92, TO-126, TO-3}
 		\end{figure}		
 	\end{columns}
@@ -170,7 +86,7 @@
 		\column{0.4\linewidth}
 		\begin{figure}[!htbp]
 			\centering 
-			\includegraphics[width=0.95\linewidth]{images/2_le_architetture/radio_transistors.jpeg}
+			\includegraphics[width=0.95\linewidth]{images/2_elettronica/radio_transistors.jpeg}
 			\caption{I transistor sono usati nelle radio sia per amplificare il segnale radiofonico   ricevuto dall'antenna che per il circuito di sintonizzazione utilizzato per selezionare la frequenza del segnale radiofonico.}
 		\end{figure}		
 	\end{columns}
@@ -223,7 +139,7 @@
 %	\begin{block}{Evoluzione del numero di transistors nei microprocessori 1971-2008}
 		\begin{figure}[!htbp]
 			\centering
-			\includegraphics[width=0.7\linewidth]{images/2_le_architetture/moore.png}
+			\includegraphics[width=0.7\linewidth]{images/2_elettronica/moore.png}
 			\caption{Evoluzione del numero di transistors nei microprocessori 1971-2008}
 		\end{figure}
 %	\end{block}
@@ -238,9 +154,9 @@
 	
 	\begin{figure}[!htbp]
 		\centering 
-		\includegraphics[width=1.02\linewidth]{images/2_le_architetture/Moore's_Law_Transistor_Count_1970-2020.png}
+		\includegraphics[width=1.02\linewidth]{images/2_elettronica/Moore's_Law_Transistor_Count_1970-2020.png}
 %		\caption{}
-		\label{fig:architectures_moorelaw}	
+		\label{fig:electronics_moorelaw}	
 	\end{figure}
 	
 \end{frame}
@@ -252,7 +168,7 @@
 	\frametitle{Le porte logiche}
 	
 	\begin{block}{Le porte logiche}
-		Grazie ai transistor è possibile realizzare dei circuiti logici (vedi \hyperlink{fig:architectures_transistors}{pag. \pageref{fig:architectures_transistors}}).\\
+		Grazie ai transistor è possibile realizzare dei circuiti logici (vedi \hyperlink{fig:electronics_transistors}{pag. \pageref{fig:electronics_transistors}}).\\
 		Le \textbf{porte logiche} sono dei circuiti elettronici elementari in grado di svolgere le operazioni logiche dell'algebra booleana basata sui valori logici:
 		\begin{itemize}
 			\item \textbf{TRUE} oppure \textbf{1}: passaggio di corrente (tensione alta)
@@ -265,21 +181,21 @@
 		\column{0.33\linewidth}
 		\begin{figure}[!htbp]
 			\centering 
-			\includegraphics[width=0.5\linewidth]{images/2_le_architetture/logic_gate_not.pdf}
+			\includegraphics[width=0.5\linewidth]{images/2_elettronica/logic_gate_not.pdf}
 			\caption{Porta logica \textit{NOT}}
 		\end{figure}
 		
 		\column{0.33\linewidth}
 		\begin{figure}[!htbp]
 			\centering 
-			\includegraphics[width=0.5\linewidth]{images/2_le_architetture/logic_gate_and.pdf}
+			\includegraphics[width=0.5\linewidth]{images/2_elettronica/logic_gate_and.pdf}
 			\caption{Porta logica \textit{AND}}
 		\end{figure} 
 		
 		\column{0.33\linewidth}
 		\begin{figure}[!htbp] 
 			\centering 
-			\includegraphics[width=0.5\linewidth]{images/2_le_architetture/logic_gate_or.pdf}
+			\includegraphics[width=0.5\linewidth]{images/2_elettronica/logic_gate_or.pdf}
 			\caption{Porta logica \textit{OR}}
 		\end{figure}
 		
@@ -301,7 +217,7 @@
 		\column{0.3\linewidth}
 		\begin{figure}[!htbp]
 			\centering 
-			\includegraphics[width=0.9\linewidth]{images/2_le_architetture/logic_gate_not_a.pdf}
+			\includegraphics[width=0.9\linewidth]{images/2_elettronica/logic_gate_not_a.pdf}
 			\caption{Icona}
 		\end{figure}
 		
@@ -320,7 +236,7 @@
 		\column{0.3\linewidth}
 		\begin{figure}[!htbp]
 			\centering 
-			\includegraphics[width=0.85\linewidth]{images/2_le_architetture/logic_gate_circuit_not.png}
+			\includegraphics[width=0.85\linewidth]{images/2_elettronica/logic_gate_circuit_not.png}
 			\caption{Circuito}
 		\end{figure}
 		
@@ -345,7 +261,7 @@
 		\column{0.3\linewidth}
 		\begin{figure}[!htbp]
 			\centering 
-			\includegraphics[width=1.0\linewidth]{images/2_le_architetture/logic_gate_and_ab.pdf}
+			\includegraphics[width=1.0\linewidth]{images/2_elettronica/logic_gate_and_ab.pdf}
 			\caption{Icona}
 		\end{figure}
 		
@@ -367,7 +283,7 @@
 		\column{0.3\linewidth}
 		\begin{figure}[!htbp]
 			\centering 
-			\includegraphics[width=0.85\linewidth]{images/2_le_architetture/logic_gate_circuit_and.png}
+			\includegraphics[width=0.85\linewidth]{images/2_elettronica/logic_gate_circuit_and.png}
 			\caption{Circuito}
 		\end{figure}
 		
@@ -391,7 +307,7 @@
 		\column{0.3\linewidth}
 		\begin{figure}[!htbp]
 			\centering 
-			\includegraphics[width=1.0\linewidth]{images/2_le_architetture/logic_gate_or_ab.pdf}
+			\includegraphics[width=1.0\linewidth]{images/2_elettronica/logic_gate_or_ab.pdf}
 			\caption{Icona}
 		\end{figure}
 		
@@ -413,7 +329,7 @@
 		\column{0.3\linewidth}
 		\begin{figure}[!htbp]
 			\centering 
-			\includegraphics[width=0.85\linewidth]{images/2_le_architetture/logic_gate_circuit_or.png}
+			\includegraphics[width=0.85\linewidth]{images/2_elettronica/logic_gate_circuit_or.png}
 			\caption{Circuito}
 		\end{figure}
 		
@@ -448,7 +364,7 @@
 
 	\begin{figure}[!htbp]
 		\centering 
-		\includegraphics[width=1.0\linewidth]{images/2_le_architetture/logic_gates_truthtables.png}
+		\includegraphics[width=1.0\linewidth]{images/2_elettronica/logic_gates_truthtables.png}
 %		\caption{}
 	\end{figure}
 	
@@ -480,7 +396,7 @@
 
 	\begin{figure}[!htbp]
 		\centering 
-		\includegraphics[width=0.8\linewidth]{images/2_le_architetture/demorgan_1.pdf}
+		\includegraphics[width=0.8\linewidth]{images/2_elettronica/demorgan_1.pdf}
 %		\caption{}
 	\end{figure}
 	
@@ -491,7 +407,7 @@
 	
 	\begin{figure}[!htbp]
 		\centering 
-		\includegraphics[width=0.8\linewidth]{images/2_le_architetture/demorgan_2.pdf}
+		\includegraphics[width=0.8\linewidth]{images/2_elettronica/demorgan_2.pdf}
 %		\caption{}
 	\end{figure}
 \end{frame}
@@ -530,7 +446,7 @@
 		\pause
 		\begin{figure}[!htbp]
 			\centering 
-			\includegraphics[width=0.8\linewidth]{images/2_le_architetture/demorgan_ex.pdf}
+			\includegraphics[width=0.8\linewidth]{images/2_elettronica/demorgan_ex.pdf}
 	%		\caption{}
 		\end{figure}
 			
@@ -657,9 +573,9 @@
 	
 	\begin{figure}[!htbp]
 		\centering 
-		\includegraphics[width=0.65\linewidth]{images/2_le_architetture/waveforms.pdf}
+		\includegraphics[width=0.65\linewidth]{images/2_elettronica/waveforms.pdf}
 		\caption{Forme d'onda sinusoidale, quadrata, triangolare e a dente di sega}
-		\label{fig:architectures_waveforms}
+		\label{fig:electronics_waveforms}
 	\end{figure}
 \end{frame}
 
@@ -685,7 +601,7 @@
 		\column{0.62\linewidth}
 		\begin{figure}[!htbp]
 			\centering 
-			\includegraphics[width=1.0\linewidth]{images/2_le_architetture/clock.png}
+			\includegraphics[width=1.0\linewidth]{images/2_elettronica/clock.png}
 			\caption{Il ciclo di clock}
 		\end{figure}
 		
@@ -705,7 +621,7 @@
 	
 	\begin{figure}[!htbp]
 		\centering 
-		\includegraphics[width=0.78\linewidth]{images/2_le_architetture/clock.png}
+		\includegraphics[width=0.78\linewidth]{images/2_elettronica/clock.png}
 %		\caption{Il ciclo di clock}
 	\end{figure}
 	
@@ -726,7 +642,7 @@
 	
 	\begin{figure}[!htbp]
 		\centering 
-		\includegraphics[width=0.78\linewidth]{images/2_le_architetture/clock.png}
+		\includegraphics[width=0.78\linewidth]{images/2_elettronica/clock.png}
 %		\caption{Il ciclo di clock}
 	\end{figure}
 	
@@ -739,9 +655,9 @@
 		
 	\begin{figure}[!htbp]
 		\centering 
-		\includegraphics[width=0.82\linewidth]{images/2_le_architetture/period_frequency.png}
+		\includegraphics[width=0.82\linewidth]{images/2_elettronica/period_frequency.png}
 		\caption{La relazione che intercorre tra periodo e frequenza}
-		\label{fig:architectures_period_frequency}
+		\label{fig:electronics_period_frequency}
 	\end{figure}
 \end{frame}
 
@@ -786,194 +702,4 @@
 	
 \end{frame}
 
-	
 
-
-
-\subsection[I componenti essenziali]{I componenti essenziali}
-\begin{frame}
-	\frametitle{I modelli}
-	
-	\begin{block}{I modelli}
-		Adesso che abbiamo chiarito quali siano i principali componenti elettronici che formano un computer, definiamo quali sono i componenti essenziali di un computer:
-		\begin{itemize}
-			\item il processore
-			\item la memoria
-			\item l'input/output (I/O)
-		\end{itemize}
-		
-	\end{block}
-	
-\end{frame}
-
-
-
-%\begin{frame}
-%	\frametitle{L'architettura di un computer}
-%	
-%	\begin{block}{L'architettura di un computer}
-%		In generale, l'architettura di un computer può essere divisa in tre parti principali:
-%		\begin{itemize}
-%			\item il processore
-%			\item la memoria
-%			\item l'input/output (I/O)
-%		\end{itemize}
-%	\end{block}
-%	
-%%	\begin{figure}[!htbp]
-%%		\centering 
-%%		\includegraphics[width=0.6\linewidth]{images/2_le_architetture/hd-sw.pdf}
-%%%			\caption{}
-%%	\end{figure}
-%	
-%\end{frame}
-
-
-\subsubsection[Il processore]{Il processore}
-\begin{frame}
-%	\frametitle{L'architettura di un computer}
-	
-	\begin{block}{Il processore}
-		Il \textbf{processore}, noto anche come "microprocessore", è il "cervello" del computer, ed è responsabile dell'esecuzione delle istruzioni contenute nel software.
-	\end{block}
-
-	\begin{columns}			
-		\column{0.5\linewidth}
-		\begin{figure}[!htbp] 
-			\centering
-			%\advance\leftskip-0.25cm
-			\includegraphics[width=1.0\linewidth]{images/2_le_architetture/intel.jpg}
-			\caption{Processore Intel}
-			\label{fig:architectures_intel}
-		\end{figure}
-					
-		\column{0.5\linewidth}
-		\begin{figure}[!htbp] 
-			\centering
-			%\advance\leftskip-0.25cm
-			\includegraphics[width=1.0\linewidth]{images/2_le_architetture/ryzen.jpg}
-			\caption{Processore AMD Ryzen}
-			\label{fig:architectures_ryzen}
-		\end{figure}
-		
-	\end{columns}
-	
-\end{frame}
-
-
-
-\subsubsection[La memoria]{La memoria}
-\begin{frame}
-%	\frametitle{L'architettura di un computer}
-	
-	\begin{block}{La memoria}
-		La \textbf{memoria} è dove vengono temporaneamente archiviati i dati e le istruzioni che vengono utilizzati dal processore. Esistono due tipi principali di memoria: 
-		\begin{itemize}
-			\item la \textbf{memoria RAM} (Random Access Memory), che viene utilizzata per archiviare i dati che il processore sta attualmente lavorando
-			\item la \textbf{memoria di massa}, come il disco rigido o il solid state drive, che viene utilizzata per archiviare i dati a lungo termine.
-		\end{itemize}
-	\end{block}
-	
-	\begin{columns}			
-		\column{0.5\linewidth}
-		\begin{figure}[!htbp]
-			\centering
-			%\advance\leftskip-0.25cm
-			\includegraphics[width=0.82\linewidth]{images/2_le_architetture/memory_ram.jpg}
-			\caption{Due memorie RAM}
-			\label{fig:architectures_memory_ram}
-		\end{figure}
-					
-		\column{0.5\linewidth}
-		\begin{figure}[!htbp] 
-			\centering
-			%\advance\leftskip-0.25cm
-			\includegraphics[width=0.7\linewidth]{images/2_le_architetture/memory_hdd.jpg}
-			\caption{L'interno di un Hard Disk}
-			\label{fig:architectures_memory_hdd}
-		\end{figure}
-		
-	\end{columns}
-	
-\end{frame}
-
-
-\subsubsection[L'input/output (I/O)]{L'input/output (I/O)}
-\begin{frame}
-%	\frametitle{L'architettura di un computer}
-	
-	\begin{block}{L'input/output (I/O)} 
-		L'\textbf{input/output} (I/O) gestisce il flusso di dati tra il computer e l'esterno, attraverso dispositivi come il monitor, la tastiera e il mouse.
-	\end{block}
-	
-	\begin{figure}[!htbp] 
-		\centering
-		%\advance\leftskip-0.25cm
-		\includegraphics[width=0.8\linewidth]{images/2_le_architetture/io.jpg}
-		\caption{Monitor, tastiera, mouse e casse}
-		\label{fig:architectures_io}
-	\end{figure}
-	 
-\end{frame}
-
-
-\begin{frame}
-%	\frametitle{L'architettura di un computer}
-	
-	\begin{block}{Altre componenti}
-		Altre componenti comuni di un computer possono includere schede di espansione, che forniscono ulteriori funzionalità al computer, come ad esempio la possibilità di collegare dispositivi esterni o di aggiungere ulteriori porte di I/O.
-	\end{block}
-	
-%	\begin{figure}[!htbp]
-%		\centering 
-%		\includegraphics[width=0.6\linewidth]{images/2_le_architetture/hd-sw.pdf}
-%%			\caption{}
-%	\end{figure}
-	
-\end{frame}
-
-
-\subsection[I modelli]{I modelli}
-\begin{frame}
-	\frametitle{I modelli}
-	
-	\begin{block}{I modelli}
-		
-		I due modelli maggiormente utilizzati per illustrare il funzionamento di massima del sistema-computer sono:
-		\begin{itemize}
-			\item il \textbf{modello di Von Neumann}
-			\item il \textbf{modello di Harvard}
-		\end{itemize}
-	\end{block}
-	
-%	\begin{figure}[!htbp]
-%		\centering 
-%		\includegraphics[width=0.6\linewidth]{images/2_le_architetture/hd-sw.pdf}
-%%			\caption{}
-%	\end{figure}
-	
-\end{frame}
-
-\subsubsection[Il modello di Von Neumann]{Il modello di Von Neumann}
-\begin{frame}
-	\frametitle{Il modello di Von Neumann}
-	
-	\begin{block}{}
-	
-	\end{block}
-	
-	
-\end{frame}
-
-
-\subsubsection[Il modello di Harvard]{Il modello di Harvard}
-
-\begin{frame}
-	\frametitle{Il modello di Harvard}
-	
-	\begin{block}{}
-	
-	\end{block}
-	
-	
-\end{frame}

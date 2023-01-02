@@ -620,13 +620,13 @@ $L_{RX}$ & $L_{RX}$ & $Dark$ & $Dark$ & - \\ \hline
 \end{frame}
 
 
-\subsection[Il computer]{Il computer}
+\subsection[Il sistema computer]{Il sistema computer}
 \begin{frame}
 	\frametitle{Il sistema computer}
 	
 	\begin{columns}			
 		\column{0.6\linewidth}
-		\begin{block}{Il computer}
+		\begin{block}{Il sistema computer}
 			I computer è a tutti gli effetti un sistema complesso che potremmo classificare come invariante, deterministico, discreto...\\
 			Affinché noi possiamo carpirne gli elementi essenziali è necessario studiare tale sistema attraverso un modello.\\~\\
 			In seguito vedremo quali sono alcuni dei modelli più utilizzati per iniziare a studiare il funzionamento del sistema-computer.			
@@ -639,6 +639,94 @@ $L_{RX}$ & $L_{RX}$ & $Dark$ & $Dark$ & - \\ \hline
 			\label{fig:systems_computer}
 		\end{figure}		
 	\end{columns}
+	
+	
+\end{frame}
+
+
+
+
+
+
+\subsubsection[La macchina di Turing]{La macchina di Turing}
+\begin{frame}
+	\frametitle{La macchina di Turing}
+	 
+	\begin{block}{Il computer}
+		Il computer è un dispositivo fisico che implementa il funzionamento di una macchina di Turing.
+	\end{block}
+	\begin{block}{La Macchina di Turing}
+		La Macchina di Turing è una macchina ideale che manipola i dati contenuti su un nastro di lunghezza potenzialmente infinita, secondo un insieme prefissato di regole ben definite.\\
+		In altre parole, si tratta di un modello astratto che definisce una macchina in grado di eseguire algoritmi e dotata di un nastro potenzialmente infinito su cui può leggere e/o scrivere dei simboli.
+	\end{block}
+\end{frame}
+
+
+
+\begin{frame}
+	\frametitle{La macchina di Turing}
+	
+	\begin{block}{Una simulazione della Macchina di Turing}
+		\begin{figure}[!htbp]
+			\centering 
+			\includegraphics[width=0.9\linewidth]{images/1_i_sistemi/turing_machine.jpg}
+			\caption{Foto da \href{https://aturingmachine.com/}{aturingmachine.com}, clicca \underline{\href{https://www.youtube.com/watch?v=E3keLeMwfHY}{qui}} per vedere il video.}
+			\label{fig:systems_turingmachine}
+		\end{figure}
+	\end{block}
+\end{frame}
+
+
+\subsubsection[Il computer]{Il computer}
+\begin{frame}
+	\frametitle{Il computer}
+	
+	\begin{block}{Il computer}
+		Un computer esegue programmi (come la macchina di Turing).\\
+		Esistono due categorie di computer:
+		\begin{columns}			
+			\column{0.3\linewidth}
+			\begin{figure}[!htbp]
+				\centering 
+				\includegraphics[width=0.7\linewidth]{images/1_i_sistemi/microprocessor.jpeg}
+				%\caption{}
+			\end{figure}
+			
+			\column{0.5\linewidth}
+			$\bullet$ \textbf{general purpose}:\\riprogrammabili dall'utente ($\mu$processors, utilizzati ad esempio nei \textit{personal computer}).
+			
+			\column{0.2\linewidth}
+			\begin{figure}[!htbp]
+				\centering
+				\advance\leftskip-0.5cm
+				\includegraphics[width=1.0\linewidth]{images/1_i_sistemi/microprocessor.png}
+				%\caption{}
+			\end{figure}
+			
+		\end{columns}
+		 
+		\begin{columns}						
+			\column{0.3\linewidth}
+			\begin{figure}[!htbp]
+				\centering 
+				\includegraphics[width=0.7\linewidth]{images/1_i_sistemi/microcontroller.jpeg}
+				%\caption{}
+			\end{figure}
+			
+			\column{0.5\linewidth}
+			$\bullet$ \textbf{special purpose}:\\dedicati ad una sola applicazione specifica  ($\mu$controllers, utilizzati ad esempio negli \textit{elettrodomestici}).
+			
+			\column{0.2\linewidth}
+			\begin{figure}[!htbp]
+				\centering
+				\advance\leftskip-0.5cm
+				\includegraphics[width=1.0\linewidth]{images/1_i_sistemi/microcontroller.png}
+				%\caption{}
+			\end{figure}
+			
+		\end{columns}
+		
+	\end{block}
 	
 	
 \end{frame}
