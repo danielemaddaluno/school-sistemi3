@@ -14,6 +14,7 @@
 			\item \textit{il processore}
 			\item \textit{la memoria}
 			\item \textit{l'input/output (I/O)}
+			\item \textit{il BUS}
 		\end{itemize}
 		
 	\end{block}
@@ -131,6 +132,33 @@
 \end{frame}
 
 
+\subsubsection[Il BUS]{Il BUS}
+\begin{frame}
+%	\frametitle{L'architettura di un computer}
+	
+	\begin{block}{Il BUS} 
+		Il \textbf{BUS} è il canale di comunicazione che permette di collegare tra loro i componenti dell’architettura, consentendo il transito delle informazioni.\\
+		Possiamo paragonare i BUS a delle \textbf{autostrade per i bit}.\\
+		Distinguiamo tre diverse linee (che approfondiremo in seguito):
+		\begin{itemize}
+			\item \textit{Control BUS} (BUS di controllo)
+			\item \textit{Address BUS} (BUS degli indirizzi)
+			\item \textit{Data BUS} (BUS dati)
+		\end{itemize}
+
+	\end{block}
+	
+	\begin{figure}[!htbp] 
+		\centering
+		%\advance\leftskip-0.25cm
+		\includegraphics[width=0.75\linewidth]{images/3_architetture/bus.jpg}
+%		\caption{}
+%		\label{fig:architectures_bus} 
+	\end{figure}
+	 
+\end{frame}
+
+
 \begin{frame}
 %	\frametitle{L'architettura di un computer}
 	
@@ -217,7 +245,8 @@
 				\item \textbf{Computer}: 
 					rappresenta la CPU che compie azioni di elaborazione come, prelevare o modificare il contenuto della memoria o informazioni dai dispositivi di input/output.\\
 					La CPU è in grado di eseguire le proprie azioni in modo sequenziale.
-				\item \textbf{Stored-program}: indica che le istruzioni che la CPU deve eseguire sono collocate (stored) nella memoria del computer e l'insieme delle istruzioni rappresenta il programma (program) che deve essere eseguito.\\Nella memoria risiedono, oltre alle istruzioni anche i dati sui quali tali programmi operano.
+				\item \textbf{Stored-program}: indica che le istruzioni che la CPU deve eseguire sono collocate (stored) nella memoria del computer e l'insieme delle istruzioni rappresenta il programma (program) che deve essere eseguito.\\
+					\underline{\textbf{Nella memoria}} risiedono, oltre alle \underline{\textbf{istruzioni}} anche i \underline{\textbf{dati}} sui quali tali programmi operano.
 			\end{itemize}
 		\end{block}
 		
@@ -254,9 +283,9 @@
 	\frametitle{L'architettura Harvard}
 	
 	\begin{block}{L'architettura Harvard}
-		A differenza dell'architettura di von Neumann nel quale i dati e le istruzioni condividono la stessa memoria, l'\textbf{architettura di Harvard} dedica \textbf{due memorie distinte per i dati e per le istruzioni}.\\
-		Si tratta di una soluzione \underline{più efficiente e ottimizzata}, ma tuttavia molto \underline{più costosa}.\\~\\
-		L'architettura Harvard è un modello applicato alla progettazione di 	\underline{processori specializzati} come i DSP (Digital Signal Processor) che vengono utilizzati per il trattamento dei dati audio o video. Inoltre molti \underline{microcontrollori} impiegati in applicazioni industriali utilizzano questa architettura.
+		A differenza dell'architettura di von Neumann nel quale i dati e le istruzioni condividono la stessa memoria, l'\textbf{architettura di Harvard} dedica \underline{\textbf{due memorie distinte per i dati e per le istruzioni}}.\\
+		Si tratta di una soluzione \textbf{più efficiente e ottimizzata}, ma tuttavia molto \textbf{più costosa}.\\~\\
+		L'architettura Harvard è un modello applicato alla progettazione di 	\textit{processori specializzati} come i DSP (Digital Signal Processor) che vengono utilizzati per il trattamento dei dati audio o video. Inoltre molti \textit{microcontrollori} impiegati in applicazioni industriali utilizzano questa architettura.
 	\end{block}
 	
 	
