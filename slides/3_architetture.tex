@@ -82,11 +82,17 @@
 %	\frametitle{L'architettura di un computer}
 	
 	\begin{block}{La memoria}
-		La \textbf{memoria} è dove vengono temporaneamente archiviati i dati e le istruzioni che vengono utilizzati dal processore. Esistono due tipi principali di memoria: 
+		La \textbf{memoria} è dove vengono archiviati i dati e le istruzioni che vengono utilizzati dal processore. Possiamo distinguere due tipi di memoria:
 		\begin{itemize}
-			\item la \textbf{memoria RAM} (Random Access Memory), che viene utilizzata per archiviare i dati che il processore sta attualmente lavorando
-			\item la \textbf{memoria di massa}, come il disco rigido o il solid state drive, che viene utilizzata per archiviare i dati a lungo termine.
+			\item \textbf{memoria principale}, utilizzata per archiviare i dati su cui il processore sta attualmente lavorando.
+			In questa categoria la memoria più importante è la memoria \underline{RAM} (anche detta memoria centrale).
+			%Può essere classificata come memoria principale anche la \underline{ROM} (Read Only Memory), che è una memoria persistente a sola lettura.
+			\item \textbf{memoria secondaria}, come il \underline{disco rigido} o il \underline{solid state drive}, che vengono utilizzati per archiviare i dati a lungo termine.
 		\end{itemize}
+%		\begin{itemize}
+%			\item la \textbf{memoria RAM} (Random Access Memory), che viene utilizzata per archiviare i dati che il processore sta attualmente lavorando
+%			\item la \textbf{memoria di massa}, come il disco rigido o il solid state drive, che viene utilizzata per archiviare i dati a lungo termine.
+%		\end{itemize}
 	\end{block}
 	
 	\begin{columns}			
@@ -94,8 +100,8 @@
 		\begin{figure}[!htbp]
 			\centering
 			%\advance\leftskip-0.25cm
-			\includegraphics[width=0.82\linewidth]{images/3_architetture/memory_ram.jpg}
-			\caption{Due memorie RAM}
+			\includegraphics[width=0.78\linewidth]{images/3_architetture/memory_ram.jpg}
+			\caption{RAM (Random Access Memory)}
 			\label{fig:architectures_memory_ram}
 		\end{figure}
 					
@@ -103,7 +109,7 @@
 		\begin{figure}[!htbp] 
 			\centering
 			%\advance\leftskip-0.25cm
-			\includegraphics[width=0.7\linewidth]{images/3_architetture/memory_hdd.jpg}
+			\includegraphics[width=0.68\linewidth]{images/3_architetture/memory_hdd.jpg}
 			\caption{L'interno di un Hard Disk}
 			\label{fig:architectures_memory_hdd}
 		\end{figure}
