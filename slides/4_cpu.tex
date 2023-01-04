@@ -75,7 +75,7 @@
 
 
 \begin{frame}
-	\frametitle{Il ciclo di macchina: schema della CPU ($\bigstar$)}
+	\frametitle{Il ciclo di macchina: schema della CPU} % ($\bigstar$)
 	
 	\begin{figure}[!htbp] 
 		\centering
@@ -85,6 +85,73 @@
 		\label{fig:cpu_complex}
 	\end{figure}
 	 
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Il ciclo di macchina: schema della CPU}
+	
+	\underline{Registri non accessibili al programmatore}:
+	\begin{itemize}
+		\item il \textbf{MAR}, \textit{Memory Address Register}: è un registro interno collegato direttamente al BUS indirizzi. Contiene gli indirizzi necessari alla selezione della cella di memoria oppure al dispositivo di I/O;
+		\item il \textbf{MDR}, \textit{Memory Data Register}: è un registro interno collegato direttamente al BUS dati. Contiene i dati che la CPU vuole inviare o ricevere dalla memoria o dai dispositivi di I/O;% Il registro MDR è una sorta di memoria di transito.
+		\item l'\textbf{IR}, \textit{Instruction Register}: è il registro che contiene l'istruzione che sta per essere eseguita;
+	\end{itemize}
+	
+	\underline{Registri accessibili al programmatore}:
+	\begin{itemize}
+		\item il \textbf{PC}, \textit{Program Counter}: è il registro che contiene l'indirizzo di memoria della prossima istruzione da eseguire;
+		\item il \textbf{PSW}, \textit{Process Status Word}: anche detto \textit{Flag Register}
+	\end{itemize}
+	 
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Il ciclo di macchina: il Flag Register}
+	
+	\begin{figure}[!htbp] 
+		\centering
+		%\advance\leftskip-0.25cm
+		\includegraphics[width=0.7\linewidth]{images/4_cpu/flag_register.pdf}
+%		\caption{}
+		\label{fig:cpu_complex}
+	\end{figure}
+	
+	Il \textbf{Flag Register} (PSW, Process Status Word) è l'unico registro il cui contenuto non ha un significato nel suo complesso, ma \textbf{ciascun bit} che lo compone \textbf{ha un suo significato specifico}.\\
+	\underline{L’ALU, a ogni operazione aritmetico-logica ne aggiorna il contenuto}.\\~\\
+	Le informazioni contenute in questo registro sono essenziali per la costruzione degli algoritmi dei programmi. Controllando il valore dei flag possiamo infatti realizzare le strutture fondamentali della programmazione (condizione, iterazione, sottoprogrammi).
+	 
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Il ciclo di macchina: il Flag Register}
+	
+	\begin{figure}[!htbp] 
+		\centering
+		%\advance\leftskip-0.25cm
+		\includegraphics[width=0.7\linewidth]{images/4_cpu/flag_register.pdf}
+%		\caption{}
+		\label{fig:cpu_complex}
+	\end{figure}
+	
+%	\begin{itemize}
+%		\item il bit OF (Overflow Flag) vale 1 se il segno del risultato dell’ultima operazione aritmetico-logica discorda dal segno degli operandi
+%		\item il bit SF (Sign Flag) vale 1 se  il risultato dell’ultima operazione aritmetico-logica è negativo
+%		\item il bit ZF (Zero Flag) vale 1 se il risultato dell’ultima istruzione aritmetico-logica è zero
+%		\item il bit PF (Parity Flag) vale 1 se nel risultato dell’ultima operazione aritmetico-logica il numero di bit a 1 del risultato è pari
+%		\item il bit CF (Carry Flag) vale 1 se l’ultima istruzione aritmetico-logica aveva un riporto
+%	\end{itemize}
+
+	Tutti i flag si riferiscono all'ultima operazione aritmetico-logica:
+	\begin{itemize}
+		\item il bit CF (Carry Flag) vale 1 se si è avuto un riporto
+		\item il bit PF (Parity Flag) vale 1 se nel risultato il numero di bit a 1 del risultato è pari
+		\item il bit ZF (Zero Flag) vale 1 se il risultato è zero
+		\item il bit SF (Sign Flag) vale 1 se  il risultato è negativo
+		\item il bit OF (Overflow Flag) vale 1 se il segno del risultato discorda dal segno degli operandi
+	\end{itemize}	 
 \end{frame}
 
 
