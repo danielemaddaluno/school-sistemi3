@@ -26,19 +26,104 @@
 
 
 
+\begin{frame}
+%	\frametitle{L'architettura di un computer}
+	
+	\begin{figure}[!htbp] 
+		\centering
+		%\advance\leftskip-0.25cm
+		\includegraphics[width=0.58\linewidth]{images/4_cpu/architecture_cpu_simple.pdf}
+		\caption{La CPU: CU, ALU e registri}
+		\label{fig:cpu_simple}
+	\end{figure}
+	 
+\end{frame}
+
+
+
+
 \subsection[Il ciclo di macchina]{Il ciclo di macchina}
 
 \begin{frame}
 	\frametitle{Il ciclo di macchina}
 	
-%	\begin{block}{Central Processing Unit}
-%		 La CPU esegue le istruzioni macchina in maniera ciclica, per poter eseguire un’istruzione la CPU deve effettuare diversi passaggi, denominati fasi. Le tre fasi principali di esecuzione delle istruzioni nel modello di Von Neumann sono:
-%		 \begin{itemize}
-%		 	\item fetch
-%		 	\item decode
-%		 	\item execute
-%		 \end{itemize}
+	\begin{block}{Il ciclo di macchina}
+		 La CPU esegue le istruzioni macchina in maniera ciclica.\\
+		 Il cosiddetto \textbf{ciclo di macchina} può essere idealmente suddiviso in 4 parti:
 		 
-%	\end{block}
+		\begin{columns}			
+			\column{0.65\linewidth}
+			\begin{enumerate}
+			 	\item \textbf{fetch}: prelevamento dalla memoria del codice macchina dell’istruzione da eseguire;
+			 	\item \textbf{decode}: l'istruzione prelevata viene trasferita in un registro specifico e quindi codificata (tradotta);
+			 	\item \textbf{fetch operands}: se necessario si prelevano anche gli operandi necessari all'istruzione;
+			 	\item \textbf{execute}: la CPU quindi emette i segnali necessari all'esecuzione dell’istruzione.
+			 \end{enumerate}
+			
+			\column{0.35\linewidth}
+			\begin{figure}[!htbp]
+				\centering 
+				\includegraphics[width=0.95\linewidth]{images/4_cpu/architecture_cpu_cycle.pdf}
+%				\caption{}
+			\end{figure} 
+		\end{columns}
+		 
+		 
+	\end{block}
 	
 \end{frame}
+
+
+\begin{frame}
+	\frametitle{Il ciclo di macchina: schema della CPU ($\bigstar$)}
+	
+	\begin{figure}[!htbp] 
+		\centering
+		%\advance\leftskip-0.25cm
+		\includegraphics[width=1.0\linewidth]{images/4_cpu/architecture_cpu_complex.pdf}
+%		\caption{La CPU: CU, ALU e registri}
+		\label{fig:cpu_complex}
+	\end{figure}
+	 
+\end{frame}
+
+
+
+\subsubsection[Fetch]{Fetch}
+\begin{frame}
+	\frametitle{Il ciclo di macchina: il fetch}
+	
+	\begin{block}{Il ciclo di macchina: il fetch}	
+	\end{block}
+	
+\end{frame}
+
+
+\subsubsection[Decode]{Decode}
+\begin{frame}
+	\frametitle{Il ciclo di macchina: il decode}
+	
+	\begin{block}{Il ciclo di macchina: il decode}	
+	\end{block}
+	
+\end{frame}
+
+\subsubsection[Fetch Operands]{Fetch Operands}
+\begin{frame}
+	\frametitle{Il ciclo di macchina: il fetch degli operandi}
+	
+	\begin{block}{Il ciclo di macchina: il fetch degli operandi}	
+	\end{block}
+	
+\end{frame}
+
+
+\subsubsection[Execute]{Execute}
+\begin{frame}
+	\frametitle{Il ciclo di macchina: l'execute}
+	
+	\begin{block}{Il ciclo di macchina: l'execute}	
+	\end{block}
+	
+\end{frame}
+
