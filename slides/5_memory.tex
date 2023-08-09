@@ -16,7 +16,6 @@
 			\item I flip-flop
 			\item La ROM
 			\item La RAM
-			\item La cache
 			\item La memoria di massa
 		\end{itemize}
 		
@@ -322,7 +321,7 @@
 	\frametitle{La RAM (Random Access Memory)}
 	  
 	\begin{block}{}
-		La \textbf{memoria ad accesso casuale}, meglio nota come \textbf{RAM} (Random Access Memory), è un tipo di memoria volatile caratterizzata dal permettere l'accesso diretto a qualunque indirizzo di memoria con le stesse identiche tempistiche.
+		La \textbf{memoria ad accesso casuale} o \textbf{RAM} (Random Access Memory), è un tipo di memoria volatile caratterizzata dal permettere l'accesso diretto a qualunque indirizzo di memoria con le stesse identiche tempistiche.
 		
 		\begin{figure}[!htbp]
 			\centering
@@ -335,26 +334,151 @@
 \end{frame}
 
 
+% http://www.brescianet.com/appunti/infobase/pc_C.htm
+\subsubsection[I tipi di RAM]{I tipi di RAM}
 \begin{frame}
-	\frametitle{La RAM (Random Access Memory)}
+	\frametitle{I tipi di RAM}
 	  
 	\begin{block}{}
-		La RAM si contrappone alla memoria ad accesso sequenziale, in cui i dati sono disposti in modo sequenziale e per accedervi è necessario scorrere su tutti i dati precedenti.
+		%La RAM si contrappone alla memoria ad accesso sequenziale, in cui i dati sono disposti in modo sequenziale e per accedervi è necessario scorrere su tutti i dati precedenti.\\~\\
+		
+		Possiamo distinguere le RAM in diverse tipologie:
+		\begin{itemize}
+			\item Le \textbf{DRAM} (dynamic RAM): tempo di accesso 20-70ns con refresh. Sono \textbf{poco costose}. Sono principalmente utilizzate per la \textit{\underline{memoria centrale}} del computer.
+			\item Le \textbf{SDRAM} (synchronous dynamic RAM): evoluzione della DRAM, sincrona rispetto al BUS di sistema, ovvero utilizza un segnale di clock esterno per la sincronizzazione delle operazioni di I/O; questo permette un incremento delle prestazioni e una maggiore efficienza.
+			\item Le \textbf{SRAM} (static RAM): tempo di accesso 5-10ns senza refresh. Sono \textbf{rapide ma costose}. Sono soprattutto utilizzate per le \textit{\underline{memorie cache}} del processore.
+			\item ... \textbf{FeRAM}, \textbf{memorie a cambiamento di fase} ...
+			%\item Le \textbf{FeRAM} (ferroelectric dynamic RAM): mantiene i dati senza l'ausilio del refresh di sistema. Utilizzano un materiale denominato ferroelettrico che ha la capacità di mantenere la propria polarizzazione anche dopo esser scollegato dalla fonte energetica.
+		\end{itemize}
 	\end{block}
 \end{frame}
 
 
-\subsection[La DRAM: dynamic RAM]{La DRAM: dynamic RAM}
+\subsubsection[La DRAM: dynamic RAM]{La DRAM: dynamic RAM}
 \begin{frame}
 	\frametitle{La DRAM: dynamic RAM}
 	  
 	\begin{block}{}
-		abc
+		La memoria dinamica DRAM è costituita da centinaia di migliaia di piccoli \textbf{condensatori} (sorta di serbatoio elettrico) che immagazzinano delle cariche. Una volta caricato, lo stato software del condensatore è pari a 1, in caso contrario è a 0, il che significa che ogni condensatore rappresenta un bit della memoria.\\~\\
+		Dato che i condensatori si scaricano, bisogna costantemente ricaricarli (il termine esatto è \textbf{refresh}) ad un intervallo di tempo regolare detto \textbf{ciclo di refresh}. Le memorie DRAM hanno ad esempio bisogno di cicli di refresh ogni 15 nanosecondi (ns) circa.\\~\\
+		
+		Oltre a comportare un certo dispendio di energia rendono più lenta la memoria in quanto, mentre si sta eseguendo il refreshing, non è possibile accedervi.
 	\end{block}
 \end{frame}
 
+\begin{frame}
+	\frametitle{La DRAM: dynamic RAM}
+	  
+	\begin{block}{}
+		È importante sottolineare come l'operazione di lettura sia distruttiva, in quanto nel momento in cui un dato viene letto viene anche perso; risulta quindi necessaria la sua riscrittura immediata e questa porta a uno spreco di tempo.\\~\\
+		Ogni condensatore è accoppiato ad un transistor (di tipo MOS) che permette di "recuperare" (leggere) o di modificare lo stato del condensatore. Questi transistor sono disposti sotto forma di tabella (matrice). I punti di memoria vengono indicati con una linea e una colonna.
+	\end{block}
+	
+	\begin{columns}			
+		\column{0.5\linewidth}
+		\begin{figure}[!htbp]
+			\centering 
+			\includegraphics[width=0.15\linewidth]{images/5_memory/transistor.pdf}
+				\caption{Transistor}
+		\end{figure}
+		
+		\column{0.5\linewidth}
+		\begin{figure}[!htbp]
+			\centering 
+			\includegraphics[width=0.15\linewidth]{images/5_memory/condensatore.pdf}
+				\caption{Condensatore} 
+		\end{figure}
+	\end{columns}
+\end{frame}
 
-\subsection[La SRAM: static RAM]{La SRAM: static RAM}
+
+\begin{frame}
+	\frametitle{La DRAM: dynamic RAM, }
+	 
+	\begin{figure}[!htbp] 
+		\centering
+		%\advance\leftskip-0.25cm
+		\includegraphics[width=0.6\linewidth]{images/5_memory/dram_bit.pdf}
+		%\caption{PROM: nota la finestrella posta nella parte superiore del  circuito, che permette di ricevere i raggi UV}
+	\end{figure}
+	
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{La DRAM: dynamic RAM}
+	 
+	\begin{figure}[!htbp] 
+		\centering
+		%\advance\leftskip-0.25cm
+		\includegraphics[width=0.6\linewidth]{images/5_memory/dram_bit_details.pdf}
+		%\caption{PROM: nota la finestrella posta nella parte superiore del  circuito, che permette di ricevere i raggi UV}
+	\end{figure}
+	
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{La DRAM: dynamic RAM}
+	 
+	\begin{figure}[!htbp] 
+		\centering
+		%\advance\leftskip-0.25cm
+		\includegraphics[width=1.0\linewidth]{images/5_memory/dram_matrix_1.pdf}
+		%\caption{PROM: nota la finestrella posta nella parte superiore del  circuito, che permette di ricevere i raggi UV}
+	\end{figure}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{La DRAM: dynamic RAM}
+	 
+	\begin{figure}[!htbp] 
+		\centering
+		%\advance\leftskip-0.25cm
+		\includegraphics[width=1.0\linewidth]{images/5_memory/dram_matrix_2.pdf}
+		%\caption{PROM: nota la finestrella posta nella parte superiore del  circuito, che permette di ricevere i raggi UV}
+	\end{figure}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{La DRAM: dynamic RAM}
+	 
+	\begin{figure}[!htbp] 
+		\centering
+		%\advance\leftskip-0.25cm
+		\includegraphics[width=1.0\linewidth]{images/5_memory/dram_matrix_3.pdf}
+		%\caption{PROM: nota la finestrella posta nella parte superiore del  circuito, che permette di ricevere i raggi UV}
+	\end{figure}
+	
+\end{frame}
+
+\subsubsection[La SDRAM: synchronized dynamic RAM]{La SDRAM: synchronized dynamic RAM}
+
+\begin{frame}
+	\frametitle{La SDRAM: valutare le prestazioni di una SDRAM}
+	
+	\begin{block}{}
+		La velocità di trasferimento è notevolmente influenzata dai fenomeni di latenza, che si verificano durante le operazioni di lettura/scrittura e che dipendono strettamente dal tipo e dalla qualità del chip, nonché dalla frequenza di funzionamento. Ad ogni banco di memoria vengono associati dei tempi caratteristici detti timing, misurati in unità di cicli di clock: a valori più bassi corrispondono prestazioni migliori, a parità di frequenza.\\~\\
+		
+		I timing più importanti sono (vedi \href{https://it.wikipedia.org/wiki/DDR\_SDRAM}{link}):
+		\begin{itemize}
+			\item CAS Latency Time (tCl)
+			\item RAS to CAS Delay Time (tRCD)
+			\item RAS Precharge Time (tRP)
+			\item Active-to-Precharge Delay (tRAS)
+			\item Row Cycle Time (tRC)
+		\end{itemize}
+		
+	\end{block}
+
+	
+	
+\end{frame}
+
+
+\subsubsection[La SRAM: static RAM]{La SRAM: static RAM}
 \begin{frame}
 	\frametitle{La SRAM: static RAM}
 	  
