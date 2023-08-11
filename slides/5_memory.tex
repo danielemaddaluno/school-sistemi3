@@ -334,6 +334,7 @@
 \end{frame}
 
 
+
 % http://www.brescianet.com/appunti/infobase/pc_C.htm
 \subsubsection[I tipi di RAM]{I tipi di RAM}
 \begin{frame}
@@ -454,10 +455,92 @@
 	
 \end{frame}
 
-\subsubsection[La SDRAM: synchronized dynamic RAM]{La SDRAM: synchronized dynamic RAM}
+
+\begin{frame}
+	\frametitle{La DRAM: dynamic RAM}
+	 
+%	\begin{block}{Le prestazioni della memoria RAM}
+%		Una delle strategie adottate per migliorare le prestazioni consiste nel combinare tipi di memoria veloce con tipi di memoria più capienti ma lente: un sistema gerarchico di memorie.
+%	\end{block}
+	
+	\begin{figure}[!htbp] 
+		\centering
+		%\advance\leftskip-0.25cm
+		\includegraphics[width=0.8\linewidth]{images/5_memory/dram_organization.png}
+%		\caption{La CPU: CU, ALU e registri}
+		\label{fig:memory_dram_organization}
+	\end{figure} 
+
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{La DRAM: dynamic RAM}
+	
+	\begin{columns}			
+		\column{0.45\linewidth}
+		\begin{scriptsize}
+			\begin{figure}[!htbp]
+				\centering
+				\vspace{0.5em}
+				\includegraphics[width=0.9\linewidth]{images/5_memory/ddr3.png}
+				\\DDR3 SDRAM - 240 pin - 5,25x1,18 inch\\\vspace{0.9em}
+				
+				\includegraphics[width=0.9\linewidth]{images/5_memory/ddr2.png}
+				\\DDR2 SDRAM - 240 pin - 5,25x1,18 inch\\\vspace{0.5em}
+				
+				\includegraphics[width=0.9\linewidth]{images/5_memory/ddr1.png}
+				\\DDR SDRAM - 184 pin - 5,375x1 inch\\\vspace{1em}
+			\end{figure}
+		\end{scriptsize}
+
+		
+		
+		\column{0.55\linewidth}
+		\begin{figure}[!htbp]
+			\centering 
+			\includegraphics[width=1.0\linewidth]{images/5_memory/ddr_compare.png}
+%			\caption{Confronto tra le diverse tipologie di DDR} 
+		\end{figure}
+	\end{columns}
+
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{La DRAM: dynamic RAM}
+	 
+	\begin{figure}[!htbp] 
+		\centering
+		%\advance\leftskip-0.25cm
+		\includegraphics[width=0.9\linewidth]{images/5_memory/ram_installation.jpg}
+		%\caption{}
+	\end{figure}
+	
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{La DRAM: dynamic RAM}
+	 
+	\begin{figure}[!htbp] 
+		\centering
+		%\advance\leftskip-0.25cm
+		\includegraphics[width=1.0\linewidth]{images/5_memory/ram_types.jpeg}
+		%\caption{}
+	\end{figure}
+	
+\end{frame}
+
+
+
+
+
+
+%\subsubsection[La SDRAM: synchronized dynamic RAM]{La SDRAM: synchronized dynamic RAM}
 % https://www.nexthardware.com/forum/ram/41922-latenze-ram-parametri-e-descrizione-cura-di-swarzy.html
 \begin{frame}
-	\frametitle{La SDRAM: valutare le prestazioni di una SDRAM}
+	\frametitle{La RAM: valutare le prestazioni di una RAM}
 	
 	\begin{block}{}
 		La velocità di trasferimento è notevolmente influenzata dai fenomeni di latenza, che si verificano durante le operazioni di lettura/scrittura e che dipendono strettamente dal tipo e dalla qualità del chip, nonché dalla frequenza di funzionamento. Ad ogni banco di memoria vengono associati dei tempi caratteristici detti timing, misurati in unità di cicli di clock: a valori più bassi corrispondono prestazioni migliori, a parità di frequenza.\\~\\
