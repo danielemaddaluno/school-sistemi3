@@ -455,7 +455,7 @@
 \end{frame}
 
 \subsubsection[La SDRAM: synchronized dynamic RAM]{La SDRAM: synchronized dynamic RAM}
-
+% https://www.nexthardware.com/forum/ram/41922-latenze-ram-parametri-e-descrizione-cura-di-swarzy.html
 \begin{frame}
 	\frametitle{La SDRAM: valutare le prestazioni di una SDRAM}
 	
@@ -483,9 +483,80 @@
 	\frametitle{La SRAM: static RAM}
 	  
 	\begin{block}{}
-		abc
+		Le \textbf{SRAM}, acronimo di static RAM, sono sempre volatili ma non necessitano di refresh. I flip-flop sono alla base della memorizzazione di un singolo bit in queste tipologie di memoria.\\~\\
+		I banchi di SRAM consentono di mantenere le informazioni per un tempo teoricamente infinito, hanno \textbf{bassi tempi di lettura} e \textbf{bassi consumi}. La necessità di usare molti componenti per cella le rende però \textbf{più costose} delle DRAM.\\~\\
+		Sono solitamente usate per le memorie cache, dove elevate velocità e ridotti consumi sono caratteristiche fondamentali. Ad esempio, possono essere trovate nella cache L1, L2 o L3 di un processore.
+		
 	\end{block}
 \end{frame}
+
+
+% https://superuser.com/questions/196143/where-exactly-l1-l2-and-l3-caches-located-in-computer
+\begin{frame}
+	\frametitle{La DRAM: dynamic RAM}
+	 
+	\begin{figure}[!htbp] 
+		\centering
+		%\advance\leftskip-0.25cm
+		\includegraphics[width=0.62\linewidth]{images/5_memory/cache_1.png}
+		\caption{\textbf{80486 (1989):} questa è la prima CPU di questa generazione che ha un po' di cache sulla CPU. È una cache unificata da 8 KB, il che significa che viene utilizzata per dati e istruzioni. In questo periodo diventa comune inserire 256 KB di memoria statica veloce sulla scheda madre come cache di 2° livello. Quindi cache di 1° livello sulla CPU, cache di 2° livello sulla scheda madre.}
+	\end{figure}
+	
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{La DRAM: dynamic RAM}
+	 
+	\begin{figure}[!htbp] 
+		\centering
+		%\advance\leftskip-0.25cm
+		\includegraphics[width=0.42\linewidth]{images/5_memory/cache_2.png}
+		\caption{\textbf{\href{https://en.wikipedia.org/wiki/Pentium\_Pro}{Pentium Pro '80686'} (1995):} a seconda del modello, questo chip aveva una cache integrata da 256Kb, 512KB o 1MB. Si noti che metà dello spazio nel chip è utilizzato dalla cache. E questo è per il modello da 256KB. Il prezzo di mercato era piuttosto alto per l'epoca. Si noti inoltre che questo chip contiene due matrici. Uno con la CPU e la prima cache, l'altro con la seconda cache da 256 KB.}
+	\end{figure}
+	
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{La DRAM: dynamic RAM}
+	 
+	\begin{figure}[!htbp] 
+		\centering
+		%\advance\leftskip-0.25cm
+		\includegraphics[width=0.8\linewidth]{images/5_memory/cache_3.png}
+		\caption{\textbf{\href{https://en.wikipedia.org/wiki/Pentium\_Pro}{Pentium-2}:} per ragioni economiche la seconda cache viene spostata fuori dalla CPU. Solo successivamente, man mano che la tecnologia è avanzata, diventò più accessibile dal punto di vista dei costi rimettere la seconda cache all'interno della CPU.}
+	\end{figure}
+	
+\end{frame}
+
+
+
+\begin{frame}
+	\frametitle{La DRAM: dynamic RAM}
+	 
+	\begin{figure}[!htbp] 
+		\centering
+		%\advance\leftskip-0.25cm
+		\includegraphics[width=0.8\linewidth]{images/5_memory/cache_4.png}
+		\caption{\textbf{Pentium-D (duo):} che fondamentalmente corrispondono a due core pentium-4 sullo stesso chip. La cache di secondo livello viene condivisa tra i due core, una cache di secondo livello condivisa è globalmente più veloce di avere due cache di secondo livello indipendenti di dimensioni dimezzate.}
+	\end{figure}
+	
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{La DRAM: dynamic RAM}
+	 
+	\begin{figure}[!htbp] 
+		\centering
+		%\advance\leftskip-0.25cm
+		\includegraphics[width=0.8\linewidth]{images/5_memory/cache_5.png}
+		\caption{\textbf{Processore i7:} più cores, stesso ragionamento, usando una cache di terzo livello condivisa tra i core.}
+	\end{figure}
+	
+\end{frame}
+
 
 
 
