@@ -29,16 +29,104 @@
 	\frametitle{La memorie volatili e non volatili}
 	 
 	\begin{block}{La memoria volatile}
-		è una memoria che \textbf{necessita dell'alimentazione elettrica} continua al fine di \textbf{mantenere memorizzate le informazioni}. Questo tipo di memorie sono anche note come memorie temporanee.\\\vspace{0.5em}
-
-		Le odierne memorie RAM (Random Access Memory), insieme alle nuove tecnologie in fase di sviluppo T-RAM, Z-RAM e TT-RAM, sono tutti esempi di memorie non fisse
+		è una memoria che \textbf{necessita dell'alimentazione elettrica} continua al fine di \textbf{mantenere memorizzate le informazioni}. Questo tipo di memorie sono anche note come memorie temporanee.
 	\end{block}
-	
+	\vspace{1.0em}
 	\begin{block}{La memoria non volatile}
 		è una tipologia di memoria in grado di \textbf{mantenere le informazioni anche quando non viene alimentata}.
 	\end{block}
 	
 \end{frame}
+
+
+\subsection[Il collo di bottiglia delle memorie]{Il collo di bottiglia delle memorie}
+\begin{frame}
+	\frametitle{Il collo di bottiglia delle memorie}
+	 
+	\begin{block}{Il collo di bottiglia}
+		Il \textbf{collo di bottiglia} è un fenomeno che si verifica quando le prestazioni di un sistema o le sue capacità sono fortemente vincolate da un singolo componente. Il termine è una metafora del collo di bottiglia reale, che limita il flusso d'uscita dell'acqua.
+	\end{block}
+	\pause
+	\begin{block}{Le prestazioni della memoria RAM}
+		Le prestazioni della CPU si sono evolute nel tempo e le prestazioni sono aumentate in maniera esponenziale (vedi \hyperlink{subsub:moore_law}{\textbf{Legge di Moore}}).\\
+		Le prestazioni delle memorie non riuscite a tenere il passo con tale ritmo, per questo è stato necessario trovare delle strategie per ridurre al minimo l'impatto di tale collo di bottiglia.
+	\end{block}
+	
+\end{frame}
+
+
+\subsection[La gerarchia delle memorie]{La gerarchia delle memorie}
+\begin{frame}
+	\frametitle{Il collo di bottiglia delle memorie}
+	 
+	\begin{block}{Le prestazioni della memoria RAM}
+		Una delle strategie adottate per migliorare le prestazioni consiste nel combinare tipi di memoria veloce con tipi di memoria più capienti ma lente: un sistema gerarchico di memorie.
+	\end{block}
+	
+	\begin{figure}[!htbp] 
+		\centering
+		%\advance\leftskip-0.25cm
+		\includegraphics[width=0.8\linewidth]{images/5_memory/memory_hierarchy.pdf}
+%		\caption{La CPU: CU, ALU e registri}
+		\label{fig:memory_hierarchy}
+	\end{figure} 
+
+\end{frame}
+
+\begin{frame}
+	\frametitle{Il collo di bottiglia delle memorie}
+	 
+	\begin{figure}[!htbp] 
+		\centering
+		%\advance\leftskip-0.25cm
+		\includegraphics[width=1.0\linewidth]{images/5_memory/gardening.pdf}
+		%\caption{}
+	\end{figure}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Il collo di bottiglia delle memorie}
+	 
+	 Immagina di vivere al terzo piano di un palazzo.\\
+	 Vuoi fare giardinaggio sul tuo terrazzo, per lavorare hai bisogno di uno specifico attrezzo, ad esempio un rastrello. \pause
+	 \begin{enumerate}
+	 	\item se hai già un rastrello in uno dei cassetti per gli attrezzi del terrazzo (hit) procedi con i tuoi lavori, altrimenti (miss) \pause
+	 	\item ti sposti in casa e cerchi il rastrello nei cassetti degli attrezzi del ripostiglio, se lo trovi (hit) torni sul terrazzo, altrimenti (miss) \pause
+	 	\item ti sposti in garage e cerchi il rastrello nei cassetti degli attrezzi del garage, se lo trovi torni sul terrazzo, altrimenti (miss) \pause
+	 	\item prendi la macchina e ti sposti all'OBI, cerchi il rastrello nei cassetti dell'OBI, se lo trovi torni sul terrazzo \pause
+	 \end{enumerate}
+	 Ogni volta che hai un hit copi questo e una piccola porzione adiacente ad essa nel livello superiore e così via fino a che non raggiungi il terrazzo. \pause
+	 Ogni volta che hai un miss invece ti sposti a cercare nel livello inferiore.
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Il collo di bottiglia delle memorie}
+	 
+	\begin{figure}[!htbp] 
+		\centering
+		%\advance\leftskip-0.25cm
+		\includegraphics[width=1.0\linewidth]{images/5_memory/gardening.pdf}
+		%\caption{}
+	\end{figure}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Il collo di bottiglia delle memorie}
+	 
+	 Nell'esempio presentato:
+	 \begin{enumerate}
+	 	\item il terrazzo e la abitazione: \pause \textbf{la CPU} \pause
+	 	\item i cassetti degli attrezzi sul terrazzo: \pause \textbf{i registri} \pause
+	 	\item i cassetti degli attrezzi nel ripostiglio: \pause la \textbf{memoria cache L1} \pause
+	 	\item i cassetti degli attrezzi nel garage: \pause la \textbf{memoria cache L2} \pause
+	 	\item i cassetti degli attrezzi da OBI: \pause la \textbf{RAM}
+	 \end{enumerate}
+	
+\end{frame}
+
 
 
 \subsection[I flip-flop]{I flip-flop}
@@ -545,7 +633,7 @@
 	\begin{block}{}
 		La velocità di trasferimento è notevolmente influenzata dai fenomeni di latenza, che si verificano durante le operazioni di lettura/scrittura e che dipendono strettamente dal tipo e dalla qualità del chip, nonché dalla frequenza di funzionamento. Ad ogni banco di memoria vengono associati dei tempi caratteristici detti timing, misurati in unità di cicli di clock: a valori più bassi corrispondono prestazioni migliori, a parità di frequenza.\\~\\
 		
-		I timing più importanti sono (vedi \href{https://it.wikipedia.org/wiki/DDR\_SDRAM}{link}):
+		I timing più importanti sono (vedi \underline{\href{https://it.wikipedia.org/wiki/DDR\_SDRAM}{link}}):
 		\begin{itemize}
 			\item CAS Latency Time (tCl)
 			\item RAS to CAS Delay Time (tRCD)
@@ -566,7 +654,7 @@
 	\frametitle{La SRAM: static RAM}
 	  
 	\begin{block}{}
-		Le \textbf{SRAM}, acronimo di static RAM, sono sempre volatili ma non necessitano di refresh. I flip-flop sono alla base della memorizzazione di un singolo bit in queste tipologie di memoria.\\~\\
+		Le \textbf{SRAM}, acronimo di static RAM, sono sempre memorie volatili ma non necessitano di refresh. I flip-flop sono alla base della memorizzazione di un singolo bit in queste tipologie di memoria.\\~\\
 		I banchi di SRAM consentono di mantenere le informazioni per un tempo teoricamente infinito, hanno \textbf{bassi tempi di lettura} e \textbf{bassi consumi}. La necessità di usare molti componenti per cella le rende però \textbf{più costose} delle DRAM.\\~\\
 		Sono solitamente usate per le memorie cache, dove elevate velocità e ridotti consumi sono caratteristiche fondamentali. Ad esempio, possono essere trovate nella cache L1, L2 o L3 di un processore.
 		
@@ -644,36 +732,3 @@
 
 
 
-\subsection[Il collo di bottiglia delle memorie]{Il collo di bottiglia delle memorie}
-\begin{frame}
-	\frametitle{Il collo di bottiglia delle memorie}
-	 
-	\begin{block}{Il collo di bottiglia}
-		Il \textbf{collo di bottiglia} è un fenomeno che si verifica quando le prestazioni di un sistema o le sue capacità sono fortemente vincolate da un singolo componente. Il termine è una metafora del collo di bottiglia reale, che limita il flusso d'uscita dell'acqua.
-	\end{block}
-	
-	\begin{block}{Le prestazioni della memoria RAM}
-		Le prestazioni della CPU si sono evolute nel tempo e le prestazioni sono aumentate in maniera esponenziale (vedi \textbf{Legge di Moore}).\\
-		Le prestazioni delle memorie non riuscite a tenere il passo con tale ritmo, per questo è stato necessario trovare delle strategie per ridurre al minimo l'impatto di tale collo di bottiglia.
-	\end{block}
-	
-\end{frame}
-
-
-\subsection[La gerarchia delle memorie]{La gerarchia delle memorie}
-\begin{frame}
-	\frametitle{Il collo di bottiglia delle memorie}
-	 
-	\begin{block}{Le prestazioni della memoria RAM}
-		Una delle strategie adottate per migliorare le prestazioni consiste nel combinare tipi di memoria veloce con tipi di memoria più capienti ma lente: un sistema gerarchico di memorie.
-	\end{block}
-	
-	\begin{figure}[!htbp] 
-		\centering
-		%\advance\leftskip-0.25cm
-		\includegraphics[width=0.8\linewidth]{images/5_memory/memory_hierarchy.pdf}
-%		\caption{La CPU: CU, ALU e registri}
-		\label{fig:memory_hierarchy}
-	\end{figure} 
-
-\end{frame}
