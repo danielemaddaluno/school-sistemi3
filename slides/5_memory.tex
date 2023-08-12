@@ -48,8 +48,10 @@
 	\end{block}
 	\pause
 	\begin{block}{Le prestazioni della memoria RAM}
-		Le prestazioni della CPU si sono evolute nel tempo e le prestazioni sono aumentate in maniera esponenziale (vedi \hyperlink{subsub:moore_law}{\textbf{Legge di Moore}}).\\
-		Le prestazioni delle memorie non riuscite a tenere il passo con tale ritmo, determinante è stato anche il fattore costo dei componenti elettronici, per questo è stato necessario trovare delle strategie per ridurre al minimo l'impatto di tale collo di bottiglia.
+		Le velocità delle CPU si sono evolute nel tempo aumentando ad un ritmo esponenziale (vedi \hyperlink{subsub:moore_law}{\textbf{Legge di Moore}}).\\
+		
+		Il canale di comunicazione tra \textbf{CPU} e \textbf{memoria} è diventato quindi \textbf{punto critico} del sistema in quanto l'evoluzione delle velocità di accesso alle memorie non è riuscita a tenere il passo con il ritmo di miglioramento di prestazioni delle CPU (collo di bottiglia).\\
+		Determinante è stato anche il fattore costo dei componenti elettronici.
 	\end{block}
 	
 \end{frame}
@@ -60,21 +62,20 @@
 	\frametitle{Il fattore costo}
 	
 	\begin{block}{Il fattore costo}
-		Non esistono memorie più veloci dei registri di memoria della CPU.
-		Tuttavia non possiamo aggiungere infiniti registri a un chip. Occupano spazio e se espandiamo il chip per aggiungere più registri, diventa molto più costoso (richiede più silicio).\\\vspace{1em}
-		Per questo è necessario utilizzare memorie più capienti e meno costose (a parità di capacità) se pur più lente, attraverso l'introduzione di cache L1, L2 (anche L3 nei processori più moderni) e la memoria RAM.
+		I \textbf{registri} di memoria della CPU sono in assoluto le \textbf{memorie più veloci} che abbiamo a disposizione. Non possiamo aggiungere infiniti registri a un chip. Occupano spazio e se espandiamo il chip per aggiungere più registri, diventa troppo costoso.\\\vspace{0.8em}
+		
+		Tuttavia la \textbf{RAM} è molto \textbf{più lenta della CPU}, per migliorare le prestazioni vengono quindi combinati tipi di memoria veloce con tipi di memoria più capienti e meno costose (a parità di capacità) se pur più lente (cache).
 	\end{block}
-	
 	
 \end{frame}
 
 
-\subsubsection[La gerarchia delle memorie]{La gerarchia delle memorie}
+\subsubsection[L'organizzazione in livelli gerarchici]{L'organizzazione in livelli gerarchici}
 \begin{frame}
-	\frametitle{La gerarchia delle memorie}
+	\frametitle{L'organizzazione in livelli gerarchici}
 	 
-	\begin{block}{Le prestazioni della memoria RAM}
-		Una delle strategie adottate per migliorare le prestazioni consiste nel combinare tipi di memoria veloce con tipi di memoria più capienti ma lente utilizzando un sistema gerarchico delle memorie.
+	\begin{block}{La gerarchia delle memorie}
+		La memoria del PC viene quindi organizzata in \textbf{livelli gerarchici}, ogni livello è caratterizzato da una \underline{\textbf{dimensione crescente}} e da un \underline{\textbf{tempo di accesso decrescente}}: registri di memoria, cache L1, L2 (anche L3 ed L4 nei processori più moderni), la memoria RAM e la memoria di massa.
 	\end{block}
 	
 	\begin{figure}[!htbp] 
@@ -87,8 +88,22 @@
 
 \end{frame}
 
+
 \begin{frame}
-	\frametitle{La gerarchia delle memorie}
+	\frametitle{L'organizzazione in livelli gerarchici}
+
+	\begin{figure}[!htbp] 
+		\centering
+		%\advance\leftskip-0.25cm
+		\includegraphics[width=0.9\linewidth]{images/5_memory/memory_hierarchy_info.pdf}
+%		\caption{}
+		\label{fig:memory_hierarchy}
+	\end{figure} 
+
+\end{frame}
+
+\begin{frame}
+	\frametitle{L'organizzazione in livelli gerarchici}
 	 
 	\begin{figure}[!htbp] 
 		\centering
@@ -100,7 +115,7 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{La gerarchia delle memorie}
+	\frametitle{L'organizzazione in livelli gerarchici}
 	 
 	 Immagina di vivere al terzo piano di un palazzo.\\
 	 Vuoi fare giardinaggio sul tuo terrazzo, per lavorare hai bisogno di uno specifico attrezzo, ad esempio un rastrello. \pause
@@ -117,7 +132,7 @@
 
 
 \begin{frame}
-	\frametitle{La gerarchia delle memorie}
+	\frametitle{L'organizzazione in livelli gerarchici}
 	
 	\begin{figure}[!htbp] 
 		\centering
@@ -136,6 +151,28 @@
 	 \end{enumerate}
 	
 \end{frame}
+
+
+%\begin{frame}
+%	\frametitle{Esercizi sulla relazione tra $\mathrm{T}$ e $f$:}
+%	
+%	\begin{block}{Esercizio 1: calcola il periodo $\mathrm{T}$ conoscendo la frequenza $f$}
+%		Un \textbf{processore} con \textbf{frequenza di clock} (o velocità di clock) di \textbf{4.0 $\pmb{GHz}$} (giga$Hz$) esegue 4 miliardi di cicli completi al secondo.\\
+%		In passato le CPU erano molto più lente di oggi e la frequenza di clock era misurata in $MHz$ (mega$Hz$) ovvero milioni di cicli completi al secondo.\\
+%		\textbf{Quanto dura il periodo di clock $\pmb{\mathrm{T}}$ per il suddetto processore?}\\~\\
+%		\pause
+%		Ricordando che la relazione tra $\mathrm{T}$ e $f$ è del tipo $\mathrm{T} = \frac{1}{f}$ possiamo calcolare la durata del periodo di clock $\mathrm{T}$ conoscendo la frequenza $f$ come segue:\\~\\
+%		\pause
+%		$\quad\,\, \mathrm{T} = \frac{1}{f} = \frac{1}{4 GHz} = \frac{1}{4 \cdot 10^9 Hz} = \frac{1}{4 \cdot 10^9 1/s} = \frac{1}{4 \cdot 10^9 s^{-1}} = \frac{1}{4} \cdot 10^{-9} s = 0.25ns$\\ \vspace{0.4em}
+%		\pause
+%		$\qquad\qquad\qquad\qquad\qquad\qquad\qquad$	quindi:\\ \vspace{0.4em}
+%%		\begin{center}
+%%			quindi:
+%%		\end{center}
+%		$\qquad\qquad\qquad\qquad \mathrm{T} = 0.25ns = 250 ps = 250$ picosecondi
+%	\end{block}
+%	
+%\end{frame}
 
 
 \subsection[I flip-flop]{I flip-flop}
