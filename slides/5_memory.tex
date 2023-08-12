@@ -362,7 +362,7 @@
 
 \subsection[La ROM (Read Only Memory)]{La ROM (Read Only Memory)}
 \begin{frame}
-	\frametitle{La ROM (Read Only Memory)}
+	\frametitle{La ROM: Read Only Memory}
 	  
 	\begin{block}{}
 		In elettronica e informatica, una memoria di sola lettura, meglio nota come \textbf{ROM (Read Only Memory)}, indica un tipo di memoria \textit{non volatile} in cui i dati sono memorizzati tramite collegamenti elettronici fisici e stabili.
@@ -901,6 +901,34 @@
 \end{frame}
 
 
+
+\subsection[L'indirizzamento di memoria]{L'indirizzamento di memoria}
+\begin{frame}
+	\frametitle{L'indirizzamento di memoria}
+	  
+	\begin{block}{}
+	
+		\begin{columns}			
+			\column{0.5\linewidth}
+			La memoria è organizzata in \textbf{celle}.
+			L’\textbf{indirizzo di memoria} di ciascuna cella è definito dalla posizione relativa della cella rispetto alla prima cella.\\~\\
+			Dato $n$: ampiezza del BUS degli indirizzi, ovvero il numero di fili conduttori sul BUS degli indirizzi, posso calcolare:
+			\begin{itemize}
+				\item \textbf{Spazio di indirizzamento} = $2^n$
+				\item \textbf{Indirizzo ultima cella} = $2^n - 1$ (corrisponde a $n$ uni in binario, nell'esempio a destra $n=3$)
+			\end{itemize}
+			
+	
+			\column{0.5\linewidth}
+			\begin{figure}[!htbp]
+				\centering 
+				\includegraphics[width=1.0\linewidth]{images/5_memory/memory_address.pdf}
+				%\caption{Esempio di memoria indirizzata tramite un BUS degli indirizzi di ampiezza 3 bit}
+			\end{figure}
+		\end{columns}
+		
+	\end{block}
+\end{frame}
 
 
 
