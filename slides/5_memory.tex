@@ -81,7 +81,7 @@
 	\begin{figure}[!htbp] 
 		\centering
 		%\advance\leftskip-0.25cm
-		\includegraphics[width=0.8\linewidth]{images/5_memory/memory_hierarchy.pdf}
+		\includegraphics[width=0.7\linewidth]{images/5_memory/memory_hierarchy.pdf}
 %		\caption{La CPU: CU, ALU e registri}
 		\label{fig:memory_hierarchy}
 	\end{figure} 
@@ -153,26 +153,124 @@
 \end{frame}
 
 
-%\begin{frame}
-%	\frametitle{Esercizi sulla relazione tra $\mathrm{T}$ e $f$:}
-%	
-%	\begin{block}{Esercizio 1: calcola il periodo $\mathrm{T}$ conoscendo la frequenza $f$}
-%		Un \textbf{processore} con \textbf{frequenza di clock} (o velocità di clock) di \textbf{4.0 $\pmb{GHz}$} (giga$Hz$) esegue 4 miliardi di cicli completi al secondo.\\
-%		In passato le CPU erano molto più lente di oggi e la frequenza di clock era misurata in $MHz$ (mega$Hz$) ovvero milioni di cicli completi al secondo.\\
-%		\textbf{Quanto dura il periodo di clock $\pmb{\mathrm{T}}$ per il suddetto processore?}\\~\\
-%		\pause
-%		Ricordando che la relazione tra $\mathrm{T}$ e $f$ è del tipo $\mathrm{T} = \frac{1}{f}$ possiamo calcolare la durata del periodo di clock $\mathrm{T}$ conoscendo la frequenza $f$ come segue:\\~\\
-%		\pause
-%		$\quad\,\, \mathrm{T} = \frac{1}{f} = \frac{1}{4 GHz} = \frac{1}{4 \cdot 10^9 Hz} = \frac{1}{4 \cdot 10^9 1/s} = \frac{1}{4 \cdot 10^9 s^{-1}} = \frac{1}{4} \cdot 10^{-9} s = 0.25ns$\\ \vspace{0.4em}
-%		\pause
-%		$\qquad\qquad\qquad\qquad\qquad\qquad\qquad$	quindi:\\ \vspace{0.4em}
-%%		\begin{center}
-%%			quindi:
-%%		\end{center}
-%		$\qquad\qquad\qquad\qquad \mathrm{T} = 0.25ns = 250 ps = 250$ picosecondi
-%	\end{block}
-%	
-%\end{frame}
+\subsubsection[Il tempo medio di accesso alla cache]{Il tempo medio di accesso alla cache}
+\begin{frame}
+	\frametitle{Il tempo medio di accesso alla cache}
+	
+	\begin{block}{Prestazioni di una memoria cache}
+		Quando durante l’esecuzione di un processo, il processore genera un indirizzo, questo viene cercato in cache e si possono verificare 2 situazioni: \pause
+		\begin{enumerate}
+			\item l’indirizzo c'è (hit) \pause
+			\item l’indirizzo non è presente (miss) \pause
+		\end{enumerate}
+		Per valutare la prestazione di una memoria cache si considerano: \pause
+		\begin{itemize}
+			\item \textbf{Hit rate ($h$)}: rapporto tra il numero di hit nel livello superiore e il numero totale dei riferimenti (prob. di avere un hit) \pause
+			\item \textbf{Miss rate ($m$)}: rapporto tra il numero di miss nel livello superiore e il numero totale dei riferimenti (ricordiamo che $m=1-h$) \pause
+			\item \textbf{Tempo di accesso alla cache ($t_c$)} \pause
+			\item \textbf{Tempo di penalizzazione ($t_p$)}: tempo per accedere alla memoria centrale e per portare la linea in cache
+		\end{itemize}
+	\end{block}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Il tempo medio di accesso alla cache}
+	
+	\begin{block}{Il tempo medio di accesso alla cache $t$}
+	Possiamo calcolare il \textbf{tempo medio di accesso alla cache} $t$ come segue:\vspace{0.25em} \pause
+		\begin{Large}
+		$$t = {\color{CpuGreen}h} \cdot {\color{CpuBlue}t_c} + {\color{CpuRed}m} \cdot {\color{CpuPink}t_p}$$
+		\end{Large}
+		~\vspace{0.5em} \pause
+		Ovvero si calcola come: \pause
+		\begin{enumerate}
+			\item l'{\color{CpuGreen}\textbf{hit rate}} (prob. di hit) per il {\color{CpuBlue}\textbf{tempo di accesso alla memoria cache}} \pause
+			\item più il \pause
+			\item il {\color{CpuRed}\textbf{miss rate}} (prob. di miss = prob. di non hit) moltiplicato per il {\color{CpuPink}\textbf{tempo necessario ad ottenere il dato dalle memorie "inferiori"}} \pause
+		\end{enumerate}
+		
+		Si noti che è una sorta di media pesata dove i pesi sono dati da $h$ e $m$, ovvero hit rate e miss rate che sono due probabilità tali che ${\color{CpuGreen}h} + {\color{CpuRed}m} = 1$.
+	\end{block}
+	
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Esercizi sul tempo medio di accesso alla cache}
+	
+	\begin{block}{Esercizio 1: calcola il $t_p$ (miss penalty)}
+		La memoria cache di un server ha:
+			\begin{itemize}
+				\item \textbf{Hit rate} di 82\% \hspace{10em} $\rightarrow$ \hspace{2em} ${\color{CpuGreen}h} = 0.8$
+				\item \textbf{Tempo medio di accesso} di 80 ns \hspace{2em} $\rightarrow$ \hspace{2em} $t = 80ns$
+				\item \textbf{Hit time} di 15ns \hspace{9.7em} $\rightarrow$ \hspace{2em} ${\color{CpuBlue}t_c} = 15ns$
+			\end{itemize}
+		~\\ \pause
+		Qual è il valore di Miss Penalty della cache (${\color{CpuPink}t_p}$)?
+		\begin{itemize}
+			\item A. Circa 500 ns
+			\item B. Circa 376ns
+			\item C. Maggiore di 3,76 ms
+			\item D. Minore di 300 ns
+		\end{itemize}
+	\end{block}
+
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Esercizi sul tempo medio di accesso alla cache}
+	
+	\begin{block}{Esercizio 1: calcola il $t_p$ (miss penalty)}
+		Prendiamo la formula della precedente slide:
+		$$t = {\color{CpuGreen}h} \cdot {\color{CpuBlue}t_c} + {\color{CpuRed}m} \cdot {\color{CpuPink}t_p}$$
+		\pause
+		Ed invertiamola ricavando il ${\color{CpuPink}t_p}$ (miss penalty):
+		$${\color{CpuPink}t_p} = \pause \frac{t - {\color{CpuGreen}h} \cdot {\color{CpuBlue}t_c}}{{\color{CpuRed}m}} \pause = \frac{t - {\color{CpuGreen}h} \cdot {\color{CpuBlue}t_c}}{1 - {\color{CpuGreen}h}}$$
+		\pause
+		Da cui, sostituendo i valori numerici:
+		\pause
+		$${\color{CpuPink}t_p} = \frac{80 - {\color{CpuGreen}0.82} \cdot {\color{CpuBlue}15}}{1 - {\color{CpuGreen}0.82}} = 376.11 ns$$
+	\end{block}
+
+\end{frame}
+
+
+
+\begin{frame}
+	\frametitle{Esercizi sul tempo medio di accesso alla cache}
+	
+	\begin{block}{Esercizio 2: calcola il $t$ (tempo medio di accesso)}
+		La memoria cache di un server ha:
+			\begin{itemize}
+				\item \textbf{Hit rate} di 82\% \hspace{9.5em} $\rightarrow$ \hspace{2em} ${\color{CpuGreen}h} = 0.8$
+				\item \textbf{Hit time} di 2ns \hspace{9.7em} $\rightarrow$ \hspace{2em} ${\color{CpuBlue}t_c} = 2ns$
+				\item \textbf{Miss penalty} di 500ns \hspace{6.8em} $\rightarrow$ \hspace{2em} ${\color{CpuPink}t_p} = 500ns$
+			\end{itemize}
+		~\\ \pause
+		$$t = {\color{CpuGreen}h} \cdot {\color{CpuBlue}t_c} + {\color{CpuRed}m} \cdot {\color{CpuPink}t_p}$$
+		\pause
+		Da cui, sostituendo i valori numerici:
+		\pause
+		$$\qquad \qquad t = {\color{CpuGreen}0.8} \cdot {\color{CpuBlue}2} + {\color{CpuRed}0.2} \cdot {\color{CpuPink}500} = 101.6ns \quad \pause (\ll 500ns)$$
+	\end{block}
+
+\end{frame}
+
+
+
+\subsection[I tipi di memoria]{I tipi di memoria}
+\begin{frame}
+%	\frametitle{I tipi di memoria}
+	\begin{figure}[!htbp] 
+		\centering
+		%\advance\leftskip-0.25cm
+		\includegraphics[width=0.95\linewidth]{images/5_memory/memory_types.pdf}
+%		\caption{}
+	\end{figure}
+		
+\end{frame}
 
 
 \subsection[I flip-flop]{I flip-flop}
@@ -185,7 +283,7 @@
 	
 	\begin{block}{I flip-flop SR (detti SR Latch)}
 		Il \textbf{flip-flop SR}, noto anche come \textbf{SR Latch}, può essere considerato uno dei circuiti logici sequenziali più basilari possibili. Questo semplice flip-flop è fondamentalmente un dispositivo bistabile di memoria a un bit che ha due ingressi:
-		\begin{itemize}
+		\begin{itemize} 
 			\item \textbf{S}: che prende il nome di \textbf{set}, che imposta l'uscita a 1
 			\item \textbf{R}: che prende il nome di \textbf{reset}, che imposta l'uscita a 0
 		\end{itemize}
