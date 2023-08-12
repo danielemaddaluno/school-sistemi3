@@ -49,18 +49,32 @@
 	\pause
 	\begin{block}{Le prestazioni della memoria RAM}
 		Le prestazioni della CPU si sono evolute nel tempo e le prestazioni sono aumentate in maniera esponenziale (vedi \hyperlink{subsub:moore_law}{\textbf{Legge di Moore}}).\\
-		Le prestazioni delle memorie non riuscite a tenere il passo con tale ritmo, per questo è stato necessario trovare delle strategie per ridurre al minimo l'impatto di tale collo di bottiglia.
+		Le prestazioni delle memorie non riuscite a tenere il passo con tale ritmo, determinante è stato anche il fattore costo dei componenti elettronici, per questo è stato necessario trovare delle strategie per ridurre al minimo l'impatto di tale collo di bottiglia.
 	\end{block}
 	
 \end{frame}
 
 
-\subsection[La gerarchia delle memorie]{La gerarchia delle memorie}
+\subsubsection[Il fattore costo]{Il fattore costo}
 \begin{frame}
-	\frametitle{Il collo di bottiglia delle memorie}
+	\frametitle{Il fattore costo}
+	
+	\begin{block}{Il fattore costo}
+		Non esistono memorie più veloci dei registri di memoria della CPU.
+		Tuttavia non possiamo aggiungere infiniti registri a un chip. Occupano spazio e se espandiamo il chip per aggiungere più registri, diventa molto più costoso (richiede più silicio).\\\vspace{1em}
+		Per questo è necessario utilizzare memorie più capienti e meno costose (a parità di capacità) se pur più lente, attraverso l'introduzione di cache L1, L2 (anche L3 nei processori più moderni) e la memoria RAM.
+	\end{block}
+	
+	
+\end{frame}
+
+
+\subsubsection[La gerarchia delle memorie]{La gerarchia delle memorie}
+\begin{frame}
+	\frametitle{La gerarchia delle memorie}
 	 
 	\begin{block}{Le prestazioni della memoria RAM}
-		Una delle strategie adottate per migliorare le prestazioni consiste nel combinare tipi di memoria veloce con tipi di memoria più capienti ma lente: un sistema gerarchico di memorie.
+		Una delle strategie adottate per migliorare le prestazioni consiste nel combinare tipi di memoria veloce con tipi di memoria più capienti ma lente utilizzando un sistema gerarchico delle memorie.
 	\end{block}
 	
 	\begin{figure}[!htbp] 
@@ -74,7 +88,7 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{Il collo di bottiglia delle memorie}
+	\frametitle{La gerarchia delle memorie}
 	 
 	\begin{figure}[!htbp] 
 		\centering
@@ -86,7 +100,7 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{Il collo di bottiglia delle memorie}
+	\frametitle{La gerarchia delle memorie}
 	 
 	 Immagina di vivere al terzo piano di un palazzo.\\
 	 Vuoi fare giardinaggio sul tuo terrazzo, per lavorare hai bisogno di uno specifico attrezzo, ad esempio un rastrello. \pause
@@ -101,22 +115,18 @@
 	
 \end{frame}
 
+
 \begin{frame}
-	\frametitle{Il collo di bottiglia delle memorie}
-	 
+	\frametitle{La gerarchia delle memorie}
+	
 	\begin{figure}[!htbp] 
 		\centering
 		%\advance\leftskip-0.25cm
-		\includegraphics[width=1.0\linewidth]{images/5_memory/gardening.pdf}
+		\includegraphics[width=0.6\linewidth]{images/5_memory/gardening.pdf}
 		%\caption{}
 	\end{figure}
-	
-\end{frame}
-
-\begin{frame}
-	\frametitle{Il collo di bottiglia delle memorie}
-	 
-	 Nell'esempio presentato:
+	 \pause
+	 Nell'esempio presentato: \pause
 	 \begin{enumerate}
 	 	\item il terrazzo e la abitazione: \pause \textbf{la CPU} \pause
 	 	\item i cassetti degli attrezzi sul terrazzo: \pause \textbf{i registri} \pause
@@ -126,7 +136,6 @@
 	 \end{enumerate}
 	
 \end{frame}
-
 
 
 \subsection[I flip-flop]{I flip-flop}
@@ -606,6 +615,34 @@
 	\end{figure}
 	
 \end{frame}
+
+
+\begin{frame}
+	\frametitle{La DRAM: dynamic RAM}
+	 
+%	La memoria RAM per PC viene realizzata in moduli:
+
+	\begin{columns}			
+		\column{0.5\linewidth}
+		\begin{figure}[!htbp]
+			\centering 
+			\includegraphics[width=0.63\linewidth]{images/5_memory/dimm.pdf}
+			\caption{Per PC desktop: \protect\linebreak DIMM (Dual Inline Memory Module)}
+			\label{fig:memory_dimm}
+		\end{figure}
+
+		\column{0.5\linewidth}
+		\begin{figure}[!htbp]
+			\centering 
+			\includegraphics[width=0.4\linewidth]{images/5_memory/so_dimm.pdf}
+			\caption{Per PC notebook: \protect\linebreak SO-DIMM (Small Outline DIMM)}
+			\label{fig:memory_so_dimm}
+		\end{figure}
+	\end{columns}
+	
+\end{frame}
+
+
 
 
 \begin{frame}
