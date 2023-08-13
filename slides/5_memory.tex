@@ -815,8 +815,21 @@
 		\end{itemize}
 		
 	\end{block}
-
 	
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{La RAM: valutare le prestazioni di una memoria}
+	
+	\begin{block}{}
+		Altri parametri per valutare le prestazioni di una memoria sono:
+		\begin{itemize}
+			\item \textbf{Latenza}: il tempo necessario, in cicli macchina dell’FSB, affinché un dato venga letto dalla memoria
+			\item \textbf{Banda di trasferimento dati}: la quantità di informazioni al secondo che vengono trasmesse dalla memoria	
+		\end{itemize}
+		
+	\end{block}
 	
 \end{frame}
 
@@ -897,7 +910,7 @@
 		\includegraphics[width=0.8\linewidth]{images/5_memory/cache_5.png}
 		\caption{\textbf{Processore i7:} più cores, stesso ragionamento, usando una cache di terzo livello condivisa tra i core.}
 	\end{figure}
-	
+
 \end{frame}
 
 
@@ -908,18 +921,33 @@
 	  
 	\begin{block}{}
 	
+		Il modello usuale di una memoria principale è lineare; in tale modello la memoria è costituita di parole o celle numerate da 0 fino al valore massimo. Il numero che identifica ogni cella è detto \textbf{indirizzo}.\\~\\ \pause
+	
+		La dimensione di ogni cella indirizzabile dipende dal tipo di calcolatore, comunque è multiplo di un byte.\\~\\ \pause
+		
+		È opportuno distinguere la \textbf{dimensione} (effettiva) di una memoria dal suo \textbf{spazio di indirizzamento}: lo spazio di indirizzamento è il numero massimo di indirizzi possibili della memoria e dipende dalla lunghezza dell'indirizzo, cioè dal numero di bit che costituiscono l'indirizzo (o equivalentemente la dimensione del BUS degli indirizzi); se $N$ è il numero di bit che costituiscono l'indirizzo di una memoria allora il suo spazio di indirizzamento è $2^N$ (due elevato alla $N$).
+		
+	\end{block}
+\end{frame}
+
+
+\subsubsection[Lo spazio di indirizzamento]{Lo spazio di indirizzamento}
+\begin{frame}
+	\frametitle{L'indirizzamento di memoria}
+	  
+	\begin{block}{Lo spazio di indirizzamento}
+	
 		\begin{columns}			
-			\column{0.5\linewidth}
-			La memoria è organizzata in \textbf{celle}.
+			\column{0.52\linewidth}
 			L’\textbf{indirizzo di memoria} di ciascuna cella è definito dalla posizione relativa della cella rispetto alla prima cella.\\~\\
-			Dato $n$: ampiezza del BUS degli indirizzi, ovvero il numero di fili conduttori sul BUS degli indirizzi, posso calcolare:
+			Riassumendo se $N$ è l'ampiezza del BUS degli indirizzi, ovvero il numero di fili conduttori sul BUS degli indirizzi:
 			\begin{itemize}
-				\item \textbf{Spazio di indirizzamento} = $2^n$
-				\item \textbf{Indirizzo ultima cella} = $2^n - 1$ (corrisponde a $n$ uni in binario, nell'esempio a destra $n=3$)
+				\item \textbf{spazio di indirizzamento} = $2^N$
+				\item \textbf{indirizzo ultima cella} = $2^N - 1$ (corrisponde a $n$ uni in binario, nell'esempio a destra $N=3$)
 			\end{itemize}
 			
 	
-			\column{0.5\linewidth}
+			\column{0.48\linewidth}
 			\begin{figure}[!htbp]
 				\centering 
 				\includegraphics[width=1.0\linewidth]{images/5_memory/memory_address.pdf}
@@ -931,4 +959,80 @@
 \end{frame}
 
 
+
+% \scalebox{0.90}{}
+\subsubsection[Multipli del byte]{Multipli del byte}
+\begin{frame}
+	\frametitle{L'indirizzamento di memoria}
+	
+	\begin{block}{Multipli del byte}
+		\begin{table}[]
+			\centering
+			\begin{tabular}{llclcl}
+			%\hline
+			$1kB$ & kilobyte & = & 1024 B & &  \\
+			$1MB$ & megabyte & = & 1024 kB & = & $1024^2$ B \\
+			$1GB$ & gigabyte & = & 1024 MB & = & $1024^2$ kB \\
+			$1TB$ & terabyte & = & 1024 GB & = & $1024^2$ kB \\
+			$1PB$ & petabyte & = & 1024 TB & = & $1024^3$ kB \\
+			$1EB$ & exabyte & = & 1024 PB & = & $1024^4$ kB \\
+			$1ZB$ & zettabyte & = & 1024 EB & = & $1024^5$ kB \\
+			$1YB$ & yottabyte & = & 1024 ZB & = & $1024^6$ kB \\
+			\end{tabular}
+		\end{table}		
+	\end{block}
+\end{frame}
+
+
+\subsubsection[La dimensione di memoria indirizzabile]{La dimensione di memoria indirizzabile}
+\begin{frame}
+	\frametitle{L'indirizzamento di memoria}
+	
+	\begin{block}{Lo spazio di indirizzamento}
+		\begin{table}[]
+			\centering
+			\begin{tabular}{lcl}
+			%\hline
+			$10bit$ & = & $1k$ celle (1024 celle) \\
+			$16bit$ & = & $64k$ celle (65536 celle) \\
+			$20bit$ & = & $1M$ celle (RAM dei processori fino all'80286) \\
+%			$30bit$ & = & $1G$ celle  \\
+			$32bit$ & = & $4G$ celle (RAM dei processori fino al Pentium) \\
+			$36bit$ & = & $64G$ celle (RAM dei processori fino al Pentium IV)  \\
+			$40bit$ & = & $1T$ celle (RAM dei processori fino all’Athlon 64)  \\
+			$64bit$ & = & $16E$ celle (RAM dei processori fino al Core i7)  \\
+			
+			\end{tabular}
+		\end{table}		
+	\end{block}
+	
+	\begin{block}{La dimensione di memoria indirizzabile}
+	
+		Per conoscere la \textbf{dimensione di memoria indirizzabile} è necessario conoscere la \textbf{dimensione della cella}:\\
+		
+		\begin{scriptsize}
+			Dimensione della memoria indirizzabile = spazio di indirizzamento $\cdot$ dimensione della cella
+		\end{scriptsize}
+		
+	\end{block}
+\end{frame}
+
+
+\subsubsection[La dimensione effettiva di memoria]{La dimensione effettiva di memoria}
+\begin{frame}
+	\frametitle{L'indirizzamento di memoria}
+	
+	\begin{block}{La dimensione effettiva di memoria}
+		La \textbf{dimensione della memoria} corrisponde al numero di byte che la costituiscono effettivamente.\\~\\
+		Di conseguenza la \textbf{dimensione effettiva di memoria} è sempre minore o uguale alla \textbf{dimensione di memoria indirizzabile}.		
+	\end{block}
+	
+	\begin{block}{Esempio: processori con indirizzi a 32 bit e 64 bit}
+		Nei Personal Computer Intel in cui l'indirizzo è di 32 bit lo spazio di indirizzamento è di $2^{32}$ byte, infatti la memoria massima utilizzabile in tali sistemi è di 4 Giga byte.\\
+		Attualmente la maggior parte dei processori usano indirizzi di 64 bit, la memoria effettiva in tal caso è sicuramente inferiore rispetto a quella indirizzabile ($32GB \ll 16EB$ ).
+		
+	\end{block}
+\end{frame}
+
+% TODO Aggiungere esercizi di calcolo delle memorie
 
