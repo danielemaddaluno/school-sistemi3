@@ -819,20 +819,6 @@
 \end{frame}
 
 
-\begin{frame}
-	\frametitle{La RAM: valutare le prestazioni di una memoria}
-	
-	\begin{block}{}
-		Altri parametri per valutare le prestazioni di una memoria sono:
-		\begin{itemize}
-			\item \textbf{Latenza}: il tempo necessario, in cicli macchina dell’FSB, affinché un dato venga letto dalla memoria
-			\item \textbf{Banda di trasferimento dati}: la quantità di informazioni al secondo che vengono trasmesse dalla memoria	
-		\end{itemize}
-		
-	\end{block}
-	
-\end{frame}
-
 
 \subsubsection[La SRAM: static RAM]{La SRAM: static RAM}
 \begin{frame}
@@ -914,6 +900,23 @@
 \end{frame}
 
 
+\subsubsection[Le prestazioni delle memorie]{Le prestazioni delle memorie}
+\begin{frame}
+	\frametitle{Le prestazioni delle memorie}
+	
+	\begin{block}{}
+		Per valutare le prestazioni di una memoria utilizziamo:
+		\begin{itemize}
+			\item \textbf{latency}: la latenza della memoria è il tempo (la latenza) che intercorre tra l'avvio di una richiesta per un byte o una parola in memoria e il momento in cui viene recuperato dal processore.\\
+				Se i dati non sono nella cache del processore, ci vorrà più tempo per ottenerli, poiché il processore dovrà comunicare con le celle di memoria esterne. La latenza è quindi una misura fondamentale della velocità della memoria: minore è la latenza, più veloce è l'operazione di lettura.
+				La latenza può essere espressa in cicli di clock o in tempo misurato in nanosecondi. \pause
+			\item \textbf{bandwidth}: la larghezza di banda della memoria misura il throughput della memoria, ovvero la quantità di informazioni al secondo che viene trasmessa dalla memoria.
+		\end{itemize}
+		
+	\end{block}
+	
+\end{frame}
+
 
 \subsection[L'indirizzamento di memoria]{L'indirizzamento di memoria}
 \begin{frame}
@@ -929,6 +932,7 @@
 		
 	\end{block}
 \end{frame}
+
 
 
 \subsubsection[Lo spazio di indirizzamento]{Lo spazio di indirizzamento}
@@ -1036,3 +1040,110 @@
 
 % TODO Aggiungere esercizi di calcolo delle memorie
 
+
+
+
+\subsection[Le memorie permanenti]{Le memorie permanenti}
+\begin{frame}
+	\frametitle{Le memorie permanenti}
+	  
+	\begin{block}{Le memorie permanenti}
+		Nel mondo dell'informatica, le unità di archiviazione svolgono un ruolo fondamentale nel conservare dati e programmi in modo permanente all'interno di un computer.\\~\\
+		Due delle tecnologie più diffuse per l'\textbf{archiviazione permanente} sono gli Hard Disk Drive (\textbf{HDD}) e i Solid State Drive (\textbf{SSD}). Queste unità differiscono significativamente nella loro struttura, prestazioni e caratteristiche, offrendo opzioni variegate per soddisfare le diverse esigenze degli utenti.
+		
+	\end{block}
+\end{frame}
+
+
+\subsubsection[HHD]{HHD}
+\begin{frame}
+	\frametitle{HHD}
+	  
+	\begin{block}{HHD}
+		Gli HDD rappresentano una delle tecnologie di archiviazione più tradizionali e sono stati a lungo il principale mezzo di archiviazione permanente nei computer. Gli HDD si basano su dischi magnetici rotanti, noti come piatti, che vengono letti e scritti da teste di lettura/scrittura mobili.\\~\\ L'informazione è memorizzata sotto forma di impulsi magnetici su questi piatti. Una maggiore capacità di archiviazione può essere ottenuta aumentando il numero di piatti all'interno dell'unità e aumentando la densità di dati su ciascun piatto.\\~\\
+		Gli HDD sono generalmente apprezzati per la loro ampiezza di archiviazione e il prezzo più basso rispetto ad altre tecnologie.
+	\end{block}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{HHD}
+	  
+	\begin{block}{}
+		 Gli HHD hanno velocità di accesso relativamente più lente rispetto agli SSD e sono sensibili a urti e movimenti bruschi, poiché le parti meccaniche all'interno possono subire danni	 
+	\end{block}
+	\begin{figure}[!htbp]
+		\centering 
+		\includegraphics[width=0.65\linewidth]{images/5_memory/hhd_info_1.pdf}
+		%\caption{Esempio di memoria indirizzata tramite un BUS degli indirizzi di ampiezza 3 bit}
+		\label{fig:memory_hdd_info_1}
+	\end{figure}
+\end{frame}
+
+
+
+\begin{frame}
+	\frametitle{HHD}
+	 
+%	La memoria RAM per PC viene realizzata in moduli:
+
+	\begin{columns}			
+		\column{0.5\linewidth}
+		\begin{figure}[!htbp]
+			\centering 
+			\includegraphics[width=1.0\linewidth]{images/5_memory/hhd_info_2.png}
+%			\caption{}
+%			\label{fig:memory_dimm}
+		\end{figure}
+
+		\column{0.5\linewidth}
+		\begin{figure}[!htbp]
+			\centering 
+			\includegraphics[width=1.0\linewidth]{images/5_memory/hhd_info_3.png}
+%			\caption{}
+%			\label{fig:memory_so_dimm}
+		\end{figure}
+	\end{columns}
+	
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{HHD}
+	 
+%	La memoria RAM per PC viene realizzata in moduli:
+
+	\begin{columns}			
+		\column{0.5\linewidth}
+		\begin{itemize}
+			
+			\item \textbf{Settore}: segmento minimo di dati su disco, solitamente 512 byte, accessibile individualmente per lettura/scrittura. 
+			\item \textbf{Cluster}: gruppo di settori contigui appartenenti ad una stessa traccia.
+			\item \textbf{Traccia}: cerchio concentrico su un disco che contiene dati. La \textit{traccia} è costituita da tutti i settori concentrici di un disco.
+			\item \textbf{Cilindro}: insieme di tracce verticali allineate su tutti i piatti.
+		\end{itemize}
+
+		\column{0.5\linewidth}
+		\begin{figure}[!htbp]
+			\centering
+			\includegraphics[width=1.0\linewidth]{images/5_memory/hhd_info_3.png}
+%			\caption{}
+%			\label{fig:memory_so_dimm}
+		\end{figure}
+	\end{columns}
+	
+\end{frame}
+
+
+
+
+
+\subsubsection[SDD]{SDD}
+\begin{frame}
+	\frametitle{SDD}
+	  
+	\begin{block}{SDD}
+		Gli SSD sono una tecnologia più recente e si sono rapidamente affermati come alternativa di archiviazione altamente performante agli HDD. A differenza degli HDD, gli SSD non hanno parti mobili; invece, utilizzano chip di memoria flash per memorizzare dati in modo permanente. Questa tecnologia permette tempi di accesso notevolmente più rapidi rispetto agli HDD, migliorando notevolmente la reattività del sistema operativo e dei programmi.\\~\\
+		Gli SSD sono anche noti per la loro maggiore resistenza agli urti e ai movimenti bruschi, poiché non hanno parti meccaniche soggette a usura. Tuttavia, a causa delle loro caratteristiche di memoria flash, gli SSD tendono a avere una vita utile limitata rispetto agli HDD.
+	\end{block}
+\end{frame}
