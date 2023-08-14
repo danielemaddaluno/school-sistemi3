@@ -1049,7 +1049,13 @@
 	  
 	\begin{block}{Le memorie permanenti}
 		Nel mondo dell'informatica, le unità di archiviazione svolgono un ruolo fondamentale nel conservare dati e programmi in modo permanente all'interno di un computer.\\~\\
-		Due delle tecnologie più diffuse per l'\textbf{archiviazione permanente} sono gli Hard Disk Drive (\textbf{HDD}) e i Solid State Drive (\textbf{SSD}). Queste unità differiscono significativamente nella loro struttura, prestazioni e caratteristiche, offrendo opzioni variegate per soddisfare le diverse esigenze degli utenti.
+		Tra le tecnologie più diffuse per l'\textbf{archiviazione permanente} ci sono:
+		\begin{itemize}
+			\item le \textbf{memorie flash}
+			\item gli \textbf{Hard Disk Drive} (HDD)
+			\item i \textbf{Solid State Drive} (SSD)
+		\end{itemize}
+		Queste unità differiscono significativamente nella loro struttura, prestazioni e caratteristiche, offrendo opzioni variegate per soddisfare le diverse esigenze degli utenti.
 	\end{block}
 
 \end{frame}
@@ -1062,6 +1068,96 @@
 		\includegraphics[width=1.0\linewidth]{images/5_memory/hdd_ssd.jpeg}
 		\caption{Un comune disco rigido (a sinistra) confrontato con un'unità a stato solido (a destra)}
 		\label{fig:memory_hdd_sdd}
+	\end{figure}
+\end{frame}
+
+
+\subsubsection[Le memorie flash]{Le memorie flash}
+\begin{frame}
+	\frametitle{Le memorie flash}
+	  
+	\begin{block}{}
+		Le memorie flash sono dispositivi di archiviazione a stato solido utilizzati per conservare dati in modo \textbf{non volatile}, mantenendo le informazioni anche senza alimentazione elettrica. 
+		Sono cruciali per l'archiviazione di dati in una vasta gamma di dispositivi, fornendo un equilibrio tra velocità, capacità e affidabilità.
+		Le memorie flash offrono un \textbf{accesso veloce} ai dati e sono \textbf{resistenti agli urti}, rendendole ideali per \textit{dispositivi mobili, penne USB, schede di memoria, SSD e altro}.\\ \vspace{0.5em}
+
+		Esistono due tipi principali di memorie flash:
+		\begin{itemize}
+			\item La \textbf{NAND Flash} è più comune ed economica, adatta per lo storage di massa in dispositivi come SSD e schede di memoria.
+			\item La \textbf{NOR Flash} è più veloce ma costosa, utilizzata in applicazioni che richiedono un accesso rapido ai dati come firmware di dispositivi embedded e BIOS di computer.
+		\end{itemize}
+		
+	\end{block}
+	
+\end{frame}
+
+% https://www.embedded.com/flash-101-nand-flash-vs-nor-flash/
+\begin{frame}
+	\frametitle{Le memorie flash}
+	
+	\begin{figure}[!htbp]
+		\centering
+		\includegraphics[width=0.57\linewidth]{images/5_memory/flash_nor_nand.png}
+		\caption{NOR Flash (left) has an architecture resembling a NOR gate. Similarly, NAND Flash (right) resembles a NAND gate. (Source: Cypress)}
+%			\label{fig:memory_so_dimm}
+	\end{figure}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Le memorie flash: esempi}
+	
+	\begin{figure}[!htbp]
+		\centering
+		\includegraphics[width=1.0\linewidth]{images/5_memory/flash_1.jpg}
+		\includegraphics[width=1.0\linewidth]{images/5_memory/flash_2.png}
+%		\caption{}
+%		\label{fig:memory_so_dimm}
+	\end{figure}
+\end{frame}
+
+% https://www.sdcard.org/developers/sd-standard-overview/speed-class/
+\begin{frame}
+	\frametitle{Le memorie flash: SD}
+	
+	\begin{figure}[!htbp]
+		\centering
+		\includegraphics[width=1.0\linewidth]{images/5_memory/flash_3.jpg}
+%		\caption{}
+%		\label{fig:memory_so_dimm}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Le memorie flash: SD}
+	
+	\begin{figure}[!htbp]
+		\centering
+		\includegraphics[width=1.0\linewidth]{images/5_memory/flash_4.jpg}
+%		\caption{}
+%		\label{fig:memory_so_dimm}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Le memorie flash: speed class}
+	
+	\begin{figure}[!htbp]
+		\centering
+		\includegraphics[width=0.55\linewidth]{images/5_memory/flash_5.png}
+%		\caption{}
+%		\label{fig:memory_so_dimm}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Le memorie flash: speed class}
+	
+	\begin{figure}[!htbp]
+		\centering
+		\includegraphics[width=1.0\linewidth]{images/5_memory/flash_6.png}
+%		\caption{}
+%		\label{fig:memory_so_dimm}
 	\end{figure}
 \end{frame}
 
@@ -1085,11 +1181,24 @@
 	\end{block}
 	\begin{figure}[!htbp]
 		\centering 
-		\includegraphics[width=0.65\linewidth]{images/5_memory/hhd_info_1.pdf}
-		%\caption{Esempio di memoria indirizzata tramite un BUS degli indirizzi di ampiezza 3 bit}
+		\includegraphics[width=0.65\linewidth]{images/5_memory/hdd_info_0.pdf}
+		%\caption{}
+		\label{fig:memory_hdd_info_0}
+	\end{figure}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{HHD}
+	  
+	\begin{figure}[!htbp]
+		\centering 
+		\includegraphics[width=0.62\linewidth]{images/5_memory/hdd_info_1.jpg}
+		%\caption{}
 		\label{fig:memory_hdd_info_1}
 	\end{figure}
 \end{frame}
+
 
 
 
@@ -1102,7 +1211,7 @@
 		\column{0.5\linewidth}
 		\begin{figure}[!htbp]
 			\centering 
-			\includegraphics[width=1.0\linewidth]{images/5_memory/hhd_info_2.png}
+			\includegraphics[width=1.0\linewidth]{images/5_memory/hdd_info_2.png}
 %			\caption{}
 %			\label{fig:memory_dimm}
 		\end{figure}
@@ -1110,7 +1219,7 @@
 		\column{0.5\linewidth}
 		\begin{figure}[!htbp]
 			\centering 
-			\includegraphics[width=1.0\linewidth]{images/5_memory/hhd_info_3.png}
+			\includegraphics[width=1.0\linewidth]{images/5_memory/hdd_info_3.png}
 %			\caption{}
 %			\label{fig:memory_so_dimm}
 		\end{figure}
@@ -1137,7 +1246,7 @@
 		\column{0.5\linewidth}
 		\begin{figure}[!htbp]
 			\centering
-			\includegraphics[width=1.0\linewidth]{images/5_memory/hhd_info_3.png}
+			\includegraphics[width=1.0\linewidth]{images/5_memory/hdd_info_3.png}
 %			\caption{}
 %			\label{fig:memory_so_dimm}
 		\end{figure}
@@ -1158,6 +1267,54 @@
 		Gli SSD sono anche noti per la loro maggiore resistenza agli urti e ai movimenti bruschi, poiché non hanno parti meccaniche soggette a usura. Tuttavia, a causa delle loro caratteristiche di memoria flash, gli SSD tendono a avere una vita utile limitata rispetto agli HDD.
 	\end{block}
 \end{frame}
+
+
+\begin{frame}
+	\frametitle{SSD}
+	 
+	\begin{columns}
+		\column{0.5\linewidth}
+		\begin{figure}[!htbp]
+			\centering 
+			\includegraphics[width=1.0\linewidth]{images/5_memory/ssd_info_1.png}
+%			\caption{}
+%			\label{}
+		\end{figure}
+			
+		\column{0.5\linewidth}
+		\begin{figure}[!htbp]
+			\centering 
+			\includegraphics[width=1.0\linewidth]{images/5_memory/ssd_info_2.png}
+%			\caption{}
+%			\label{}
+		\end{figure}
+	\end{columns}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{SSD}
+	  
+	\begin{figure}[!htbp]
+		\centering 
+		\includegraphics[width=0.55\linewidth]{images/5_memory/ssd_info_3.jpg}
+		%\caption{}
+		\label{fig:memory_ssd_info_0}
+	\end{figure}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{SSD: per notebooks}
+	  
+	\begin{figure}[!htbp]
+		\centering 
+		\includegraphics[width=1.0\linewidth]{images/5_memory/ssd_info_4.png}
+		%\caption{}
+%		\label{}
+	\end{figure}
+\end{frame}
+
 
 
 \subsubsection[HDD vs SSD]{HDD vs SSD}
@@ -1186,6 +1343,14 @@
 \end{frame}
 
 
-
-
+\begin{frame}
+	\frametitle{HDD vs SSD}
+	  
+	\begin{figure}[!htbp]
+		\centering 
+		\includegraphics[width=1.0\linewidth]{images/5_memory/hhd_vs_ssd.jpg}
+		%\caption{}
+%		\label{}
+	\end{figure}
+\end{frame}
 
