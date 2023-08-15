@@ -27,18 +27,80 @@
 
 
 \subsection[Lo scopo dei BUS]{Lo scopo dei BUS}
+
+
+%\begin{frame}
+%	\frametitle{Lo scopo dei BUS}
+%	
+%	\begin{block}{I BUS: le autostrade per i bit}
+%		Il BUS nei computer è un sistema di comunicazione che trasmette dati e segnali tra le diverse componenti del sistema, come processori, memoria e dispositivi. Distinguiamo due categorie di BUS:
+%		\begin{itemize}
+%			\item L'\textbf{internal BUS} (o \textbf{system BUS}): connette componenti all'interno della scheda madre, facilitando lo scambio di dati tra CPU, RAM e altre parti.
+%			\item L' \textbf{external BUS}: collega la scheda madre a dispositivi esterni come unità di archiviazione e schede di espansione. 
+%		\end{itemize}
+%		
+%	\end{block}
+%	
+%\end{frame}
+
 \begin{frame}
 	\frametitle{Lo scopo dei BUS}
 	
-	\begin{block}{Lo scopo dei BUS}
-		Un BUS nei computer è un sistema di comunicazione che trasmette dati e segnali tra le diverse componenti del sistema, come processori, memoria e dispositivi. I BUS si possono dividere in due categorie:
+	\begin{block}{}
+		I processori operano su $1^i$ e $0^i$. Gli $1^i$ e gli $0^i$ viaggiano da un punto all'altro all'interno del processore, così come all'esterno verso altri chip.
+		Per spostare gli $1^i$ e gli $0^i$, vengono utilizzate \textbf{linee elettroniche} chiamate \textbf{BUS}; una sorta di autostrade per i bit. Distinguiamo tra:
 		\begin{itemize}
-			\item Il \textbf{BUS interno} connette componenti all'interno della scheda madre, facilitando lo scambio di dati tra CPU, RAM e altre parti.
-			\item Il \textbf{BUS esterno}, come il BUS di sistema, collega la scheda madre a dispositivi esterni come unità di archiviazione e schede di espansione. 
+			\item \textbf{internal BUS}: le linee elettroniche \textit{	\underline{interne alla CPU}}. Nell'8086, il BUS dati interno comprende 16 linee separate, ciascuna delle quali contiene un 1 o uno 0. Nei processori odierni si hanno fino a 64/128 linee separate.
+			\item \textbf{external BUS}: utilizzato quando la CPU necessita di comunicare con dei \textit{\underline{dispositivi esterni}}, come una stampante. L'external BUS collega il processore agli adattatori, alla tastiera, al mouse, al disco rigido e ad altri dispositivi.
+				I processori odierni hanno BUS esterni con 64/128 bit.
 		\end{itemize}
-		
-		Il BUS interno è più veloce e gestisce comunicazioni tra parti vitali del computer, mentre il BUS esterno connette il computer a periferiche. Entrambi sono cruciali per l'efficienza e la coesione del sistema, consentendo il corretto funzionamento e la comunicazione tra le diverse componenti.
 		
 	\end{block}
 	
 \end{frame}
+
+
+\subsection[Internal BUS ed external BUS]{Internal BUS ed external BUS}
+\begin{frame}
+	\frametitle{Internal BUS ed external BUS}
+	  
+	\begin{figure}[!htbp]
+		\centering
+		\includegraphics[width=1.0\linewidth]{images/6_bus/bus_internal_external.pdf}
+		%\caption{}
+%		\label{}
+	\end{figure}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Internal BUS ed external BUS}
+	  
+	\begin{figure}[!htbp]
+		\centering
+		\includegraphics[width=0.715\linewidth]{images/6_bus/bus_size.pdf}
+		\caption{per il computer, ogni lettera dell'alfabeto è una diversa combinazione di otto 1 e 0 (in una codifica ASCII ad esempio). Ad esempio, la lettera D è 01000100 e la lettera E è 01000101. La figura dimostra che aumentando le dimensioni del BUS aumentano notevolmente le prestazioni di un computer, in modo simile a come l'aumento del numero di corsie di un'autostrada ne riduce la congestione.}
+%		\label{}
+	\end{figure}
+\end{frame}
+
+
+
+\subsection[Master \& Slave]{Master \& Slave}
+\begin{frame}
+	\frametitle{Master \& Slave}
+	
+	\begin{block}{}
+		Nei sistemi informatici, l'architettura del bus può coinvolgere dispositivi che agiscono come "master" e "slave" durante le operazioni di comunicazione.
+		\begin{itemize}
+			\item Il \textbf{master} è il dispositivo che inizia e controlla l'operazione di trasferimento dati. Detiene il controllo del flusso di dati e inizia le richieste di lettura o scrittura ad altri dispositivi. Ad esempio, una CPU può essere il master quando richiede dati dalla memoria RAM.
+			\item Lo \textbf{slave}, d'altro canto, risponde alle richieste del master e fornisce i dati richiesti o accetta i dati da scrivere. Un esempio tipico è un dispositivo di archiviazione come un'unità SSD o un'unità disco rigido, che risponde alle richieste di lettura o scrittura provenienti dalla CPU (master).
+		\end{itemize}
+		Questo concetto è fondamentale per garantire che le comunicazioni avvengano in modo coordinato e senza conflitti, consentendo al sistema di funzionare in modo efficiente e affidabile.
+		
+	\end{block}
+	
+\end{frame}
+
+
+
