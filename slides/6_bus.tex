@@ -73,34 +73,123 @@
 \end{frame}
 
 
-\begin{frame}
-	\frametitle{Internal BUS ed external BUS}
-	  
-	\begin{figure}[!htbp]
-		\centering
-		\includegraphics[width=0.715\linewidth]{images/6_bus/bus_size.pdf}
-		\caption{per il computer, ogni lettera dell'alfabeto è una diversa combinazione di otto 1 e 0 (in una codifica ASCII ad esempio). Ad esempio, la lettera D è 01000100 e la lettera E è 01000101. La figura dimostra che aumentando le dimensioni del BUS aumentano notevolmente le prestazioni di un computer, in modo simile a come l'aumento del numero di corsie di un'autostrada ne riduce la congestione.}
-%		\label{}
-	\end{figure}
-\end{frame}
-
-
 
 \subsection[Master \& Slave]{Master \& Slave}
 \begin{frame}
 	\frametitle{Master \& Slave}
 	
-	\begin{block}{}
-		Nei sistemi informatici, l'architettura del bus può coinvolgere dispositivi che agiscono come "master" e "slave" durante le operazioni di comunicazione.
+	\begin{block}{Il master e lo slave}
+		Nei sistemi informatici, l'architettura del bus può coinvolgere dispositivi che agiscono come \textit{master} e \textit{slave} durante le operazioni di comunicazione.
 		\begin{itemize}
 			\item Il \textbf{master} è il dispositivo che inizia e controlla l'operazione di trasferimento dati. Detiene il controllo del flusso di dati e inizia le richieste di lettura o scrittura ad altri dispositivi. Ad esempio, una CPU può essere il master quando richiede dati dalla memoria RAM.
 			\item Lo \textbf{slave}, d'altro canto, risponde alle richieste del master e fornisce i dati richiesti o accetta i dati da scrivere. Un esempio tipico è un dispositivo di archiviazione come un'unità SSD o un'unità disco rigido, che risponde alle richieste di lettura o scrittura provenienti dalla CPU (master).
 		\end{itemize}
-		Questo concetto è fondamentale per garantire che le comunicazioni avvengano in modo coordinato e senza conflitti, consentendo al sistema di funzionare in modo efficiente e affidabile.
 		
 	\end{block}
 	
 \end{frame}
 
 
+% https://www.tablesgenerator.com/#
+\begin{frame}
+	\frametitle{Master \& Slave}
+	
+	\begin{block}{}
+		Questo concetto è fondamentale per garantire che le comunicazioni avvengano in modo coordinato e senza conflitti, consentendo al sistema di funzionare in modo efficiente e affidabile.
+		\begin{table}[]
+			\begin{tabular}{|c|c|c|}
+			\hline
+			\rowcolor[HTML]{ffce93} 
+			\textbf{Master} & \textbf{Slave}     & \textbf{Situazione}                                      \\ \hline
+			\rowcolor[HTML]{EFEFEF} 
+			CPU             & Memoria            & \shortstack{Fetch dell'istruzione\\  o degli operandi}                   \\ \hline
+			\rowcolor[HTML]{EFEFEF} 
+			CPU             & Dispositivo di I/O & \shortstack{Operazione di lettura \\o scrittura con dispositivo di I/O} \\ \hline
+			\rowcolor[HTML]{EFEFEF} 
+			CPU             & Memoria            & \shortstack{Operazione di lettura \\o scrittura su memoria}             \\ \hline
+			\rowcolor[HTML]{EFEFEF} 
+			I/O             & Memoria            & \shortstack{DMA \\(Direct Memory Access)}                               \\ \hline
+			\end{tabular}
+		\end{table}
+		
+	\end{block}
+	
+\end{frame}
 
+
+\subsection[Aumentare le prestazioni dei BUS]{Aumentare le prestazioni dei BUS}
+\begin{frame}
+	\frametitle{Aumentare le prestazioni dei BUS}
+	  
+	\begin{block}{}
+		Per migliorare le prestazioni di un BUS, vengono utilizzate diverse tecniche di progettazione e ottimizzazione. Alcune di queste includono:
+		\begin{itemize}
+			\item \textbf{Aumento della larghezza del bus}: incrementare il numero di linee dei bus consente di trasferire più dati contemporaneamente, accelerando il trasferimento di informazioni tra i dispositivi collegati.
+			\item \textbf{Aumento della velocità di clock}: aumentare la frequenza di clock del bus consente di aumentare la velocità di trasferimento dei dati. Tuttavia, ciò può portare a problemi di interferenza elettronica e consumo energetico più elevato.
+			\item \textbf{Caching}: l'utilizzo di cache può ridurre la necessità di trasferimenti frequenti tra la CPU e la memoria principale. Le cache sono memorie veloci e di piccole dimensioni che conservano copie dei dati più utilizzati dalla CPU.
+		\end{itemize}
+		
+	\end{block}
+
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Aumentare le prestazioni dei BUS: larghezza del BUS}
+	  
+	\begin{figure}[!htbp]
+		\centering
+		\includegraphics[width=0.715\linewidth]{images/6_bus/bus_size.pdf}
+		\caption{per il computer, ogni lettera dell'alfabeto è una diversa combinazione di otto 1 e 0 (in una codifica ASCII ad esempio). Ad esempio, la lettera D è 01000100 e la lettera E è 01000101. La figura dimostra che \underline{aumentando} la \textbf{larghezza del BUS} \underline{aumentano} notevolmente \textbf{le prestazioni} di un computer, in modo simile a come l'aumento del numero di corsie di un'autostrada ne riduce la congestione.}
+%		\label{}
+	\end{figure}
+\end{frame}
+
+
+
+\subsection[Valutare le prestazioni dei BUS]{Valutare le prestazioni dei BUS}
+\begin{frame}
+	\frametitle{Valutare le prestazioni di un BUS}
+	  
+	\begin{block}{Parametri delle prestazioni di un BUS}
+		\begin{itemize}
+			\item \textbf{Larghezza}: indica il numero di linee dati di un BUS. Più linee significano maggiore capacità di trasferimento simultaneo di dati.
+			\item \textbf{Bit Rate}: è il numero di bit trasmessi o ricevuti in un'unità di tempo, misurato in bit al secondo (bps).
+			\item \textbf{Banda}: è la quantità di dati che può essere trasmessa attraverso il bus in un dato intervallo di tempo, espressa solitamente in byte al secondo (Bps).
+			\item \textbf{Velocità}: rappresenta la frequenza di clock del BUS per un BUS sincrono, determinando quante volte i dati possono essere trasmessi o ricevuti in un secondo.
+		\end{itemize}
+		
+	\end{block}
+
+\end{frame}
+
+
+\subsection[BUS sincrono e asincrono]{BUS sincrono e asincrono}
+\begin{frame}
+	\frametitle{BUS sincrono e asincrono}
+	  
+	\begin{block}{Parametri delle prestazioni di un BUS}
+		I BUS sincroni e asincroni differiscono nel modo in cui gestiscono il timing delle comunicazioni:
+		\begin{itemize}
+			\item In un \textbf{BUS sincrono}, i dispositivi seguono un orologio comune, coordinando trasmissioni e ricezioni in base a impulsi temporizzati.
+				I BUS sincroni offrono maggiore precisione e velocità ma richiedono un'accurata sincronizzazione. 
+			\item Nei \textbf{BUS asincroni}, invece, i dati vengono trasmessi senza un clock centralizzato, utilizzando segnali di controllo per indicare l'inizio e la fine dei dati. I BUS asincroni sono più flessibili e tolleranti ma possono essere meno efficienti in termini di velocità di trasferimento.
+		\end{itemize}
+		
+	\end{block}
+
+\end{frame}
+
+% TODO aggiungere esercizi sul BUS sincrono e asincrono
+
+
+\subsection[L'arbitraggio]{L'arbitraggio}
+\begin{frame}
+	\frametitle{L'arbitraggio}
+	  
+	\begin{block}{L'arbitraggio di un BUS}
+		
+		
+	\end{block}
+
+\end{frame}
