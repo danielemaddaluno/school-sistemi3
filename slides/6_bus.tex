@@ -199,7 +199,7 @@
 		\begin{scriptsize}
 		\begin{itemize}
 			\item A. $5 s$
-			\item B. $2 \cdot 10^{-7} ns$
+			\item B. $250 ns$
 			\item C. $5 \cdot 10^{-7} s$
 			\item D. $2 \cdot 10^{-7} s$
 		\end{itemize}
@@ -216,7 +216,7 @@
 		\begin{figure}[!htbp]
 			\centering
 			\includegraphics[width=0.86\linewidth]{images/6_bus/bus_synch.pdf}
-			\caption{1. Invio indirizzo, 2. Estrazione del dato, 3. Invio del dato}
+			\caption{{\color{CpuGreen}1. Invio indirizzo}, {\color{CpuBlue}2. Estrazione del dato}, {\color{CpuRed}3. Invio del dato}}
 %			\label{}
 		\end{figure}
 	\end{block}
@@ -227,10 +227,14 @@
 	\frametitle{Esercizi sui BUS sincroni}
 	
 	\begin{block}{Esercizio 1: soluzione}
-		Per calcolare il tempo di una lettura è necessario scomporre l'operazione di lettura in tre parti e calcolare la durata di ogni operazione:
+		Per calcolare il tempo di una lettura è necessario scomporre l'operazione di lettura in tre parti e calcolare la durata di ogni operazione in questo specifico caso:
 		\begin{enumerate}
-			\item Inviare l'indirizzo della locazione di memoria sul BUS degli indirizzi
-		\end{enumerate}	
+			\item {\color{CpuGreen}Inviare l'indirizzo della locazione di memoria tramite il BUS degli indirizzi: $2\mathrm{T}$}
+			\item {\color{CpuBlue}Lettura della parola dalla memoria: $\Big\lceil \frac{100}{25} \Big\rceil \mathrm{T} \rightarrow 4\mathrm{T}$}
+			\item {\color{CpuRed} Inviare il dato tramite il BUS dati; ricordando che il BUS dati è ampio 32 bit, mentre il dato da inviare è di 64 bit, sono necessari due invii attraverso il BUS dati, di conseguenza: $2 \cdot 2\mathrm{T} \rightarrow 4\mathrm{T}$}
+		\end{enumerate}
+		Quindi il tempo di trasferimento per un READ per questa architettura è dato da:
+		$$t = {\color{CpuGreen}2\mathrm{T}} + {\color{CpuBlue}4\mathrm{T}} + {\color{CpuRed}4\mathrm{T}} = 10\mathrm{T} = 10 \cdot 25ns = 250ns$$
 	\end{block}
 \end{frame}
 
@@ -264,6 +268,50 @@
 \end{frame}
 
 
+\begin{frame}
+	\frametitle{Esercizi sui BUS sincroni}
+	
+	\begin{block}{Esercizio 2: soluzione}
+		\begin{figure}[!htbp]
+			\centering
+			\includegraphics[width=0.86\linewidth]{images/6_bus/bus_synch.pdf}
+			\caption{{\color{CpuGreen}1. Invio indirizzo}, {\color{CpuBlue}2. Estrazione del dato}, {\color{CpuRed}3. Invio del dato}}
+%			\label{}
+		\end{figure}
+	\end{block}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Esercizi sui BUS sincroni}
+	
+	\begin{block}{Esercizio 2: soluzione}
+		Per calcolare la velocità di trasferimento in lettura è necessario scomporre l'operazione di lettura in tre parti e calcolare la durata di ogni operazione in questo specifico caso:
+		\begin{enumerate}
+			\item {\color{CpuGreen}Inviare l'indirizzo della locazione di memoria tramite il BUS degli indirizzi: $2\mathrm{T}$}
+			\item {\color{CpuBlue}Lettura della parola dalla memoria: $\Big\lceil \frac{100}{15} \Big\rceil \mathrm{T} \rightarrow 7\mathrm{T}$}
+			\item {\color{CpuRed} Inviare il dato tramite il BUS dati; ricordando che il BUS dati è ampio 32 bit, mentre il dato da inviare è di 64 bit, sono necessari due invii attraverso il BUS dati, di conseguenza: $2 \cdot 2\mathrm{T} \rightarrow 4\mathrm{T}$}
+		\end{enumerate}
+		Quindi calcoliamo la velocità di lettura per questa architettura come:
+		$$t = {\color{CpuGreen}2\mathrm{T}} + {\color{CpuBlue}7\mathrm{T}} + {\color{CpuRed}4\mathrm{T}} = 13\mathrm{T} = 13 \cdot 15ns = 195ns \rightarrow 64bit/195ns$$
+	\end{block}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Esercizi sui BUS sincroni}
+	
+	\begin{block}{Esercizio 2: soluzione}
+		Non è richiesto dall'esercizio ma qualora volessimo calcolare la velocità di trasferimento in termini di byte/s ripartiamo dal risultato di $64bit/195ns$ e procediamo a calcolare la velocità come segue:\\~\\
+		
+		\begin{scriptsize}
+		$$\frac{64bit}{195ns} = \frac{8byte}{195 \cdot 10^{-9} s} = \frac{{\color{CpuBlue}8} \cdot 10^{9}byte}{{\color{CpuBlue}195}s}= {\color{CpuBlue}0.041} \cdot 10^{9} byte/s = 410 \cdot 10^{6} byte/s \simeq 410 MB/s$$
+		\end{scriptsize}
+		
+	\end{block}
+\end{frame}
+
+
 
 \begin{frame}
 	\frametitle{Esercizi sui BUS sincroni}
@@ -290,6 +338,50 @@
 		\end{itemize}
 		\end{scriptsize}
 	
+	\end{block}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Esercizi sui BUS sincroni}
+	
+	\begin{block}{Esercizio 3: soluzione}
+		\begin{figure}[!htbp]
+			\centering
+			\includegraphics[width=0.86\linewidth]{images/6_bus/bus_synch.pdf}
+			\caption{{\color{CpuGreen}1. Invio indirizzo}, {\color{CpuBlue}2. Estrazione del dato}, {\color{CpuRed}3. Invio del dato}}
+%			\label{}
+		\end{figure}
+	\end{block}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Esercizi sui BUS sincroni}
+	
+	\begin{block}{Esercizio 3: soluzione}
+		Per calcolare la banda di trasmissione per la lettura è necessario scomporre l'operazione di lettura in tre parti e calcolare la durata di ogni operazione in questo specifico caso:
+		\begin{enumerate}
+			\item {\color{CpuGreen}Inviare l'indirizzo della locazione di memoria tramite il BUS degli indirizzi: $1\mathrm{T}$}
+			\item {\color{CpuBlue}Lettura della parola dalla memoria: $\Big\lceil \frac{200}{50} \Big\rceil \mathrm{T} \rightarrow 4\mathrm{T}$}
+			\item {\color{CpuRed} Inviare il dato tramite il BUS dati; ricordando che il BUS dati è ampio 32 bit e il dato da inviare è di 32 bit, è sufficiente un invio attraverso il BUS dati, di conseguenza: $1\mathrm{T}$}
+		\end{enumerate}
+		Quindi calcoliamo la velocità di lettura per questa architettura come:
+		$$t = {\color{CpuGreen}1\mathrm{T}} + {\color{CpuBlue}4\mathrm{T}} + {\color{CpuRed}1\mathrm{T}} = 6\mathrm{T} = 6 \cdot 50ns = 300ns \rightarrow 32bit/300ns = 4byte/300ns$$
+	\end{block}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Esercizi sui BUS sincroni}
+	
+	\begin{block}{Esercizio 3: soluzione}
+		Possiamo quindi calcolare la banda massima di trasmissione per la lettura in termini di byte/s ripartendo dal risultato di $4byte/300ns$:\\~\\
+		
+		\begin{scriptsize}
+		$$\frac{4byte}{300ns} = \frac{4byte}{300 \cdot 10^{-9} s} = \frac{{\color{CpuBlue}4} \cdot 10^{9}byte}{{\color{CpuBlue}300}s}= {\color{CpuBlue}0.01333} \cdot 10^{9} byte/s = 13.33 \cdot 10^{6} byte/s \simeq 13.33 MB/s$$
+		\end{scriptsize}
+		
 	\end{block}
 \end{frame}
 
