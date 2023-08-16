@@ -181,6 +181,134 @@
 \end{frame}
 
 % TODO aggiungere esercizi sul BUS sincrono e asincrono
+\begin{frame}
+	\frametitle{Esercizi sui BUS sincroni}
+	
+	\begin{block}{Esercizio 1}
+		Un bus sincrono presenta le seguenti caratteristiche:
+		\begin{scriptsize}
+		\begin{enumerate}
+			\item durata di un ciclo di clock 25 ns
+			\item durata di una trasmissione sul bus 2 cicli di clock
+			\item dimensione del bus dati 32 bit
+			\item dimensione del bus indirizzi 32 bit
+		\end{enumerate}
+		\end{scriptsize}
+		Qual è il tempo di trasferimento durante un’operazione di lettura (READ) di un dato dalla memoria, sapendo che la memoria principale ha un tempo di ciclo pari a 100 ns e che ciascuna locazione di memoria ha capacità pari a 64 bit?
+		
+		\begin{scriptsize}
+		\begin{itemize}
+			\item A. $5 s$
+			\item B. $2 \cdot 10^{-7} ns$
+			\item C. $5 \cdot 10^{-7} s$
+			\item D. $2 \cdot 10^{-7} s$
+		\end{itemize}
+		\end{scriptsize}
+	
+	\end{block}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Esercizi sui BUS sincroni}
+		
+	\begin{block}{Esercizio 2}
+		Un bus sincrono presenta le seguenti caratteristiche:
+		\begin{scriptsize}
+		\begin{enumerate}
+			\item durata di un ciclo di clock 15 ns
+			\item durata di una trasmissione sul bus 2 cicli di clock
+			\item dimensione del bus dati 32 bit
+			\item dimensione del bus indirizzi 32 bit
+		\end{enumerate}
+		\end{scriptsize}
+		
+		Qual è la velocità di trasferimento durante un’operazione di lettura (READ) di un dato dalla memoria, sapendo che la memoria principale ha un tempo di ciclo pari a 100 ns e che ciascuna locazione di memoria ha capacità pari a 64 bit?
+		
+		\begin{scriptsize}
+		\begin{itemize}
+			\item A. $64 bit/195 ns$
+			\item B. $32 bit/195 ns$
+			\item C. $32 bit/(195 \cdot 10^{-9})$
+			\item D. $4 byte/(195 \cdot 10^{-9})$
+		\end{itemize}
+		\end{scriptsize}
+	
+	\end{block}
+\end{frame}
+
+
+
+\begin{frame}
+	\frametitle{Esercizi sui BUS sincroni}
+		
+	\begin{block}{Esercizio 3}
+		Un bus sincrono presenta le seguenti caratteristiche:
+		\begin{scriptsize}
+		\begin{enumerate}
+			\item linea dati di 32 bit
+			\item durata di un ciclo di clock 50 ns
+			\item il tempo di trasmissione su bus è 1 ciclo di clock
+			\item il tempo per leggere una parola dalla memoria è 200 ns
+		\end{enumerate}
+		\end{scriptsize}
+		
+		Qual è la banda massima di trasmissione per la lettura di una parola dalla memoria da un altro dispositivo?
+		
+		\begin{scriptsize}
+		\begin{itemize}
+			\item A. $15MB/s$
+			\item B. $2MB/s$
+			\item C. $20MB/s$
+			\item D. $13.3MB/s$
+		\end{itemize}
+		\end{scriptsize}
+	
+	\end{block}
+\end{frame}
+
+
+%\begin{frame}
+%
+%			\begin{itemize}
+%				\item \textbf{Hit rate} di 82\% \hspace{9.5em} $\rightarrow$ \hspace{2em} ${\color{CpuGreen}h} = 0.8$
+%				\item \textbf{Hit time} di 2ns \hspace{9.7em} $\rightarrow$ \hspace{2em} ${\color{CpuBlue}t_c} = 2ns$
+%				\item \textbf{Miss penalty} di 500ns \hspace{6.8em} $\rightarrow$ \hspace{2em} ${\color{CpuPink}t_p} = 500ns$
+%			\end{itemize}
+%		\end{block}
+%		\pause
+%		$$t = {\color{CpuGreen}h} \cdot {\color{CpuBlue}t_c} + {\color{CpuRed}m} \cdot {\color{CpuPink}t_p}$$
+%		\pause
+%		Da cui, sostituendo i valori numerici:
+%		\pause
+%		$$\qquad \qquad t = {\color{CpuGreen}0.8} \cdot {\color{CpuBlue}2} + {\color{CpuRed}0.2} \cdot {\color{CpuPink}500} = 101.6ns \quad \pause (\ll 500ns)$$
+%	
+%\end{frame}
+
+
+%\begin{frame}
+%	\frametitle{Il tempo medio di accesso alla cache}
+%	
+%	\begin{block}{Il tempo medio di accesso alla cache $t$}
+%	Possiamo calcolare il \textbf{tempo medio di accesso alla cache} $t$ come segue:\vspace{0.25em} \pause
+%		\begin{Large}
+%		$$t = {\color{CpuGreen}h} \cdot {\color{CpuBlue}t_c} + {\color{CpuRed}m} \cdot {\color{CpuPink}t_p}$$
+%		\end{Large}
+%		~\vspace{0.5em} \pause
+%		Ovvero si calcola come: \pause
+%		\begin{enumerate}
+%			\item l'{\color{CpuGreen}\textbf{hit rate}} (prob. di hit) per il {\color{CpuBlue}\textbf{tempo di accesso alla memoria cache}} \pause
+%			\item più il \pause
+%			\item il {\color{CpuRed}\textbf{miss rate}} (prob. di miss = prob. di non hit) moltiplicato per il {\color{CpuPink}\textbf{tempo necessario ad ottenere il dato dalle memorie "inferiori"}} \pause
+%		\end{enumerate}
+%		
+%		Si noti che è una sorta di media pesata dove i pesi sono dati da $h$ e $m$, ovvero hit rate e miss rate che sono due probabilità tali che ${\color{CpuGreen}h} + {\color{CpuRed}m} = 1$.
+%	\end{block}
+%	
+%\end{frame}
+
+
+
 
 
 \subsection[L'arbitraggio]{L'arbitraggio}
@@ -193,3 +321,5 @@
 	\end{block}
 
 \end{frame}
+
+
