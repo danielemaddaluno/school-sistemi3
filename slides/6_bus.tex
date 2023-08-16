@@ -429,15 +429,89 @@
 
 
 
-\subsection[L'arbitraggio]{L'arbitraggio}
+\subsection[L'arbitraggio di un BUS]{L'arbitraggio di un BUS}
 \begin{frame}
-	\frametitle{L'arbitraggio}
+	\frametitle{L'arbitraggio di un BUS}
 	  
 	\begin{block}{L'arbitraggio di un BUS}
+		L'\textbf{arbitraggio di un BUS} è un processo essenziale nell'architettura dei computer, dove più dispositivi o processori condividono lo stesso BUS per accedere alle risorse di sistema, come memoria o periferiche.\\~\\
 		
+		L'arbitraggio \underline{gestisce il conflitto di accesso simultaneo dei dispositivi}, \underline{evitando collisioni} e \underline{garantendo l'ordine corretto di accesso}.\\~\\
+
+		Il sistema di arbitraggio \textbf{determina quale dispositivo ha il diritto di utilizzare il bus in un dato momento}, assegnando priorità o utilizzando algoritmi di turni. Ciò evita situazioni di contenzione, in cui più dispositivi cercano di accedere al BUS contemporaneamente, garantendo l'equità e l'efficienza nell'utilizzo delle risorse di sistema.
 		
 	\end{block}
-
 \end{frame}
+
+
+\begin{frame}
+	\frametitle{L'arbitraggio di un BUS}
+	  
+	\begin{block}{L'arbitraggio di un BUS}
+		Approfondiamo tre tipologie di arbitraggio:
+		\begin{enumerate}
+			\item arbitraggio centralizzato (daisy chaining a un livello)
+			\item arbitraggio centralizzato (daisy chaining con più livelli di priorità)
+			\item arbitraggio distribuito.
+		\end{enumerate}
+		~\\
+		Nell'arbitraggio centralizzato il bus viene concesso da un circuito integrato nella CPU chiamato appunto arbitro, invece nell'arbitraggio decentralizzato non esiste questo chip, la concessione del bus viene gestita dagli stessi dispositivi.
+
+	\end{block}
+\end{frame}
+
+
+
+\subsubsection[Daisy chaining a un livello]{Daisy chaining a un livello}
+\begin{frame}
+	\frametitle{Daisy chaining a un livello}
+	  
+	\begin{block}{Daisy chaining a un livello}
+		\begin{figure}[!htbp]
+			\centering
+			\includegraphics[width=0.8\linewidth]{images/6_bus/daisy_chaining_lev_1.jpg}
+%			\caption{}
+%			\label{}
+		\end{figure}
+	\end{block}
+\end{frame}
+
+
+\subsubsection[Daisy chaining con più livelli di priorità]{Daisy chaining con più livelli di priorità}
+\begin{frame}
+	\frametitle{Daisy chaining con più livelli di priorità}
+	  
+	\begin{block}{Daisy chaining con più livelli di priorità}
+		\begin{figure}[!htbp]
+			\centering
+			\includegraphics[width=0.8\linewidth]{images/6_bus/daisy_chaining_lev_n.jpg}
+%			\caption{}
+%			\label{}
+		\end{figure}
+	\end{block}
+\end{frame}
+
+
+
+\subsubsection[Arbitraggio distribuito]{Arbitraggio distribuito}
+\begin{frame}
+	\frametitle{Arbitraggio distribuito}
+	  
+	\begin{block}{Arbitraggio distribuito}
+		\begin{figure}[!htbp]
+			\centering
+			\includegraphics[width=0.8\linewidth]{images/6_bus/daisy_chaining_distributed.jpg}
+%			\caption{}
+%			\label{}
+		\end{figure}
+		
+	\end{block}
+\end{frame}
+
+
+
+
+
+
 
 
