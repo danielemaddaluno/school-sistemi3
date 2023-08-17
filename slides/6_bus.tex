@@ -473,6 +473,14 @@
 %			\caption{}
 %			\label{}
 		\end{figure}
+		\begin{footnotesize}
+		\begin{enumerate}
+			\item Il dispositivo master che vuole utilizzare il BUS attiva la linea BUS request
+			\item Quando la linea BUS request viene attivata, l'arbitro attiva la linea BUS grant appena è disponibile
+			\item La linea BUS grant viene propagata da un dispositivo a quello successivo solo se esso non ha attivato la linea BUS request
+			\item Il dispositivo che ha attivato la linea BUS request deve attendere che la linea BUS grant diventi attiva prima di poter utilizzare il bus
+		\end{enumerate}
+		\end{footnotesize}
 	\end{block}
 \end{frame}
 
@@ -480,7 +488,7 @@
 \subsubsection[Daisy chaining con più livelli di priorità]{Daisy chaining con più livelli di priorità}
 \begin{frame}
 	\frametitle{Daisy chaining con più livelli di priorità}
-	  
+	
 	\begin{block}{Daisy chaining con più livelli di priorità}
 		\begin{figure}[!htbp]
 			\centering
@@ -488,6 +496,9 @@
 %			\caption{}
 %			\label{}
 		\end{figure}
+		\begin{footnotesize}
+		Nel daisy chaining con più livelli di priorità, ciascun livello viene gestito  indipendentemente, funziona come descritto in precedenza (per i caso di daisy chaining a un livello), tranne quando le due (o più) linee BUS request sono attive contemporaneamente perché, in tal caso, l’arbitro attiva solo la linea BUS grant di livello più basso (con priorità maggiore).
+		\end{footnotesize}
 	\end{block}
 \end{frame}
 
@@ -504,6 +515,14 @@
 %			\caption{}
 %			\label{}
 		\end{figure}
+		
+		\begin{footnotesize}
+		\begin{enumerate}
+			\item Setup per l'accesso al BUS: dispositivo master che vuole utilizzare il BUS nega la linea arbitration out dopodiché attende che la linea arbitration in diventi attiva e che la linea busy venga negata.
+			\item Accesso al BUS: attiva la linea busy, attiva la linea arbitration out e utilizza il bus.
+			\item Termine dell'utilizzo del BUS: il dispositivo master che utilizza il BUS nega la linea busy quando termina.
+		\end{enumerate}
+		\end{footnotesize}
 		
 	\end{block}
 \end{frame}
