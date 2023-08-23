@@ -243,6 +243,7 @@
 		    \begin{minipage}{0.49\textwidth}
 		        \centering
 		        \includegraphics[width=1.0\linewidth]{images/7_pipeline/pipeline_in_time.png}
+		        \label{fig:pipeline_pipeline_in_time}
 		    \end{minipage}
 		    \hfill
 		    \begin{minipage}{0.49\textwidth}
@@ -263,7 +264,14 @@
 	\frametitle{\textbullet{4} Pipeline}
 
 	%\begin{block}{Esecuzione fuori ordine}
-		Tuttavia, la pipeline può incontrare situazioni in cui le istruzioni successive dipendono dai risultati di quelle precedenti.
+		Tuttavia, la pipeline può incontrare situazioni in cui le istruzioni successive dipendono dai risultati di quelle precedenti. Chiamiamo tali situazioni problematiche \textbf{conflitti}.\\
+		I conflitti possono essere causati da risorse limitate, dati mancanti o salti nell'esecuzione sequenziale delle istruzioni.\\~\\		
+		Distinguiamo i tre principali tipi di conflitti:
+		\begin{enumerate}
+			\item \textbf{conflitti strutturali}: quando due fasi utilizzano contemporaneamente la stessa risorsa, come per esempio i BUS, l’ALU o la memoria RAM;
+			\item \textbf{conflitti tra i dati}: quando un'istruzione utilizza un dato che è ancora in fase di elaborazione;
+			\item \textbf{conflitti di controllo}: si verificano quando istruzioni di salto creano incertezza circa quale sia la successiva istruzione da andare effettivamente ad eseguire.
+		\end{enumerate}
 		
 	%\end{block}
 
