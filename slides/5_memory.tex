@@ -260,6 +260,23 @@
 \end{frame}
 
 
+\subsubsection[I principi di località: spaziale e temporale]{I principi di località: spaziale e temporale}
+\begin{frame}
+%	\frametitle{I flip-flop}
+	
+	\begin{block}{I principi di località}
+		I \textbf{principi di località}, sono concetti chiave nelle memorie cache per ottimizzare l'efficienza dell'accesso ai dati. Essi si basano sull'osservazione che i pattern di accesso alle memorie tendono ad avere delle caratteristiche prevedibili che possono essere sfruttate per migliorare le prestazioni complessive.
+		\begin{itemize}
+			\item \textbf{Località Spaziale}: dati adiacenti ai recenti accessi vengono probabilmente richiesti poiché le istruzioni spesso accedono a dati correlati e contigui nello spazio.
+			\item \textbf{Località Temporale}: dati acceduti di recente hanno alta probabilità di essere richiesti nuovamente entro breve tempo (ad esempio in caso di cicli).
+		\end{itemize}
+		Queste due sono la ragione per cui quando si ha un cache-miss si carica nella cache non solo il dato mancante, ma anche molti altri dati ad esso adiacenti (il blocco).
+	\end{block}
+		
+\end{frame}
+
+
+
 
 \subsection[I tipi di memoria]{I tipi di memoria}
 \begin{frame}
